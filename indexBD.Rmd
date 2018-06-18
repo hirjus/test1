@@ -1,20 +1,17 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
-date: 18.6.2018
-author: Jussi Hirvonen
+author: "Jussi Hirvonen"
+date: "18.6.2018"
 documentclass: book
-#lang: fi
-#date: "`r Sys.Date()`"
-#bibliography: [book.bib, packages.bib]
-#biblio-style: apalike
-#link-citations: yes
-#github-repo: rstudio/bookdown-demo
-description: "bookdown - paketin testailua""
 site: bookdown::bookdown_site
+description: bookdown - paketin testailua
 output:
-  bookdown::gitbook: default
-  #bookdown::pdf_book:
-    keep_tex: yes
+   bookdown::gitbook: default
+   #bookdown::pdf_book:
+    #keep_tex: yes
+    #toc: true
+    #number_sections: true
+    #toc_depth: 2
 ---
 ```{r bdtest1_paketit, include=FALSE}
 library(rgl)
@@ -38,34 +35,37 @@ library(tinytex)
 
 YAML-headerin säätöä
 
-nämä asetukset ovat nyt käytössä:
-documentclass: article
-lang: fi
-output: 
-  pdf_document:
-    toc: true
-    number_sections: true
-    toc_depth: 2
-    fig_caption: true
-    fig_width: 5
-    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
-    #code_folding: show
-  html_document:
-    theme: cosmo
-    toc: true
-    number_sections: true
-    toc_depth: 2
-    fig_caption: true
-    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
-    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
-    code_folding: hide
+nämä asetukset ovat käytössä Galku-dokkareissa:
+
+#documentclass: article
+#lang: fi
+#output: 
+#  pdf_document:
+#    toc: true
+#    number_sections: true
+#    toc_depth: 2
+#    fig_caption: true
+#    fig_width: 5
+#    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
+#    #code_folding: show
+#  html_document:
+#    theme: cosmo
+#    toc: true
+#    number_sections: true
+#    toc_depth: 2
+#    fig_caption: true
+#    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
+#    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
+#    code_folding: hide
+
+pdf ei toimi, gitbook toimii
 
 ***
   
-```{r child = "kaavat1.Rmd"}
+```{r child = "test_kaavat1.Rmd"}
 ```
   
 ***
   
-```{r child=, include=FALSE}
+```{r child = "taulkuv1.Rmd"}
 ```
