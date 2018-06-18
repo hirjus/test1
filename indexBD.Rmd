@@ -1,0 +1,71 @@
+---
+title: "Bookdown-dokumetti - testi 1"
+date: 18.6.2018
+author: Jussi Hirvonen
+documentclass: book
+#lang: fi
+#date: "`r Sys.Date()`"
+#bibliography: [book.bib, packages.bib]
+#biblio-style: apalike
+#link-citations: yes
+#github-repo: rstudio/bookdown-demo
+description: "bookdown - paketin testailua""
+site: bookdown::bookdown_site
+output:
+  bookdown::gitbook: default
+  #bookdown::pdf_book:
+    keep_tex: yes
+---
+```{r bdtest1_paketit, include=FALSE}
+library(rgl)
+library(ca)
+library(haven)
+library(dplyr)
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(rmarkdown)
+library(ggplot2)
+library(furniture)
+library(likert)
+library(scales) # G_1_2 - kuva
+library(reshape2)  # G_1_2 - kuva
+library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen
+library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen
+library(bookdown)
+library(tinytex)
+```
+
+YAML-headerin säätöä
+
+nämä asetukset ovat nyt käytössä:
+documentclass: article
+lang: fi
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+    toc_depth: 2
+    fig_caption: true
+    fig_width: 5
+    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
+    #code_folding: show
+  html_document:
+    theme: cosmo
+    toc: true
+    number_sections: true
+    toc_depth: 2
+    fig_caption: true
+    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
+    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
+    code_folding: hide
+
+***
+  
+```{r child = "kaavat1.Rmd"}
+```
+  
+***
+  
+```{r child=, include=FALSE}
+```

@@ -1,35 +1,3 @@
----
-title: "Kaavat bookdown-paketilla"
-date: 13.6.2018
-author: Jussi Hirvonen
-documentclass: book
-#lang: fi
-site: bookdown::bookdown_site
-output:
-  bookdown::pdf_book:
-    keep_tex: yes
-  
----
-```{r include=FALSE}
-library(rgl)
-library(ca)
-library(haven)
-library(dplyr)
-library(knitr)
-library(tidyverse)
-library(lubridate)
-library(rmarkdown)
-library(ggplot2)
-library(furniture)
-library(likert)
-library(scales) # G_1_2 - kuva
-library(reshape2)  # G_1_2 - kuva
-library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen
-library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen
-library(bookdown)
-library(tinytex)
-```
-
 
 # Kaavat ja matemattiset merkinnät
 
