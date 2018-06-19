@@ -58,7 +58,7 @@ nämä asetukset ovat käytössä Galku-dokkareissa:
 #    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
 #    code_folding: hide
 
-pdf ei toimi, gitbook toimii
+pdf ei toimi, gitbook toimii. Kun poistin nuo YAML-headerit pdf_documet - osasta niin pdf toimii myös. Asetusten konflikteja (YAML ja bookdown)?
 
 ***
   
