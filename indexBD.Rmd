@@ -1,17 +1,18 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
 author: "Jussi Hirvonen"
-date: "18.6.2018"
+date: "19.6.2018"
 documentclass: book
 site: bookdown::bookdown_site
 description: bookdown - paketin testailua
 output:
-   bookdown::gitbook: default
    #bookdown::pdf_book:
     #keep_tex: yes
     #toc: true
     #number_sections: true
     #toc_depth: 2
+   bookdown::gitbook: default
+   
 ---
 ```{r bdtest1_paketit, include=FALSE}
 library(rgl)
@@ -58,7 +59,11 @@ nämä asetukset ovat käytössä Galku-dokkareissa:
 #    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
 #    code_folding: hide
 
-pdf ei toimi, gitbook toimii. Kun poistin nuo YAML-headerit pdf_documet - osasta niin pdf toimii myös. Asetusten konflikteja (YAML ja bookdown)?
+Eivät suoraan toimi bookdown-paketin kanssa.
+
+En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+
+Tämä teksti **ei tulostu**.
 
 ***
   
