@@ -6,13 +6,12 @@ documentclass: book
 site: bookdown::bookdown_site
 description: bookdown - paketin testailua
 output:
+   bookdown::gitbook: default
    #bookdown::pdf_book:
     #keep_tex: yes
     #toc: true
     #number_sections: true
     #toc_depth: 2
-   bookdown::gitbook: default
-   
 ---
 ```{r bdtest1_paketit, include=FALSE}
 library(rgl)
@@ -62,6 +61,8 @@ nämä asetukset ovat käytössä Galku-dokkareissa:
 Eivät suoraan toimi bookdown-paketin kanssa.
 
 En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+
+Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita).
 
 Tämä teksti **ei tulostu**.
 
