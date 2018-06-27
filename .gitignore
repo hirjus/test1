@@ -5,6 +5,12 @@
 # Session Data files
 .RData
 
+#Bookdown-demosta
+_publish.R
+_book
+_bookdown_files
+
+
 # Example code in package build process
 *-Ex.R
 
