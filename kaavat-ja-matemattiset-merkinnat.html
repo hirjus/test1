@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
+<link rel="prev" href="johdanto.html">
 <link rel="next" href="taulukot-ja-kuvat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -61,10 +61,11 @@
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>1</b> Kaavat ja matemattiset merkinnät</a><ul>
-<li class="chapter" data-level="1.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>1.1</b> Kahden luokittelumuuttuja taulukko</a></li>
+<li class="chapter" data-level="1" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>1</b> Johdanto</a></li>
+<li class="chapter" data-level="2" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>2</b> Kaavat ja matemattiset merkinnät</a><ul>
+<li class="chapter" data-level="2.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>2.1</b> Kahden luokittelumuuttuja taulukko</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html"><i class="fa fa-check"></i><b>2</b> Taulukot ja kuvat</a></li>
+<li class="chapter" data-level="3" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html"><i class="fa fa-check"></i><b>3</b> Taulukot ja kuvat</a></li>
 </ul>
 
       </nav>
@@ -82,22 +83,17 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bookdown-dokumetti - testi 1</h1>
-<h4 class="author"><em>Jussi Hirvonen</em></h4>
-<h4 class="date"><em>19.6.2018</em></h4>
-</div>
 <div id="kaavat-ja-matemattiset-merkinnat" class="section level1">
-<h1><span class="header-section-number">1</span> Kaavat ja matemattiset merkinnät</h1>
+<h1><span class="header-section-number">2</span> Kaavat ja matemattiset merkinnät</h1>
 <p>Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on oltava yksikäsitteisiä koko dokumentissa, jos käytetään “merge and knit” menetelmää. Jos taas jokainen lapsidokumentti on “itsenäinen” (“knit and merge”), tämä koskee vain kyseistä dokumenttia (kts. Bookdown - webkirja).</p>
 <div id="kahden-luokittelumuuttuja-taulukko" class="section level2">
-<h2><span class="header-section-number">1.1</span> Kahden luokittelumuuttuja taulukko</h2>
+<h2><span class="header-section-number">2.1</span> Kahden luokittelumuuttuja taulukko</h2>
 <p>Kahden luokittelumuuttujan riippuvuutta voidaan testata <span class="math inline">\(\chi^{2}\)</span> - testillä. Testisuure saadaan laskemalla yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa</p>
 <p><span class="math display" id="eq:khii21">\[\begin{equation}
 
   \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
   
-  \tag{1.1}
+  \tag{2.1}
 
 \end{equation}\]</span></p>
 <p>Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:</p>
@@ -105,7 +101,7 @@
 
   rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
   
-  \tag{1.2}
+  \tag{2.2}
   
 \end{equation}\]</span></p>
 <p>Kun jaamme nämä tekijät havaintojen kokonaismäärällä <span class="math inline">\(n\)</span>, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon <span class="math inline">\(\frac{\chi^{2}}{n}\)</span>.</p>
@@ -113,12 +109,12 @@
 
  \frac{\chi^{2}}{n} = \phi^{2}
  
- \tag{1.3}
+ \tag{2.3}
  
 
 \end{equation}\]</span></p>
 <p>Tunnusluku <span class="math inline">\(\phi^{2}\)</span> on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan <span class="math inline">\(\phi\)</span> - kertoimeksi.</p>
-<p>Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan.</p>
+<p>Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata <a href="kaavat-ja-matemattiset-merkinnat.html#eq:khii21">(2.1)</a> .</p>
 <hr />
 </div>
 </div>
@@ -127,8 +123,8 @@
           </div>
         </div>
       </div>
-
-<a href="taulukot-ja-kuvat.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="johdanto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taulukot-ja-kuvat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

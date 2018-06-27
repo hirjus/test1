@@ -6,12 +6,12 @@ documentclass: book
 site: bookdown::bookdown_site
 description: bookdown - paketin testailua
 output:
-   bookdown::gitbook: default
    #bookdown::pdf_book:
     #keep_tex: yes
     #toc: true
     #number_sections: true
     #toc_depth: 2
+   bookdown::gitbook: default
 ---
 ```{r bdtest1_paketit, include=FALSE}
 library(rgl)
@@ -66,7 +66,7 @@ Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita).
 
 Tämä teksti **ei tulostu**.
 ***
-```{r child = test_johd.Rmd}
+```{r child = "test_johd.Rmd"}
 
 ```
 

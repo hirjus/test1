@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="kaavat-ja-matemattiset-merkinnat.html">
 
+<link rel="next" href="kaavat-ja-matemattiset-merkinnat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -83,17 +83,48 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="taulukot-ja-kuvat" class="section level1">
-<h1><span class="header-section-number">3</span> Taulukot ja kuvat</h1>
-<p>Tähän taulukoita ja kuvia, esimerkkiaineistoilla.</p>
+<div id="header">
+<h1 class="title">Bookdown-dokumetti - testi 1</h1>
+<h4 class="author"><em>Jussi Hirvonen</em></h4>
+<h4 class="date"><em>27.6.2018</em></h4>
+</div>
+<div id="johdanto" class="section level1">
+<h1><span class="header-section-number">1</span> Johdanto</h1>
+<p>Bookdown - formaatissa “juuritiedoston” indexBD.Rmd tekstit eivät tulostu,mutta siellä on YAML-headeri.</p>
+<p>Nämä asetukset ovat käytössä Galku-dokkareissa:</p>
+<p>#documentclass: article
+#lang: fi
+#output:
+# pdf_document:
+# toc: true
+# number_sections: true
+# toc_depth: 2
+# fig_caption: true
+# fig_width: 5
+# fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
+# #code_folding: show
+# html_document:
+# theme: cosmo
+# toc: true
+# number_sections: true
+# toc_depth: 2
+# fig_caption: true
+# fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
+# fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
+# code_folding: hide</p>
+<p>Eivät suoraan toimi bookdown-paketin kanssa.</p>
+<p>En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
+<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita).</p>
+<hr />
+<hr />
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="kaavat-ja-matemattiset-merkinnat.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
+<a href="kaavat-ja-matemattiset-merkinnat.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
