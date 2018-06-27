@@ -1,0 +1,32 @@
+# Johdanto
+
+Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu,mutta siellä on YAML-headeri.
+
+Nämä asetukset ovat käytössä Galku-dokkareissa:
+
+#documentclass: article
+#lang: fi
+#output: 
+#  pdf_document:
+#    toc: true
+#    number_sections: true
+#    toc_depth: 2
+#    fig_caption: true
+#    fig_width: 5
+#    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
+#    #code_folding: show
+#  html_document:
+#    theme: cosmo
+#    toc: true
+#    number_sections: true
+#    toc_depth: 2
+#    fig_caption: true
+#    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
+#    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
+#    code_folding: hide
+
+Eivät suoraan toimi bookdown-paketin kanssa.
+
+En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+
+Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita).
