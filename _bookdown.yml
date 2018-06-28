@@ -1,0 +1,9 @@
+﻿book_filename: "bookdown-testi1"
+language:
+  label:
+    fig: 'Kuva '
+    tab: 'Taulukko '
+    eq: 'Yhtälö '
+  ui:
+    chapter_name: "Luku "
+delete_merged_file: true

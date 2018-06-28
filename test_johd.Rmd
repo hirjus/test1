@@ -1,31 +1,41 @@
 # Johdanto
 
-Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu,mutta siellä on YAML-headeri.
+Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).
 
-Nämä asetukset ovat käytössä Galku-dokkareissa:
+Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. Nämä lienee välittyvät Pandocille?
 
-#documentclass: article
-#lang: fi
-#output: 
-#  pdf_document:
-#    toc: true
-#    number_sections: true
-#    toc_depth: 2
-#    fig_caption: true
-#    fig_width: 5
-#    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
-#    #code_folding: show
-#  html_document:
-#    theme: cosmo
-#    toc: true
-#    number_sections: true
-#    toc_depth: 2
-#    fig_caption: true
-#    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
-#    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
-#    code_folding: hide
+Bookdown - demon esimerkkitiedostot ovat nämä:
 
-Eivät suoraan toimi bookdown-paketin kanssa.
+ouput.yml (huomaa, että _ - merkki jätetty pois!)
+bookdown::gitbook:
+  css: style.css
+  config:
+    toc:
+     before: |
+        <li><a href="./">A Minimal Book Example</a></li>
+      after: |
+        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
+    download: ["pdf", "epub"]
+bookdown::pdf_book:
+  includes:
+    in_header: preamble.tex
+  latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
+bookdown::epub_book: default
+
+bookdown.yml
+
+book_filename: "bookdown-demo"
+language:
+  ui:
+    chapter_name: "Chapter "
+delete_merged_file: true
+
+
+
+
 
 En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
 

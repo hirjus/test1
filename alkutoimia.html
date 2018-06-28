@@ -32,8 +32,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="johdanto.html">
-<link rel="next" href="taulukot-ja-kuvat.html">
+
+<link rel="next" href="johdanto.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -155,45 +155,67 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kaavat-ja-matemattiset-merkinnat" class="section level1">
-<h1><span class="header-section-number">Luku 3</span> Kaavat ja matemattiset merkinnät</h1>
-<p>Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on oltava yksikäsitteisiä koko dokumentissa, jos käytetään “merge and knit” menetelmää. Jos taas jokainen lapsidokumentti on “itsenäinen” (“knit and merge”), tämä koskee vain kyseistä dokumenttia (kts. Bookdown - webkirja).</p>
-<div id="kahden-luokittelumuuttuja-taulukko" class="section level2">
-<h2><span class="header-section-number">3.1</span> Kahden luokittelumuuttuja taulukko</h2>
-<p>Kahden luokittelumuuttujan riippuvuutta voidaan testata <span class="math inline">\(\chi^{2}\)</span> - testillä. Testisuure saadaan laskemalla yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa</p>
-<p><span class="math display" id="eq:khii21">\[\begin{equation}
-
-  \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
-  
-  \tag{3.1}
-
-\end{equation}\]</span></p>
-<p>Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:</p>
-<p><span class="math display" id="eq:khii22">\[\begin{equation}
-
-  rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
-  
-  \tag{3.2}
-  
-\end{equation}\]</span></p>
-<p>Kun jaamme nämä tekijät havaintojen kokonaismäärällä <span class="math inline">\(n\)</span>, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon <span class="math inline">\(\frac{\chi^{2}}{n}\)</span>.</p>
-<p><span class="math display" id="eq:inert1">\[\begin{equation}
-
- \frac{\chi^{2}}{n} = \phi^{2}
- 
- \tag{3.3}
- 
-
-\end{equation}\]</span></p>
-<p>Tunnusluku <span class="math inline">\(\phi^{2}\)</span> on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan <span class="math inline">\(\phi\)</span> - kertoimeksi.</p>
-<p>Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata <a href="kaavat-ja-matemattiset-merkinnat.html#eq:khii21">(3.1)</a> . Kokeillaan vielä, toimivatko kirjallisuusviittet, kuten tärkeä lähde<span class="citation">(Greenacre <a href="#ref-RefWorks:55">2017</a>)</span>.</p>
+<div id="header">
+<h1 class="title">Bookdown-dokumetti - testi 1</h1>
+<h4 class="author"><em>Jussi Hirvonen</em></h4>
+<h4 class="date"><em>2018-06-28</em></h4>
+</div>
+<div id="alkutoimia" class="section level1">
+<h1><span class="header-section-number">Luku 1</span> Alkutoimia</h1>
+<div id="tarkeimmat-ohjelmistot" class="section level2">
+<h2><span class="header-section-number">1.1</span> Tärkeimmät ohjelmistot</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a></code></pre></div>
+<pre><code>## [1] &#39;2.2.1&#39;</code></pre>
+<p>Viimeinen rivi kertoo pandoc-version.</p>
+</div>
+<div id="yaml-headerin-saatoa" class="section level2">
+<h2><span class="header-section-number">1.2</span> YAML-headerin säätöä</h2>
+<p>Bookdown-demo
+title: “A Minimal Book Example”
+author: “Yihui Xie”
+date: “2018-06-28”
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo</p>
+<p>nämä asetukset ovat käytössä Galku-dokkareissa:</p>
+<p>documentclass: article
+lang: fi
+output:
+pdf_document:
+toc: true
+number_sections: true
+toc_depth: 2
+fig_caption: true
+fig_width: 5
+fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
+#code_folding: show
+html_document:
+theme: cosmo
+toc: true
+number_sections: true
+toc_depth: 2
+fig_caption: true
+fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
+fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
+code_folding: hide</p>
+<p>Poistetaan YAML-headerista nämä (koska on output.yml-tiedosto)
+output:
+bookdown::gitbook: default
+#bookdown::pdf_book:
+#keep_tex: yes
+#toc: true
+#number_sections: true
+#toc_depth: 2</p>
+<p>Eivät suoraan toimi bookdown-paketin kanssa.</p>
+<p>En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
+<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita).</p>
 <hr />
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-RefWorks:55">
-<p>Greenacre, Michael J. 2017. <em>Correspondence analysis in practice</em>. Third edition. Boca Raton, Florida: CRC Press. <a href="https://helka.finna.fi/Record/helka.3029760" class="uri">https://helka.finna.fi/Record/helka.3029760</a>.</p>
 </div>
 </div>
             </section>
@@ -201,8 +223,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="johdanto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="taulukot-ja-kuvat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+
+<a href="johdanto.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

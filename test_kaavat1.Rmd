@@ -1,9 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-
 # Kaavat ja matemattiset merkinnät
 
 Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on oltava yksikäsitteisiä koko dokumentissa, jos käytetään "merge and knit" menetelmää. Jos taas jokainen lapsidokumentti on "itsenäinen" ("knit and merge"), tämä koskee vain kyseistä dokumenttia (kts. Bookdown - webkirja).
@@ -43,4 +37,4 @@ Kun jaamme nämä tekijät havaintojen kokonaismäärällä $n$, rivisumma muunt
  
 Tunnusluku $\phi^{2}$ on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan $\phi$ - kertoimeksi.
 
-Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata \@ref(eq:khii21) .
+Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata \@ref(eq:khii21) . Kokeillaan vielä, toimivatko kirjallisuusviittet, kuten tärkeä lähde[@RefWorks:55].
