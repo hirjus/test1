@@ -1,7 +1,8 @@
 bookdown::gitbook:
   css: style.css
+  fig_caption: TRUE
+  split_bib: FALSE
   config:
-    toc:
       
 bookdown::pdf_book:
  
