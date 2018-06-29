@@ -92,3 +92,5 @@ plot(smokeCA)
 Kuvassa \@ref(fig:CAmap1), ja tämä toimii aika mainiosti! Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?
 
 Näköjään stargazer-kokeilu tulostusoptiolla "html" loi R-projektihakemistoon kansion ja sinne png-kuvan.
+finnish.ldf tiedoston muokkaus MikTeX:ssä tehty, mutta se ei vaikuta html-viiteotsikkoon. Korjattu "ehdollisessa viitesivussa" viitteet.Rmd jossa html-viiteluettelon otsikko annetaan.
+
