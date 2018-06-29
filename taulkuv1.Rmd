@@ -49,3 +49,46 @@ knitr::kable(
 ```
 
 Taulukossa \@ref(tab:smoketable2) on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.
+
+Jos PDF-tulostuksessa ei haluta ns. kelluvaa taulukkoa (float), voi kable-funktiossa käyttää LaTeXin pakettia longtable. Silloin on myös muistettava ottaa paketti käyttöön (usepackage{}) LaTeX - pohjatiedostossa (preamble).
+
+Pandoc tukee monia Markdownin taulukkotyyppejä. Viittaaminen vaaati labeloidun otsikon, ja sen on oltava otsikkotestin alussa määrämuotoisena (esim. ab:hienotaulu). Tämä vaatii tarkkuutta, jos taulukon pitää toimia html- ja LaTex-outputissa. kable-funktiota kannattaa käyttää!
+
+## Korrespondenssianalyysin numeeriset tulokset taulukoina
+
+Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä kaksiulotteisena karttana.
+
+```{r simpleCA}
+smokeCA <- ca(smoke)
+temp1 <- smokeCA 
+temp2 <- summary(smokeCA)
+#str(smokeCA)
+#knitr::kable( smokeCA,
+#  digits = 3,
+#  caption = 'Riviprofiilit ja keskiarvoprofiili', booktabs = TRUE
+#)
+#str(temp1)
+#stargazer(temp2$rows, type = "text", title = "CA-tuloksia")
+# LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) 
+#str(temp2)
+temp1
+
+```
+Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista kablen pitäisi toimia.
+
+## Kuvat
+
+**chunk-optiot**
+
+fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig: + koodipätkän label) ja niihin voi viitata.
+
+fig.asp oikeaan arvoon 1.
+
+```{r CAmap1, fig.cap="CA-kartta", fig.asp= 1 }
+plot(smokeCA)
+
+```
+
+Kuvassa \@ref(fig:CAmap1), ja tämä toimii aika mainiosti! Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?
+
+Näköjään stargazer-kokeilu tulostusoptiolla "html" loi R-projektihakemistoon kansion ja sinne png-kuvan.

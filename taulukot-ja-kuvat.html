@@ -138,6 +138,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="4" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html"><i class="fa fa-check"></i><b>4</b> Taulukot ja kuvat</a><ul>
 <li class="chapter" data-level="4.1" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#taulukoita"><i class="fa fa-check"></i><b>4.1</b> Taulukoita</a></li>
+<li class="chapter" data-level="4.2" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#korrespondenssianalyysin-numeeriset-tulokset-taulukoina"><i class="fa fa-check"></i><b>4.2</b> Korrespondenssianalyysin numeeriset tulokset taulukoina</a></li>
+<li class="chapter" data-level="4.3" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#kuvat"><i class="fa fa-check"></i><b>4.3</b> Kuvat</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -310,7 +312,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable2">4.2</a> on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.
+<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable2">4.2</a> on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.</p>
+<p>Jos PDF-tulostuksessa ei haluta ns. kelluvaa taulukkoa (float), voi kable-funktiossa käyttää LaTeXin pakettia longtable. Silloin on myös muistettava ottaa paketti käyttöön (usepackage{}) LaTeX - pohjatiedostossa (preamble).</p>
+<p>Pandoc tukee monia Markdownin taulukkotyyppejä. Viittaaminen vaaati labeloidun otsikon, ja sen on oltava otsikkotestin alussa määrämuotoisena (esim. ab:hienotaulu). Tämä vaatii tarkkuutta, jos taulukon pitää toimia html- ja LaTex-outputissa. kable-funktiota kannattaa käyttää!</p>
+</div>
+<div id="korrespondenssianalyysin-numeeriset-tulokset-taulukoina" class="section level2">
+<h2><span class="header-section-number">4.2</span> Korrespondenssianalyysin numeeriset tulokset taulukoina</h2>
+<p>Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä kaksiulotteisena karttana.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">temp1 &lt;-<span class="st"> </span>smokeCA </a>
+<a class="sourceLine" id="cb8-3" data-line-number="3">temp2 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</a>
+<a class="sourceLine" id="cb8-4" data-line-number="4"><span class="co">#str(smokeCA)</span></a>
+<a class="sourceLine" id="cb8-5" data-line-number="5"><span class="co">#knitr::kable( smokeCA,</span></a>
+<a class="sourceLine" id="cb8-6" data-line-number="6"><span class="co">#  digits = 3,</span></a>
+<a class="sourceLine" id="cb8-7" data-line-number="7"><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></a>
+<a class="sourceLine" id="cb8-8" data-line-number="8"><span class="co">#)</span></a>
+<a class="sourceLine" id="cb8-9" data-line-number="9"><span class="co">#str(temp1)</span></a>
+<a class="sourceLine" id="cb8-10" data-line-number="10"><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></a>
+<a class="sourceLine" id="cb8-11" data-line-number="11"><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></a>
+<a class="sourceLine" id="cb8-12" data-line-number="12"><span class="co">#str(temp2)</span></a>
+<a class="sourceLine" id="cb8-13" data-line-number="13">temp1</a></code></pre></div>
+<pre><code>## 
+##  Principal inertias (eigenvalues):
+##            1        2        3       
+## Value      0.074759 0.010017 0.000414
+## Percentage 87.76%   11.76%   0.49%   
+## 
+## 
+##  Rows:
+##                SM        JM        SE       JE        SC
+## Mass     0.056995  0.093264  0.264249 0.455959  0.129534
+## ChiDist  0.216559  0.356921  0.380779 0.240025  0.216169
+## Inertia  0.002673  0.011881  0.038314 0.026269  0.006053
+## Dim. 1  -0.240539  0.947105 -1.391973 0.851989 -0.735456
+## Dim. 2  -1.935708 -2.430958 -0.106508 0.576944  0.788435
+## 
+## 
+##  Columns:
+##              none    light   medium     heavy
+## Mass     0.316062 0.233161 0.321244  0.129534
+## ChiDist  0.394490 0.173996 0.198127  0.355109
+## Inertia  0.049186 0.007059 0.012610  0.016335
+## Dim. 1  -1.438471 0.363746 0.718017  1.074445
+## Dim. 2  -0.304659 1.409433 0.073528 -1.975960</code></pre>
+<p>Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista kablen pitäisi toimia.</p>
+</div>
+<div id="kuvat" class="section level2">
+<h2><span class="header-section-number">4.3</span> Kuvat</h2>
+<p><strong>chunk-optiot</strong></p>
+<p>fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig: + koodipätkän label) ja niihin voi viitata.</p>
+<p>fig.asp oikeaan arvoon 1.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">plot</span>(smokeCA)</a></code></pre></div>
+<div class="figure"><span id="fig:CAmap1"></span>
+<img src="indexBD_files/figure-html/CAmap1-1.png" alt="CA-kartta" width="672" />
+<p class="caption">
+Kuva 4.1: CA-kartta
+</p>
+</div>
+<p>Kuvassa <a href="taulukot-ja-kuvat.html#fig:CAmap1">4.1</a>, ja tämä toimii aika mainiosti! Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?</p>
+<p>Näköjään stargazer-kokeilu tulostusoptiolla “html” loi R-projektihakemistoon kansion ja sinne png-kuvan.
 ***</p>
 <hr />
 </div>
