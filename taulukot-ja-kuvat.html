@@ -25,7 +25,7 @@
 <meta name="author" content="Jussi Hirvonen">
 
 
-<meta name="date" content="2018-06-28">
+<meta name="date" content="2018-06-29">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -136,7 +136,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html"><i class="fa fa-check"></i><b>4</b> Taulukot ja kuvat</a></li>
+<li class="chapter" data-level="4" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html"><i class="fa fa-check"></i><b>4</b> Taulukot ja kuvat</a><ul>
+<li class="chapter" data-level="4.1" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#taulukoita"><i class="fa fa-check"></i><b>4.1</b> Taulukoita</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -160,8 +162,68 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Tähän taulukoita ja kuvia, esimerkkiaineistoilla.</p>
 <p>Kirjallisuutta on myös <span class="citation">(Roux ja Rouanet <a href="references.html#ref-RefWorks:68">2004</a>)</span>, ja <span class="citation">(Greenacre ja Hastie <a href="references.html#ref-RefWorks:57">1987</a>)</span> esittelee geometrisen tulkinnan peruskäsitteet yksinkertaisen kahden luokittelumuuttujan korrespondenssianalyysin avaulla.</p>
 <p>Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esittäminen jokaisen sivun alareunassa.</p>
+<div id="taulukoita" class="section level2">
+<h2><span class="header-section-number">4.1</span> Taulukoita</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#käytetään CA-paketin smoke - dataa</span></a>
+<a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;smoke&quot;</span>)</a></code></pre></div>
+<p>Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella ‘tab’, ja siihen liitetään chunk-label (esim alla tab:smoketable1).</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">)</a></code></pre></div>
+<table>
+<caption><span id="tab:smoketable1">Taulukko 4.1: </span>CA-paketin smoke-data (keinotekoinen)</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">none</th>
+<th align="right">light</th>
+<th align="right">medium</th>
+<th align="right">heavy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SM</td>
+<td align="right">4</td>
+<td align="right">2</td>
+<td align="right">3</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td>JM</td>
+<td align="right">4</td>
+<td align="right">3</td>
+<td align="right">7</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td>SE</td>
+<td align="right">25</td>
+<td align="right">10</td>
+<td align="right">12</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td>JE</td>
+<td align="right">18</td>
+<td align="right">24</td>
+<td align="right">33</td>
+<td align="right">13</td>
+</tr>
+<tr class="odd">
+<td>SC</td>
+<td align="right">10</td>
+<td align="right">6</td>
+<td align="right">7</td>
+<td align="right">2</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></a></code></pre></div>
+<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable1">4.1</a> on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).
+***</p>
 <hr />
-<hr />
+</div>
 </div>
             </section>
 
