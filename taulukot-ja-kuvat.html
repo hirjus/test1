@@ -220,7 +220,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></a></code></pre></div>
-<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable1">4.1</a> on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).
+<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable1">4.1</a> on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).</p>
+<p>Useampi taulukko saadaan taulukkoymäristöön (table environment) yhdistämällä data-objektit listaksi.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="co"># riviprofiilit</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</a>
+<a class="sourceLine" id="cb7-3" data-line-number="3"><span class="co"># keskiarvoprofiili</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</a>
+<a class="sourceLine" id="cb7-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb7-6" data-line-number="6">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8">  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb7-9" data-line-number="9">)</a></code></pre></div>
+<table class="kable_wrapper">
+<caption>
+<span id="tab:smoketable2">Taulukko 4.2: </span>Riviprofiilit ja keskiarvoprofiili
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">none</th>
+<th align="right">light</th>
+<th align="right">medium</th>
+<th align="right">heavy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>SM</td>
+<td align="right">0.364</td>
+<td align="right">0.182</td>
+<td align="right">0.273</td>
+<td align="right">0.182</td>
+</tr>
+<tr class="even">
+<td>JM</td>
+<td align="right">0.222</td>
+<td align="right">0.167</td>
+<td align="right">0.389</td>
+<td align="right">0.222</td>
+</tr>
+<tr class="odd">
+<td>SE</td>
+<td align="right">0.490</td>
+<td align="right">0.196</td>
+<td align="right">0.235</td>
+<td align="right">0.078</td>
+</tr>
+<tr class="even">
+<td>JE</td>
+<td align="right">0.205</td>
+<td align="right">0.273</td>
+<td align="right">0.375</td>
+<td align="right">0.148</td>
+</tr>
+<tr class="odd">
+<td>SC</td>
+<td align="right">0.400</td>
+<td align="right">0.240</td>
+<td align="right">0.280</td>
+<td align="right">0.080</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="right">none</th>
+<th align="right">light</th>
+<th align="right">medium</th>
+<th align="right">heavy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.316</td>
+<td align="right">0.233</td>
+<td align="right">0.321</td>
+<td align="right">0.13</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable2">4.2</a> on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.
 ***</p>
 <hr />
 </div>

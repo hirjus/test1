@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 
 # Taulukot ja kuvat
 
@@ -13,11 +18,13 @@ Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esitt
 #käytetään CA-paketin smoke - dataa
 data("smoke")
 
+
 ```
 
 Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella 'tab', ja siihen liitetään chunk-label (esim alla tab:smoketable1).
 
 ```{r smoketable1}
+
 knitr::kable(smoke[,1:4], booktabs = TRUE,
   caption = 'CA-paketin smoke-data (keinotekoinen)'
 )
@@ -26,16 +33,19 @@ knitr::kable(smoke[,1:4], booktabs = TRUE,
 
 Taulukossa \@ref(tab:smoketable1) on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).
 
-Useampi taulukko saadaan taulukkoymäristöön (table environment) yhdistämällä data-objektit listaksi. Ei toimi 29.6.2018.
+Useampi taulukko saadaan taulukkoymäristöön (table environment) yhdistämällä data-objektit listaksi.
 
 ```{r smoketable2}
-eka <- tableX(smoke, type = "row_perc")
-toka <- tableX(smoke[,1:4], type = "col_perc")
+# riviprofiilit
+smoke.rpro <- smoke / rowSums (smoke)
+# keskiarvoprofiili
+smoke.avrpro <- colSums(smoke) / sum(smoke)
 
 knitr::kable(
-  list(eka, toka  ),
-  caption = 'A Tale of Two Tables.', booktabs = TRUE
+  list(smoke.rpro, t(smoke.avrpro)   ), digits = 3,
+  caption = 'Riviprofiilit ja keskiarvoprofiili', booktabs = TRUE
 )
 
 ```
 
+Taulukossa \@ref(tab:smoketable2) on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.
