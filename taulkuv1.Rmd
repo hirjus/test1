@@ -1,7 +1,7 @@
 ---
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 # Taulukot ja kuvat
@@ -61,7 +61,7 @@ Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää
 ```{r simpleCA}
 smokeCA <- ca(smoke)
 temp1 <- smokeCA 
-temp2 <- summary(smokeCA)
+numres1CA1 <- summary(smokeCA)
 #str(smokeCA)
 #knitr::kable( smokeCA,
 #  digits = 3,
@@ -71,10 +71,32 @@ temp2 <- summary(smokeCA)
 #stargazer(temp2$rows, type = "text", title = "CA-tuloksia")
 # LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) 
 #str(temp2)
-temp1
+#str(temp2$scree)
+#temp2$scree
 
 ```
+
 Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista kablen pitäisi toimia.
+
+Kokeillaan summary(smokeCA) - listan dataframe-olioden tulostusta kablella. Voisi harkita funktiota, joka poimii CA:n tuloslistasta sopivat objektit kable-funktiolle? Stargazer taas vaatisi (luultavasti) jonkun ehdollisen tulostuksen (PDF ja html)?
+```{r simpleCAtab1}
+knitr::kable( numres1CA1$rows,
+    digits = 3,          
+    caption = 'Korrespondenssianalyysin diagnostiikkaa - rivit', booktabs = TRUE
+)
+
+```
+Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi ne tulostetaan erikseen.
+
+```{r simpleCAtab2}
+knitr::kable( numres1CA1$columns,
+    digits = 3,          
+    caption = 'Korrespondenssianalyysin diagnostiikkaa - sarakkeet', booktabs = TRUE
+)
+
+```
+
+
 
 ## Kuvat
 
@@ -93,4 +115,17 @@ Kuvassa \@ref(fig:CAmap1), ja tämä toimii aika mainiosti! Kuvan otsikko tulost
 
 Näköjään stargazer-kokeilu tulostusoptiolla "html" loi R-projektihakemistoon kansion ja sinne png-kuvan.
 finnish.ldf tiedoston muokkaus MikTeX:ssä tehty, mutta se ei vaikuta html-viiteotsikkoon. Korjattu "ehdollisessa viitesivussa" viitteet.Rmd jossa html-viiteluettelon otsikko annetaan.
+
+Saisiko numeeristen tulosten scree-kuvan samalla tavalla kuvaksi?
+```{r screeplot1, eval=FALSE, fig.cap="Dimensioiden", include=FALSE}
+str(numres1CA1$scree)
+test2 <- as.table(numres1CA1$scree)
+str(test1$V1)
+str(test2)
+test2[[dimnames]]
+# Vielä kokeilua!
+
+
+```
+
 
