@@ -25,7 +25,7 @@
 <meta name="author" content="Jussi Hirvonen">
 
 
-<meta name="date" content="2018-06-30">
+<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -162,7 +162,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Bookdown-dokumetti - testi 1</h1>
 <h4 class="author"><em>Jussi Hirvonen</em></h4>
-<h4 class="date"><em>2018-06-30</em></h4>
+<h4 class="date"><em>2018-07-02</em></h4>
 </div>
 <div id="alkutoimia" class="section level1">
 <h1><span class="header-section-number">Luku 1</span> Alkutoimia</h1>
@@ -176,49 +176,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="yaml-headerin-saatoa" class="section level2">
 <h2><span class="header-section-number">1.2</span> YAML-headerin säätöä</h2>
-<p>Bookdown-demo
-title: “A Minimal Book Example”
-author: “Yihui Xie”
-date: “2018-06-30”
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: rstudio/bookdown-demo</p>
-<p>nämä asetukset ovat käytössä Galku-dokkareissa:</p>
-<p>documentclass: article
-lang: fi
-output:
-pdf_document:
-toc: true
-number_sections: true
-toc_depth: 2
-fig_caption: true
-fig_width: 5
-fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
-#code_folding: show
-html_document:
-theme: cosmo
-toc: true
-number_sections: true
-toc_depth: 2
-fig_caption: true
-fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
-fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
-code_folding: hide</p>
-<p>Poistetaan YAML-headerista nämä (koska on output.yml-tiedosto)
-output:
-bookdown::gitbook: default
-#bookdown::pdf_book:
-#keep_tex: yes
-#toc: true
-#number_sections: true
-#toc_depth: 2</p>
-<p>Eivät suoraan toimi bookdown-paketin kanssa.</p>
+<p>YAML-metadataa voi olla “kotisivulla”, jonka nimi oletuksena on index.Rmd. Lisäksi määrityksiä on tiedostoissa _output.yml ja _bookdown.yml. Näiden hierarkia on hieman epäselvä.</p>
 <p>En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
-<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita).</p>
+<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita). EI vileä kokeiltu.</p>
 <hr />
 </div>
 </div>

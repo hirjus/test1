@@ -25,7 +25,7 @@
 <meta name="author" content="Jussi Hirvonen">
 
 
-<meta name="date" content="2018-06-30">
+<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -169,6 +169,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="co">#käytetään CA-paketin smoke - dataa</span></a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">data</span>(<span class="st">&quot;smoke&quot;</span>)</a></code></pre></div>
 <p>Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella ‘tab’, ja siihen liitetään chunk-label (esim alla tab:smoketable1).</p>
+<p>Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen, “smoke”-dataa ei löydy.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">)</a></code></pre></div>
@@ -416,20 +417,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <td align="right">133</td>
 <td align="right">81</td>
 </tr>
-<tr class="even">
-<td align="left">Rivien</td>
-<td align="right">ja sara</td>
-<td align="right">kkeiden</td>
-<td align="right">diagno</td>
-<td align="right">tiikkat</td>
-<td align="right">auluko</td>
-<td align="right">t eivä</td>
-<td align="right">t mahdu</td>
-<td align="right">rinna</td>
-<td align="right">kkain, siksi ne tulostetaan erikseen.</td>
-</tr>
 </tbody>
 </table>
+<p>Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi ne tulostetaan erikseen.</p>
 <div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</a>
 <a class="sourceLine" id="cb10-2" data-line-number="2">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
 <a class="sourceLine" id="cb10-3" data-line-number="3">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
@@ -501,20 +491,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
+<p>Taulukoiden <a href="taulukot-ja-kuvat.html#tab:simpleCAtab1">4.3</a> ja <a href="taulukot-ja-kuvat.html#tab:simpleCAtab2">4.4</a> luvut on kerrottu tuhannella (“per milles”).</p>
+<p>Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan ca-funktion tuloslistasta taulukoksi. Se esitetään joskus myös ns. scree - kuvana, jos dimensoita on paljon ja joudutaan pohtimaan kuinka monta valitaan (vaikea kysymys!).</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</a>
+<a class="sourceLine" id="cb11-2" data-line-number="2">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
+<a class="sourceLine" id="cb11-3" data-line-number="3">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
+<a class="sourceLine" id="cb11-4" data-line-number="4">)</a></code></pre></div>
+<table>
+<caption><span id="tab:simpleCAscree">Taulukko 4.5: </span>Korrespondenssianalyysin diagnostiikkaa - ominaisarvot</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">values</th>
+<th align="right">values2</th>
+<th align="right">values3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td align="right">0.075</td>
+<td align="right">87.756</td>
+<td align="right">87.756</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td align="right">0.010</td>
+<td align="right">11.759</td>
+<td align="right">99.515</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td align="right">0.000</td>
+<td align="right">0.485</td>
+<td align="right">100.000</td>
+</tr>
+</tbody>
+</table>
+<p>Taulukko <a href="taulukot-ja-kuvat.html#tab:simpleCAscree">4.5</a> vaatii selityksen, mutta kuvaa ei tässä tapauksessa tarvita.</p>
 </div>
 <div id="kuvat" class="section level2">
 <h2><span class="header-section-number">4.3</span> Kuvat</h2>
 <p><strong>chunk-optiot</strong></p>
 <p>fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig: + koodipätkän label) ja niihin voi viitata.</p>
 <p>fig.asp oikeaan arvoon 1.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1"><span class="kw">plot</span>(smokeCA)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1"><span class="kw">plot</span>(smokeCA)</a></code></pre></div>
 <div class="figure"><span id="fig:CAmap1"></span>
 <img src="indexBD_files/figure-html/CAmap1-1.png" alt="CA-kartta" width="672" />
 <p class="caption">
 Kuva 4.1: CA-kartta
 </p>
 </div>
-<p>Kuvassa <a href="taulukot-ja-kuvat.html#fig:CAmap1">4.1</a>, ja tämä toimii aika mainiosti! Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?</p>
+<p>Kuviin (kuten <a href="taulukot-ja-kuvat.html#fig:CAmap1">4.1</a>) ja taulukoihin voi viitata tekstissä. Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?</p>
 <p>Näköjään stargazer-kokeilu tulostusoptiolla “html” loi R-projektihakemistoon kansion ja sinne png-kuvan.
 finnish.ldf tiedoston muokkaus MikTeX:ssä tehty, mutta se ei vaikuta html-viiteotsikkoon. Korjattu “ehdollisessa viitesivussa” viitteet.Rmd jossa html-viiteluettelon otsikko annetaan.</p>
 <p>Saisiko numeeristen tulosten scree-kuvan samalla tavalla kuvaksi?</p>

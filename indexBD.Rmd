@@ -44,55 +44,12 @@ Viimeinen rivi kertoo pandoc-version.
 
 ## YAML-headerin säätöä
 
-Bookdown-demo
-title: "A Minimal Book Example"
-author: "Yihui Xie"
-date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: [book.bib, packages.bib]
-biblio-style: apalike
-link-citations: yes
-github-repo: rstudio/bookdown-demo
 
-nämä asetukset ovat käytössä Galku-dokkareissa:
-
-documentclass: article
-lang: fi
-output: 
-  pdf_document:
-    toc: true
-    number_sections: true
-    toc_depth: 2
-    fig_caption: true
-    fig_width: 5
-    fig_height: 5 # takaako asp=1? Ei takaa! Mutta aika lähellä pdf:ssä
-    #code_folding: show
-  html_document:
-    theme: cosmo
-    toc: true
-    number_sections: true
-    toc_depth: 2
-    fig_caption: true
-    fig_width: 5 # nämä parametrit tuumissa, vaikuttavat vain r-generoituihin kuviin.
-    fig_height: 5 # takaako asp=1? Ei! Ja eivät vaikuta muiden kuvien kokoon (esim. tiedostoista).
-    code_folding: hide
-    
-Poistetaan YAML-headerista nämä (koska on output.yml-tiedosto)
-output:
-   bookdown::gitbook: default
-   #bookdown::pdf_book:
-    #keep_tex: yes
-    #toc: true
-    #number_sections: true
-    #toc_depth: 2
-
-Eivät suoraan toimi bookdown-paketin kanssa.
+YAML-metadataa voi olla "kotisivulla", jonka nimi oletuksena on index.Rmd. Lisäksi määrityksiä on tiedostoissa \_output.yml ja \_bookdown.yml. Näiden hierarkia on hieman epäselvä.
 
 En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
 
-Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita).
+Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita). EI vileä kokeiltu.
 
 
 ***
