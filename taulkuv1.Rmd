@@ -30,7 +30,7 @@ knitr::kable(smoke[,1:4], booktabs = TRUE,
 
 Taulukossa \@ref(tab:smoketable1) on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).
 
-Useampi taulukko saadaan taulukkoymäristöön (table environment) yhdistämällä data-objektit listaksi.
+Useampi taulukko saadaan taulukkoympäristöön (table environment) yhdistämällä data-objektit listaksi.
 
 ```{r smoketable2}
 # riviprofiilit

@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Johdanto
 
 Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).
@@ -6,37 +11,32 @@ Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. N�
 
 Bookdown - demon esimerkkitiedostot ovat nämä:
 
-ouput.yml (huomaa, että _ - merkki jätetty pois!)
-bookdown::gitbook:
-  css: style.css
-  config:
-    toc:
-     before: |
-        <li><a href="./">A Minimal Book Example</a></li>
-      after: |
-        <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-    edit: https://github.com/rstudio/bookdown-demo/edit/master/%s
-    download: ["pdf", "epub"]
-bookdown::pdf_book:
-  includes:
-    in_header: preamble.tex
-  latex_engine: xelatex
-  citation_package: natbib
-  keep_tex: yes
-bookdown::epub_book: default
-
-bookdown.yml
-
-book_filename: "bookdown-demo"
-language:
-  ui:
-    chapter_name: "Chapter "
-delete_merged_file: true
+ouput.yml (huomaa, että _ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
 
 
 
 
 
-En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+Nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
 
 Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita).
+
+3.7.2018 PDF-tulostuksen säätöä, nyt saadaan jo virheilmoituksiakin! Piti tallentaa utf-8 - muodossa kertaalleen. Tulostus kaatuu valituksiin puuttuvista $-merkeistä kaavoissa (test_kaavat1.rmd). TeX-tiedoston voi kääntää PDF:ksi, mutta kaavat sekaisin ja paljon muutakin. Esim. sisällysluettelo.
+
+Merkistöt olivat pielessä (ei utf-8!), ja samoin test1_preamble.tex -tiedosto. Laitoin kuntoon, nyt asiallinen virheilmoitus:
+
+! LaTeX Error: Two documentclass or documentstyle commands.
+
+Error: Failed to compile indexBD.tex. See indexBD.log for more info.
+Execution halted
+Poistetaan test1_preambe.tex eka rivi kokonaan:
+% documentclass[12pt,a4paper,leqno] (alusta puuttuu takakeno)
+% dispositiopaperista, poistettiin ekalta riviltä {article}
+Lisäksi usepackage[**utf8**]{inputenc}.
+
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+
+! LaTeX Error: Option clash for package babel. 
+
+Palautetaan eka rivi, documeteclass {book}. Taas virheilmoitus ! LaTeX Error: Two documentclass or documentstyle commands. Poistetaan eka rivi. Ja sama virheilmoitus "option clash".

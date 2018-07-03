@@ -2,14 +2,17 @@
 title: "Bookdown-dokumetti - testi 1"
 author: "Jussi Hirvonen"
 date: "`r Sys.Date()`"
-lang: fi
-site: bookdown::bookdown_site
-output: bookdown::gitbook
-documentclass: book
-bibliography: ["bdtest1.bib"]
-biblio-style: apalike
-link-citations: yes
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
 description: bookdown - paketin testailua
+documentclass: book
+lang: fi
+link-citations: yes
+bibliography: bdtest1.bib
+site: bookdown::bookdown_site
+biblio-style: apalike
 ---
 # Alkutoimia
 
@@ -37,6 +40,7 @@ library(tinytex)
 
 ```{r bdprogs1}
 system("pdflatex --version")
+#getwd()
 
 rmarkdown::pandoc_version()
 ```
