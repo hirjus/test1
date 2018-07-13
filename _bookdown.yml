@@ -5,5 +5,5 @@ language:
     tab: 'Taulukko '
     eq: 'Yhtälö '
   ui:
-  chapter_name: "Luku "
+    chapter_name: "Luku "
 delete_merged_file: true

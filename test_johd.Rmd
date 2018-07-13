@@ -1,8 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
 # Johdanto
 
 Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).
@@ -40,3 +35,4 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 ! LaTeX Error: Option clash for package babel. 
 
 Palautetaan eka rivi, documeteclass {book}. Taas virheilmoitus ! LaTeX Error: Two documentclass or documentstyle commands. Poistetaan eka rivi. Ja sama virheilmoitus "option clash".
+

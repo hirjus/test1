@@ -8,12 +8,9 @@ Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esitt
 
 ## Taulukoita
 
-```{r data1}
-#käytetään CA-paketin smoke - dataa
-data("smoke")
+Tästä poistettu koodilohko data_1, ei tarvita jos ca-paketti on ladattu.
 
 
-```
 
 Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella 'tab', ja siihen liitetään chunk-label (esim alla tab:smoketable1).
 
@@ -132,7 +129,7 @@ Saisiko numeeristen tulosten scree-kuvan samalla tavalla kuvaksi?
 ```{r screeplot1, eval=FALSE, fig.cap="Dimensioiden ominaisarvot", include=FALSE}
 str(numres1CA1$scree)
 test2 <- as.table(numres1CA1$scree)
-str(test1$V1)
+#str(test1$V1)
 str(test2)
 test2[[dimnames]]
 # Vielä kokeilua!
