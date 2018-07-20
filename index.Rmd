@@ -1,23 +1,25 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
+subtile: "Versio 1.0"
 author: "Jussi Hirvonen"
 date: "`r Sys.Date()`"
+lang: fi
 bibliography: bdtest1.bib
 description: bookdown - paketin testailua
 documentclass: book
-lang: fi
 link-citations: yes
 site: bookdown::bookdown_site
 biblio-style: apalike
 ---
-# Alkutoimia
 
-Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
-Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa?
+# Bookdown-paketin testidokumentti
 
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne joissa on ns.
 
+A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
 
 ```{r bdtest1_paketit, include=FALSE}
+#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?
 library(rgl)
 library(ca)
 library(haven)
@@ -36,48 +38,3 @@ library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostuks
 library(bookdown)
 library(tinytex)
 ```
-
-## Tärkeimmät ohjelmistot
-
-```{r bdprogs1}
-system("pdflatex --version")
-#getwd()
-
-rmarkdown::pandoc_version()
-```
-Viimeinen rivi kertoo pandoc-version.
-
-## YAML-headerin säätöä
-
-
-YAML-metadataa voi olla "kotisivulla", jonka nimi oletuksena on index.Rmd. Lisäksi määrityksiä on tiedostoissa \_output.yml ja \_bookdown.yml. Näiden hierarkia on hieman epäselvä.
-
-En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
-
-Bookdown-tulostuksessa voisi käyttää "one document" - optioita (funktioita). EI vileä kokeiltu.
-
-
-***
-```{r child = "test_johd.Rmd"}
-
-```
-
-***
-
-***
-  
-```{r child = "test_kaavat1.Rmd"}
-```
-  
-***
-  
-```{r child = "taulkuv1.Rmd"}
-```
-***
-
-***
-```{r child="viitteet.Rmd"}
-
-```
-
-***

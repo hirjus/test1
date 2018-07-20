@@ -8,7 +8,7 @@ Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esitt
 
 ## Taulukoita
 
-Tästä poistettu koodilohko data_1, ei tarvita jos ca-paketti on ladattu.
+Tästä poistettu koodilohko data_1, ei tarvita jos ca-paketti on ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty. Koodilohkojen nimissä taitaa olla sallittu?
 
 
 

@@ -131,38 +131,8 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-07-03}
+    \date{2018-07-20}
 
-%\documentclass[12pt,a4paper,leqno]{book}
-% dispositiopaperista, poistettiin ekalta riviltä {article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[finnish]{babel}
-\usepackage{amsthm}
-\usepackage{amsfonts}         
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{graphicx}
-\usepackage{float}
-\usepackage{lipsum}
-%tämä kopioitu bookdown-demo - esimerkistä
-\usepackage{booktabs}
-%\usepackage{amsthm} on jo yllä
-%lisää dispopaperista
-\pagestyle{plain}
-\setcounter{page}{1}
-\addtolength{\hoffset}{-1.15cm}
-\addtolength{\textwidth}{2.3cm}
-\addtolength{\voffset}{0.45cm}
-\addtolength{\textheight}{-0.9cm}
-
-%tämä kopioitu bookdown-demo - esimerkistä
-\makeatletter
-\def\thm@space@setup{%
-  \thm@preskip=8pt plus 2pt minus 4pt
-  \thm@postskip=\thm@preskip
-}
-\makeatother
 
 \usepackage{amsthm}
 \newtheorem{theorem}{Theorem}[chapter]
@@ -185,8 +155,42 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\hypertarget{bookdown-paketin-testidokumentti}{%
+\chapter{Bookdown-paketin
+testidokumentti}\label{bookdown-paketin-testidokumentti}}
+
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja
+kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet
+toimivat, myös ne joissa on ns.
+
+A sample document using RMarkdown with bookdown-package to do
+statistical analysis and publish a report in html and pdf formats.
+
+\hypertarget{johdanto}{%
+\chapter{Johdanto}\label{johdanto}}
+
 \hypertarget{alkutoimia}{%
-\chapter{Alkutoimia}\label{alkutoimia}}
+\section{Alkutoimia}\label{alkutoimia}}
+
+Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna
+bookdown-demoon). Bookdown-demossa lisäksi output: pdf\_document, mutta
+lienee tarpeeton kun kaksi outputformaattia annettu
+output.yaml-tiedostossa
+
+20.7.2018 poistetaan tästä dokkarista child-item - jutut. Jätetään
+r-pakettien lataus.
+
+Bookdown - formaatissa ``juuritiedoston'' indexBD.Rmd tekstit eivät
+tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason
+otsikkoa.Siellä on YAML-headeri (metadata).
+
+Lisää YAML-parametreja voi antaa tiedostoissa \_bookdown.yml ja
+\_output.yml. Nämä lienee välittyvät Pandocille?
+
+Bookdown - demon esimerkkitiedostot ovat nämä:
+
+ouput.yml (huomaa, että \_ - merkki jätetty pois!) (tässä oli
+bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
 
 \hypertarget{tarkeimmat-ohjelmistot}{%
 \section{Tärkeimmät ohjelmistot}\label{tarkeimmat-ohjelmistot}}
@@ -206,37 +210,9 @@
 
 Viimeinen rivi kertoo pandoc-version.
 
-\hypertarget{yaml-headerin-saatoa}{%
-\section{YAML-headerin säätöä}\label{yaml-headerin-saatoa}}
-
-YAML-metadataa voi olla ``kotisivulla'', jonka nimi oletuksena on
-index.Rmd. Lisäksi määrityksiä on tiedostoissa \_output.yml ja
-\_bookdown.yml. Näiden hierarkia on hieman epäselvä.
-
-En säädä pdf-tulostusta, nyt toimii gitbook ja pdf\_book
-tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä
-r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja
-Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
-
-Bookdown-tulostuksessa voisi käyttää ``one document'' - optioita
-(funktioita). EI vileä kokeiltu.
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\hypertarget{johdanto}{%
-\chapter{Johdanto}\label{johdanto}}
-
-Bookdown - formaatissa ``juuritiedoston'' indexBD.Rmd tekstit eivät
-tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason
-otsikkoa.Siellä on YAML-headeri (metadata).
-
-Lisää YAML-parametreja voi antaa tiedostoissa \_bookdown.yml ja
-\_output.yml. Nämä lienee välittyvät Pandocille?
-
-Bookdown - demon esimerkkitiedostot ovat nämä:
-
-ouput.yml (huomaa, että \_ - merkki jätetty pois!) (tässä oli
-bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
+\hypertarget{muutoksia-ja-tilannetietoja}{%
+\section{Muutoksia ja
+tilannetietoja}\label{muutoksia-ja-tilannetietoja}}
 
 Nyt toimii gitbook ja pdf\_book tulostusformaatteina. Molemmat ovat
 html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta)
@@ -270,10 +246,6 @@ LaTeX Font Info: Redeclaring font encoding T1 on input line 48. ))
 Palautetaan eka rivi, documeteclass \{book\}. Taas virheilmoitus ! LaTeX
 Error: Two documentclass or documentstyle commands. Poistetaan eka rivi.
 Ja sama virheilmoitus ``option clash''.
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \hypertarget{kaavat-ja-matemattiset-merkinnat}{%
 \chapter{Kaavat ja matemattiset
@@ -336,8 +308,6 @@ frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi
 paikallaan. Yhtälöihin voi viitata \eqref{eq:khii21} . Kokeillaan vielä,
 toimivatko kirjallisuusviittet, kuten tärkeä lähde\citep{RefWorks:55}.
 
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
 \hypertarget{taulukot-ja-kuvat}{%
 \chapter{Taulukot ja kuvat}\label{taulukot-ja-kuvat}}
 
@@ -353,12 +323,9 @@ viitteiden esittäminen jokaisen sivun alareunassa.
 \hypertarget{taulukoita}{%
 \section{Taulukoita}\label{taulukoita}}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{#käytetään CA-paketin smoke - dataa}
-\KeywordTok{data}\NormalTok{(}\StringTok{"smoke"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
+Tästä poistettu koodilohko data\_1, ei tarvita jos ca-paketti on
+ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty.
+Koodilohkojen nimissä taitaa olla sallittu?
 
 Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja
 se saa automaattisesti labelin etutunnisteella `tab', ja siihen
@@ -605,7 +572,7 @@ fig.asp oikeaan arvoon 1.
 
 \begin{figure}
 \centering
-\includegraphics{indexBD_files/figure-latex/CAmap1-1.pdf}
+\includegraphics{bookdown-testi1_files/figure-latex/CAmap1-1.pdf}
 \caption{\label{fig:CAmap1}CA-kartta}
 \end{figure}
 
@@ -619,12 +586,6 @@ Korjattu ``ehdollisessa viitesivussa'' viitteet.Rmd jossa
 html-viiteluettelon otsikko annetaan.
 
 Saisiko numeeristen tulosten scree-kuvan samalla tavalla kuvaksi?
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
-
-\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
 \bibliography{bdtest1.bib}
 

@@ -1,5 +1,12 @@
 # Johdanto
 
+## Alkutoimia
+
+Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
+Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa
+
+20.7.2018 poistetaan tästä dokkarista child-item - jutut. Jätetään r-pakettien lataus.
+
 Bookdown - formaatissa "juuritiedoston" indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).
 
 Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. Nämä lienee välittyvät Pandocille?
@@ -8,9 +15,20 @@ Bookdown - demon esimerkkitiedostot ovat nämä:
 
 ouput.yml (huomaa, että _ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
 
+## Tärkeimmät ohjelmistot
+
+```{r bdprogs1, echo=TRUE}
+system("pdflatex --version")
+#getwd()
+
+rmarkdown::pandoc_version()
+```
+
+Viimeinen rivi kertoo pandoc-version.
 
 
 
+##  Muutoksia ja tilannetietoja
 
 Nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
 

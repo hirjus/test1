@@ -1,12 +1,12 @@
-bookdown::pdf_book:
-  includes:
-    in_header: test1_preamble.tex
-  latex_engine: pdflatex
-  citation_package: natbib
-  keep_tex: yes
 bookdown::gitbook:
   css: style.css
-  fig_caption: TRUE
-  split_bib: FALSE
-  config:
-
+  # fig_caption: TRUE
+  # split_bib: FALSE
+  # config:
+bookdown::pdf_book:
+  includes:
+     #in_header: test1_preamble.tex
+  latex_engine: pdflatex
+  # latex_engine: xelatex
+  citation_package: natbib
+  keep_tex: yes
