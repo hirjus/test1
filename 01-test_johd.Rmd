@@ -54,3 +54,5 @@ LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
 
 Palautetaan eka rivi, documeteclass {book}. Taas virheilmoitus ! LaTeX Error: Two documentclass or documentstyle commands. Poistetaan eka rivi. Ja sama virheilmoitus "option clash".
 
+Pahin virhe: equation-tägien välissä ei saa olla tyhjiä rivejä! Ongelmia on myös lähdeluettelon aakkostuksessa, Å-ä- ö näyttävät aakkostuvan kuten A, a ja o. Pitää testailla vielä.
+

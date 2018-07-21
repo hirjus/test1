@@ -7,32 +7,22 @@ Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on olta
 Kahden luokittelumuuttujan riippuvuutta voidaan testata  $\chi^{2}$ - testillä. Testisuure saadaan laskemalla yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa
 
 \begin{equation}
-
   \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
-  
   (\#eq:khii21)
-
 \end{equation}
 
 Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:
 
 \begin{equation}
-
   rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
-  
   (\#eq:khii22)
-  
 \end{equation}
 
 Kun jaamme nämä tekijät havaintojen kokonaismäärällä $n$, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon $\frac{\chi^{2}}{n}$.
 
 \begin{equation}
-
  \frac{\chi^{2}}{n} = \phi^{2}
- 
  (\#eq:inert1)
- 
-
 \end{equation}
  
 Tunnusluku $\phi^{2}$ on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan $\phi$ - kertoimeksi.

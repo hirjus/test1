@@ -2,7 +2,7 @@
 
 Tähän taulukoita ja kuvia, esimerkkiaineistoilla.
 
-Kirjallisuutta on myös [@RefWorks:68], ja [@RefWorks:57] esittelee geometrisen tulkinnan peruskäsitteet yksinkertaisen kahden luokittelumuuttujan korrespondenssianalyysin avaulla.
+Kirjallisuutta on myös [@RefWorks:68], ja [@RefWorks:57] esittelee geometrisen tulkinnan peruskäsitteet yksinkertaisen kahden luokittelumuuttujan korrespondenssianalyysin avaulla. Mitenköhän skandit toimivat lähteissä, bib-tiedostossa on niitä myös escape-muodossa (katso esim. [@RefWorks:100], kritiikkiä on esittänyt [@RefWorks:110])
 
 Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esittäminen jokaisen sivun alareunassa.
 
