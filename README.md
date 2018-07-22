@@ -18,3 +18,9 @@ Uutta versiota tehdäänn haarassa kehitys2, pdf-tulostus toimimaan.
 
 21.7.2018 Gitbook- ja PDF-tulostus toimivat. Kaavat, taulukot ja kuvat numeroituvat ja saavat suomenkieliset nimet. Muuten dokumentin asetukset ovat dookdown-demo- esimerkistä, ja preamble.tex - tiedostoa ei käytetä. Suurin virhe oli {equation}-tägien välisten kaavarivien väliset tyhjät rivit.
 
+Tulosteet löytyvät alihakemistosta _book.
+
+# Viimestelyä
+
+**22.7.2018**
+- lisättiin luku dokumenttien renderöintiprosessista. PDF-kuva näkyy vain pdf-tulosteessa. 
