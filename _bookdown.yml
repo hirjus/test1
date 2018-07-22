@@ -7,3 +7,5 @@ language:
       eq: 'Yhtälö '
    ui:
       chapter_name: "Luku "
+      
+output_dir: "docs"
