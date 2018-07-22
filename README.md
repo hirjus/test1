@@ -23,4 +23,13 @@ Tulosteet löytyvät alihakemistosta _book.
 # Viimestelyä
 
 **22.7.2018**
-- lisättiin luku dokumenttien renderöintiprosessista. PDF-kuva näkyy vain pdf-tulosteessa. 
+- lisättiin luku dokumenttien renderöintiprosessista. PDF-kuva näkyy vain pdf-tulosteessa.
+- lisättiin luku dokumenttien renderöintiprosessista. PDF-kuva näkyy vain pdf-tulosteessa.
+- pientä hienosäätöä gitbookissa, ja hieman lisää tekstiä bookdown- ja Rmarkdown - tulostusoptioista
+- include_graphics - funktiolla saa ulkoisen kuvatiedoston html- ja pdf- formaattiin, jos kuva on png. PDF-kuvan saa vain PDF-tulosteeseen
+- lähdeviitteet oudossa järjestyksessä
+- gitbookissa ei saa koodilohkojen koodia piilotettua? code_folding: hide - asetus output.yml - tiedostossa tuottaa virheilmoituksen (pitäisi olla "theme"
+  mutta gitbookilla on jo omansa). Jotenkin ne sieltä sivun alalaidasta taisivat kadota? 
+
+# Versio 3
+- tägätään, ja otetaan uusi haara kehityshommaan

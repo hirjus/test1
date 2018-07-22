@@ -1,8 +1,7 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
-subtile: "Versio 1.0"
 author: "Jussi Hirvonen"
-date: "`r Sys.Date()`"
+date: "`r Sys.Date()` (Versio 3.0)"
 lang: fi
 bibliography: bdtest1.bib
 description: bookdown - paketin testailua
