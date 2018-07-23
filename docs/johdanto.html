@@ -25,15 +25,14 @@
 <meta name="author" content="Jussi Hirvonen">
 
 
-<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-
-<link rel="next" href="johdanto.html">
+<link rel="prev" href="index.html">
+<link rel="next" href="kaavat-ja-matemattiset-merkinnat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -128,11 +127,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="alkutoimia.html"><a href="alkutoimia.html"><i class="fa fa-check"></i><b>1</b> Alkutoimia</a><ul>
-<li class="chapter" data-level="1.1" data-path="alkutoimia.html"><a href="alkutoimia.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>1.1</b> Tärkeimmät ohjelmistot</a></li>
-<li class="chapter" data-level="1.2" data-path="alkutoimia.html"><a href="alkutoimia.html#yaml-headerin-saatoa"><i class="fa fa-check"></i><b>1.2</b> YAML-headerin säätöä</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bookdown-paketin testidokumentti</a></li>
+<li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a><ul>
+<li class="chapter" data-level="2.1" data-path="johdanto.html"><a href="johdanto.html#alkutoimia"><i class="fa fa-check"></i><b>2.1</b> Alkutoimia</a></li>
+<li class="chapter" data-level="2.2" data-path="johdanto.html"><a href="johdanto.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>2.2</b> Tärkeimmät ohjelmistot</a></li>
+<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-ja-tilannetietoja"><i class="fa fa-check"></i><b>2.3</b> Muutoksia ja tilannetietoja</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a></li>
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
 </ul></li>
@@ -141,6 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#korrespondenssianalyysin-numeeriset-tulokset-taulukoina"><i class="fa fa-check"></i><b>4.2</b> Korrespondenssianalyysin numeeriset tulokset taulukoina</a></li>
 <li class="chapter" data-level="4.3" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#kuvat"><i class="fa fa-check"></i><b>4.3</b> Kuvat</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="bookdown-ja-rmarkdown.html"><a href="bookdown-ja-rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Bookdown ja Rmarkdown</a></li>
 <li class="chapter" data-level="" data-path="lahteet.html"><a href="lahteet.html"><i class="fa fa-check"></i>Lähteet</a></li>
 </ul>
 
@@ -159,27 +160,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Bookdown-dokumetti - testi 1</h1>
-<h4 class="author"><em>Jussi Hirvonen</em></h4>
-<h4 class="date"><em>2018-07-02</em></h4>
+<div id="johdanto" class="section level1">
+<h1><span class="header-section-number">Luku 2</span> Johdanto</h1>
+<div id="alkutoimia" class="section level2">
+<h2><span class="header-section-number">2.1</span> Alkutoimia</h2>
+<p>Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
+Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa</p>
+<p>20.7.2018 poistetaan tästä dokkarista child-item - jutut. Jätetään r-pakettien lataus.</p>
+<p>Bookdown - formaatissa “juuritiedoston” indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).</p>
+<p>Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. Nämä lienee välittyvät Pandocille?</p>
+<p>Bookdown - demon esimerkkitiedostot ovat nämä:</p>
+<p>ouput.yml (huomaa, että _ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)</p>
 </div>
-<div id="alkutoimia" class="section level1">
-<h1><span class="header-section-number">Luku 1</span> Alkutoimia</h1>
 <div id="tarkeimmat-ohjelmistot" class="section level2">
-<h2><span class="header-section-number">1.1</span> Tärkeimmät ohjelmistot</h2>
+<h2><span class="header-section-number">2.2</span> Tärkeimmät ohjelmistot</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#getwd()</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a></code></pre></div>
 <pre><code>## [1] &#39;2.2.1&#39;</code></pre>
 <p>Viimeinen rivi kertoo pandoc-version.</p>
 </div>
-<div id="yaml-headerin-saatoa" class="section level2">
-<h2><span class="header-section-number">1.2</span> YAML-headerin säätöä</h2>
-<p>YAML-metadataa voi olla “kotisivulla”, jonka nimi oletuksena on index.Rmd. Lisäksi määrityksiä on tiedostoissa _output.yml ja _bookdown.yml. Näiden hierarkia on hieman epäselvä.</p>
-<p>En säädä pdf-tulostusta, nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
-<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita). EI vileä kokeiltu.</p>
-<hr />
+<div id="muutoksia-ja-tilannetietoja" class="section level2">
+<h2><span class="header-section-number">2.3</span> Muutoksia ja tilannetietoja</h2>
+<p>Nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
+<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita).</p>
+<p>3.7.2018 PDF-tulostuksen säätöä, nyt saadaan jo virheilmoituksiakin! Piti tallentaa utf-8 - muodossa kertaalleen. Tulostus kaatuu valituksiin puuttuvista $-merkeistä kaavoissa (test_kaavat1.rmd). TeX-tiedoston voi kääntää PDF:ksi, mutta kaavat sekaisin ja paljon muutakin. Esim. sisällysluettelo.</p>
+<p>Merkistöt olivat pielessä (ei utf-8!), ja samoin test1_preamble.tex -tiedosto. Laitoin kuntoon, nyt asiallinen virheilmoitus:</p>
+<p>! LaTeX Error: Two documentclass or documentstyle commands.</p>
+<p>Error: Failed to compile indexBD.tex. See indexBD.log for more info.
+Execution halted
+Poistetaan test1_preambe.tex eka rivi kokonaan:
+% documentclass[12pt,a4paper,leqno] (alusta puuttuu takakeno)
+% dispositiopaperista, poistettiin ekalta riviltä {article}
+Lisäksi usepackage[<strong>utf8</strong>]{inputenc}.</p>
+<p>LaTeX Font Info: Redeclaring font encoding T1 on input line 48.
+))</p>
+<p>! LaTeX Error: Option clash for package babel.</p>
+<p>Palautetaan eka rivi, documeteclass {book}. Taas virheilmoitus ! LaTeX Error: Two documentclass or documentstyle commands. Poistetaan eka rivi. Ja sama virheilmoitus “option clash”.</p>
+<p>Pahin virhe: equation-tägien välissä ei saa olla tyhjiä rivejä! Ongelmia on myös lähdeluettelon aakkostuksessa, Å-ä- ö näyttävät aakkostuvan kuten A, a ja o. Pitää testailla vielä.</p>
+
 </div>
 </div>
             </section>
@@ -187,8 +207,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-
-<a href="johdanto.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kaavat-ja-matemattiset-merkinnat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -224,8 +244,7 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "subsection"
-},
-"search": false
+}
 });
 });
 </script>

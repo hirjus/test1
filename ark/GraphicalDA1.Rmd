@@ -1,0 +1,12 @@
+---
+title: "Graphical DA 1"
+output: html_notebook
+---
+Palataan sorvin ääreen 24.2.2018, R ja datan käsittely.
+
+
+```{r}
+structure(cars)
+cars
+```
+

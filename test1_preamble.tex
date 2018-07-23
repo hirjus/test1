@@ -1,0 +1,32 @@
+%\documentclass[12pt,a4paper,leqno]{book}
+% dispositiopaperista, poistettiin ekalta riviltä {article}
+%%
+%% Poistetaan sellaisia, jotka näköjään saadaan automaattisesti
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[finnish]{babel}
+\usepackage{amsthm}
+\usepackage{amsfonts}         
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{lipsum}
+%tämä kopioitu bookdown-demo - esimerkistä
+\usepackage{booktabs}
+%\usepackage{amsthm} on jo yllä
+%lisää dispopaperista
+\pagestyle{plain}
+\setcounter{page}{1}
+\addtolength{\hoffset}{-1.15cm}
+\addtolength{\textwidth}{2.3cm}
+\addtolength{\voffset}{0.45cm}
+\addtolength{\textheight}{-0.9cm}
+
+%tämä kopioitu bookdown-demo - esimerkistä
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother

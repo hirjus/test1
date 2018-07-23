@@ -1,0 +1,39 @@
+---
+title: "Bookdown-dokumetti - testi 1"
+author: "Jussi Hirvonen"
+date: "`r Sys.Date()` (Versio 3.0)"
+lang: fi
+bibliography: bdtest1.bib
+description: bookdown - paketin testailua
+documentclass: book
+link-citations: yes
+site: bookdown::bookdown_site
+biblio-style: apalike
+---
+
+# Bookdown-paketin testidokumentti
+
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne joissa on ns.
+
+A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
+
+```{r bdtest1_paketit, include=FALSE}
+#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?
+library(rgl)
+library(ca)
+library(haven)
+library(dplyr)
+library(knitr)
+library(tidyverse)
+library(lubridate)
+library(rmarkdown)
+library(ggplot2)
+library(furniture)
+library(likert)
+library(scales) # G_1_2 - kuva
+library(reshape2)  # G_1_2 - kuva
+library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen
+library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen
+library(bookdown)
+library(tinytex)
+```

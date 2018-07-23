@@ -25,15 +25,14 @@
 <meta name="author" content="Jussi Hirvonen">
 
 
-<meta name="date" content="2018-07-02">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   
   
-<link rel="prev" href="johdanto.html">
-<link rel="next" href="taulukot-ja-kuvat.html">
+<link rel="prev" href="bookdown-ja-rmarkdown.html">
+
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -128,11 +127,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li class="chapter" data-level="1" data-path="alkutoimia.html"><a href="alkutoimia.html"><i class="fa fa-check"></i><b>1</b> Alkutoimia</a><ul>
-<li class="chapter" data-level="1.1" data-path="alkutoimia.html"><a href="alkutoimia.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>1.1</b> Tärkeimmät ohjelmistot</a></li>
-<li class="chapter" data-level="1.2" data-path="alkutoimia.html"><a href="alkutoimia.html#yaml-headerin-saatoa"><i class="fa fa-check"></i><b>1.2</b> YAML-headerin säätöä</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Bookdown-paketin testidokumentti</a></li>
+<li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a><ul>
+<li class="chapter" data-level="2.1" data-path="johdanto.html"><a href="johdanto.html#alkutoimia"><i class="fa fa-check"></i><b>2.1</b> Alkutoimia</a></li>
+<li class="chapter" data-level="2.2" data-path="johdanto.html"><a href="johdanto.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>2.2</b> Tärkeimmät ohjelmistot</a></li>
+<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-ja-tilannetietoja"><i class="fa fa-check"></i><b>2.3</b> Muutoksia ja tilannetietoja</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a></li>
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
 </ul></li>
@@ -141,6 +141,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.2" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#korrespondenssianalyysin-numeeriset-tulokset-taulukoina"><i class="fa fa-check"></i><b>4.2</b> Korrespondenssianalyysin numeeriset tulokset taulukoina</a></li>
 <li class="chapter" data-level="4.3" data-path="taulukot-ja-kuvat.html"><a href="taulukot-ja-kuvat.html#kuvat"><i class="fa fa-check"></i><b>4.3</b> Kuvat</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="bookdown-ja-rmarkdown.html"><a href="bookdown-ja-rmarkdown.html"><i class="fa fa-check"></i><b>5</b> Bookdown ja Rmarkdown</a></li>
 <li class="chapter" data-level="" data-path="lahteet.html"><a href="lahteet.html"><i class="fa fa-check"></i>Lähteet</a></li>
 </ul>
 
@@ -159,39 +160,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="kaavat-ja-matemattiset-merkinnat" class="section level1">
-<h1><span class="header-section-number">Luku 3</span> Kaavat ja matemattiset merkinnät</h1>
-<p>Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on oltava yksikäsitteisiä koko dokumentissa, jos käytetään “merge and knit” menetelmää. Jos taas jokainen lapsidokumentti on “itsenäinen” (“knit and merge”), tämä koskee vain kyseistä dokumenttia (kts. Bookdown - webkirja).</p>
-<div id="kahden-luokittelumuuttuja-taulukko" class="section level2">
-<h2><span class="header-section-number">3.1</span> Kahden luokittelumuuttuja taulukko</h2>
-<p>Kahden luokittelumuuttujan riippuvuutta voidaan testata <span class="math inline">\(\chi^{2}\)</span> - testillä. Testisuure saadaan laskemalla yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa</p>
-<p><span class="math display" id="eq:khii21">\[\begin{equation}
+<div id="lahteet" class="section level1 unnumbered">
+<h1>Lähteet</h1>
 
-  \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
-  
-  \tag{3.1}
-
-\end{equation}\]</span></p>
-<p>Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:</p>
-<p><span class="math display" id="eq:khii22">\[\begin{equation}
-
-  rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
-  
-  \tag{3.2}
-  
-\end{equation}\]</span></p>
-<p>Kun jaamme nämä tekijät havaintojen kokonaismäärällä <span class="math inline">\(n\)</span>, rivisumma muuntuu rivin massaksi, ja niiden summa muotoon <span class="math inline">\(\frac{\chi^{2}}{n}\)</span>.</p>
-<p><span class="math display" id="eq:inert1">\[\begin{equation}
-
- \frac{\chi^{2}}{n} = \phi^{2}
- 
- \tag{3.3}
- 
-
-\end{equation}\]</span></p>
-<p>Tunnusluku <span class="math inline">\(\phi^{2}\)</span> on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan <span class="math inline">\(\phi\)</span> - kertoimeksi.</p>
-<p>Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata <a href="kaavat-ja-matemattiset-merkinnat.html#eq:khii21">(3.1)</a> . Kokeillaan vielä, toimivatko kirjallisuusviittet, kuten tärkeä lähde<span class="citation">(Greenacre <a href="lahteet.html#ref-RefWorks:55">2017</a>)</span>.</p>
-<hr />
+<div id="refs" class="references">
+<div id="ref-RefWorks:110">
+<p>Ahlgren, Alli. 1994. <em>Öljyntuotanto Hämeessä - outo idea</em>. Dordrecht: Kluwer Academic Publishers.</p>
+</div>
+<div id="ref-RefWorks:100">
+<p>Åhlgren, Älli. 1994. <em>Öljyntuotanto Hämeessä</em>. Dordrecht: Kluwer Academic Publishers.</p>
+</div>
+<div id="ref-RefWorks:57">
+<p>Greenacre, Michael, ja Trevor Hastie. 1987. ”The Geometric Interpretation of Correspondence Analysis”. <em>Journal of the American Statistical Association</em> 82 (398): 437–47. <a href="https://doi.org/10.1080/01621459.1987.10478446" class="uri">https://doi.org/10.1080/01621459.1987.10478446</a>.</p>
+</div>
+<div id="ref-RefWorks:55">
+<p>Greenacre, Michael J. 2017. <em>Correspondence analysis in practice</em>. Third edition. Boca Raton, Florida: CRC Press. <a href="https://helka.finna.fi/Record/helka.3029760" class="uri">https://helka.finna.fi/Record/helka.3029760</a>.</p>
+</div>
+<div id="ref-RefWorks:68">
+<p>Roux, Brigitte Le, ja Henry Rouanet. 2004. <em>Geometric data analysis: from correspondence analysis to structured data analysis</em>. Dordrecht: Kluwer Academic Publishers.</p>
+</div>
 </div>
 </div>
             </section>
@@ -199,8 +186,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="johdanto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="taulukot-ja-kuvat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="bookdown-ja-rmarkdown.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -236,8 +223,7 @@ gitbook.start({
 "download": null,
 "toc": {
 "collapse": "subsection"
-},
-"search": false
+}
 });
 });
 </script>

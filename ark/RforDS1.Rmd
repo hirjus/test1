@@ -1,0 +1,61 @@
+---
+title: "R for Data Science"
+output:
+  html_notebook: default
+  pdf_document: default
+---
+Jatketaan ja kertaillaan, 24.2.2018 alkaen. Nyt lämmittelynä datan rukkailua. 
+
+```{r}
+plot(cars)
+```
+
+Kaikki tämä nettikirjasta "R for Data Science"
+```{r}
+summary(cars)
+structure(cars)
+hist(cars$dist)
+```
+
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+# Datan käsittelyä
+
+dplyr - viisi tärkeintä funktiota
+* filter() - havaintojen (rivien) valinta sarakearvojen perusteella
+* arrange() - havaintojen järjestäminen
+* select() - muuttujien (sarakkeiden) valinta nimen perusteella
+* mutate() - uusien muuttujien luonti
+* summarise() - aggregoi (laske yhteen, yhdistä) muuttujia ("collapse many values down to a single summary" - vähän koukeroisesti sanottu)
+
+Kaikkiin voidaan liittää group_by(), toimivat silloin ryhmä kerrallaan.
+
+Parametrit: df, mitä datalle tehdään (muuttujanimet ilman ilman lainausmerkkejä)
+Tulos on uusi df (tai tribble)
+
+# mutate()
+
+* aina uusi muuttuja, kannattaa ehkä valita vain osa datasta käsittelyyn
+* voi viitata samassa mutate-kutsussa siinä luotuihin muuttujiin
+* jos halutaan säilyttää vain uudet, transmute()
+
+## Funktioita muuttjien luontiin
+
+_bold_ Funktion syöte ja tulos on oltava vektori (function must be vectorised)
+
+##Modulo
+
+* kokonaislukujakolasku %/% ja * jakojäännös %%
+* x == y  * (x %/% y) + (x %% y)
+
+Muitakin tärkeimpiä esitellään luvussa 5.5.1.
+Terminologia on outoa. Rolling aggregates instead moving average?
+
+## Harjoitukset
+
+1. Muunna kellonajat "hhmm" - formaatista tunneiksi ja minuuteiksi
+
+
