@@ -2,7 +2,8 @@ bookdown::gitbook:
   css: style.css
   fig_caption: true
   split_bib: false # ei lähteitä sivun alareunaan
-  # config: tämän on omia asetuksia...
+  config:
+    download: null
   # code_folding: hide # koodilohkojen koodi oletukesna piilossa - vaatii themen käyttöä, gitbookissa on jo
 bookdown::pdf_book:
   includes:

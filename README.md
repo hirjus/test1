@@ -32,4 +32,12 @@ Tulosteet löytyvät alihakemistosta _book.
   mutta gitbookilla on jo omansa). Jotenkin ne sieltä sivun alalaidasta taisivat kadota? 
 
 # Versio 3
+
+- lisättu docs-hakemisto outputille -> voi julkaista Githubissa, kun merge->master
+- ark-hakemistossa vanhat pdf-versiot
 - tägätään, ja otetaan uusi haara kehityshommaan
+
+## Versio 3.01
+
+- julkaistu GitHubin www-palvelussa
+- Gitbookin ylävalikossa PDF-tiedoston latauspainike
