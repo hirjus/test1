@@ -1,14 +1,14 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
 author: "Jussi Hirvonen"
-date: "`r Sys.Date()` (Versio 3.01)"
+date: "`r Sys.Date()` (Versio 3.02)"
 lang: fi
-bibliography: bdtest1.bib
-description: bookdown - paketin testailua
-documentclass: book
-link-citations: yes
 site: bookdown::bookdown_site
+documentclass: book
+bibliography: bdtest1.bib
+link-citations: yes
 biblio-style: apalike
+description: "bookdown - paketin testailua"
 ---
 
 # Bookdown-paketin testidokumentti

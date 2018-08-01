@@ -163,7 +163,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Bookdown-dokumetti - testi 1</h1>
 <h4 class="author"><em>Jussi Hirvonen</em></h4>
-<h4 class="date"><em>2018-07-23 (Versio 3.01)</em></h4>
+<h4 class="date"><em>2018-08-01 (Versio 3.02)</em></h4>
 </div>
 <div id="bookdown-paketin-testidokumentti" class="section level1">
 <h1><span class="header-section-number">Luku 1</span> Bookdown-paketin testidokumentti</h1>
@@ -218,6 +218,19 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -41,3 +41,6 @@ Tulosteet löytyvät alihakemistosta _book.
 
 - julkaistu GitHubin www-palvelussa
 - Gitbookin ylävalikossa PDF-tiedoston latauspainike
+
+1.8.2018 versio 3.01, pikku korjailuja ja siistimistä. Gitbook-formaatissa ei toimi koodin piiloitus oletuksena (code_folding: hide). Vaatii jonkun teeman käyttämistä.
+

@@ -4,11 +4,10 @@ bookdown::gitbook:
   split_bib: false # ei lähteitä sivun alareunaan
   config:
     download: null
-  # code_folding: hide # koodilohkojen koodi oletukesna piilossa - vaatii themen käyttöä, gitbookissa on jo
+    #code_folding: hide # koodilohkojen koodi oletukesna piilossa - vaatii themen käyttöä, gitbookissa on jo
 bookdown::pdf_book:
   includes:
      #in_header: test1_preamble.tex
   latex_engine: pdflatex
-  # latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
