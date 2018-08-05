@@ -9,6 +9,7 @@ bibliography: bdtest1.bib
 link-citations: yes
 biblio-style: apalike
 description: "bookdown - paketin testailua"
+github-repo: "hirjus/test1"
 ---
 
 # Bookdown-paketin testidokumentti
