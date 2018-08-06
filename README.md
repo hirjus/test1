@@ -1,4 +1,4 @@
-﻿# test1
+# test1
 
 Testirepo, kokeillaan versionhallintaa Rmarkdown-tiedostoilla. Bookdown-paketti, pdf- ja html-tulostus.
 
@@ -43,4 +43,8 @@ Tulosteet löytyvät alihakemistosta _book.
 - Gitbookin ylävalikossa PDF-tiedoston latauspainike
 
 1.8.2018 versio 3.01, pikku korjailuja ja siistimistä. Gitbook-formaatissa ei toimi koodin piiloitus oletuksena (code_folding: hide). Vaatii jonkun teeman käyttämistä.
+
+## Uusi kehityshaara
+
+6.8.2018 uusi kehityshaara, ja yksi commit (alaviite). Ehkä myös muut perusmuotoilut voisi lyhyesti esitellä?
 

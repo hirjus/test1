@@ -183,8 +183,8 @@ Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi
 </div>
 <div id="muutoksia-ja-tilannetietoja" class="section level2">
 <h2><span class="header-section-number">2.3</span> Muutoksia ja tilannetietoja</h2>
-<p>Nyt toimii gitbook ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
-<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita).</p>
+<p>Nyt toimii gitbook<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
+<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita)?</p>
 <p>3.7.2018 PDF-tulostuksen säätöä, nyt saadaan jo virheilmoituksiakin! Piti tallentaa utf-8 - muodossa kertaalleen. Tulostus kaatuu valituksiin puuttuvista $-merkeistä kaavoissa (test_kaavat1.rmd). TeX-tiedoston voi kääntää PDF:ksi, mutta kaavat sekaisin ja paljon muutakin. Esim. sisällysluettelo.</p>
 <p>Merkistöt olivat pielessä (ei utf-8!), ja samoin test1_preamble.tex -tiedosto. Laitoin kuntoon, nyt asiallinen virheilmoitus:</p>
 <p>! LaTeX Error: Two documentclass or documentstyle commands.</p>
@@ -201,6 +201,12 @@ Lisäksi usepackage[<strong>utf8</strong>]{inputenc}.</p>
 <p>Pahin virhe: equation-tägien välissä ei saa olla tyhjiä rivejä! Ongelmia on myös lähdeluettelon aakkostuksessa, Å-ä- ö näyttävät aakkostuvan kuten A, a ja o. Pitää testailla vielä.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Virheilmoitukset ovat aika hyödyttömiä. Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.<a href="johdanto.html#fnref1" class="footnote-back">↩</a></p></li>
+</ol>
 </div>
             </section>
 
