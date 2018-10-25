@@ -10,8 +10,6 @@ Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esitt
 
 Tästä poistettu koodilohko data_1, ei tarvita jos ca-paketti on ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty. Koodilohkojen nimissä taitaa olla sallittu?
 
-
-
 Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella 'tab', ja siihen liitetään chunk-label (esim alla tab:smoketable1).
 
 Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen, "smoke"-dataa ei löydy.
