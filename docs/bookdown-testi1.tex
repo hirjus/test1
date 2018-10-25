@@ -619,7 +619,7 @@ vaikea hahmottaa.
 
 }
 
-\caption{Tulostiedoston prosessointi}\label{fig:bdprocess}
+\caption{Tulostiedoston prosessointi - png}\label{fig:bdprocess1}
 \end{figure}
 
 Perusopas bookdown paketin käyttöön on Yihui Xien
@@ -650,6 +650,24 @@ eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin
 paketinhallintasovelluksen (jolla on monta nimeä, admin console jne)
 peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit
 voi sitten asentaa admin-oikeuksilla.
+
+Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy
+html-tulosteessa.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{'BookdownProc.pdf'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{BookdownProc} 
+
+}
+
+\caption{Tulostiedoston prosessointi - pdf}\label{fig:bdprocess2}
+\end{figure}
 
 \bibliography{bdtest1.bib}
 

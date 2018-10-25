@@ -166,17 +166,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>LaTeX-formaatti renderöidään jollain LaTeX-vaihtoehdolla PDF-tiedostoksi. <strong>ToDo</strong> PDF-formaattejakin on useita variantteja, mikä niistä. Tässä vaihtoehdossa konfigurointimahdollisuudet ovat käytännössä rajattomat, sillä välitulosteena syntyvää TeX-tiedostoa voi muokata ja muuntaa sen sitten PDF-muotoon.</p>
 <p>Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on vaikea hahmottaa.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</a></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:bdprocess"></span>
-<img src="BookdownProc.png" alt="Tulostiedoston prosessointi" width="50%" />
+<div class="figure" style="text-align: center"><span id="fig:bdprocess1"></span>
+<img src="BookdownProc.png" alt="Tulostiedoston prosessointi - png" width="50%" />
 <p class="caption">
-Kuva 5.1: Tulostiedoston prosessointi
+Kuva 5.1: Tulostiedoston prosessointi - png
 </p>
 </div>
 <p>Perusopas bookdown paketin käyttöön on Yihui Xien <a href="https://bookdown.org/yihui/bookdown/">“bookdown: Authoring Books and Technical Documents with R Markdown”&quot;</a>. Siinä pääidea on tuottaa yhdellä Rmd-koodilla kuvan
-<a href="bookdown-ja-rmarkdown.html#fig:bdprocess">5.1</a> kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma “kutoo” Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).</p>
+<a href="#fig:bdprocess"><strong>??</strong></a> kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma “kutoo” Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).</p>
 <p>Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan <a href="https://bookdown.org/yihui/rmarkdown/">“R Markdown: The Definitive Guide”</a>. Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.</p>
 <p>R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman teoksen johdattelut auttavat jatkoon.</p>
 <p>Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia, jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman koneen MikTeX - asennus asentamaan tarvittavat paketit “lennossa”. Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin paketinhallintasovelluksen (jolla on monta nimeä, admin console jne) peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit voi sitten asentaa admin-oikeuksilla.</p>
+<p>Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy html-tulosteessa.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</a></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:bdprocess2"></span>
+<img src="BookdownProc.pdf" alt="Tulostiedoston prosessointi - pdf" width="50%" />
+<p class="caption">
+Kuva 5.2: Tulostiedoston prosessointi - pdf
+</p>
+</div>
 
 </div>
             </section>
