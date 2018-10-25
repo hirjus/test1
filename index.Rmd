@@ -1,7 +1,7 @@
 ---
 title: "Bookdown-dokumetti - testi 1"
 author: "Jussi Hirvonen"
-date: '`r Sys.Date()` (Versio 3.02)'
+date: '`r Sys.Date()` (Versio 3.03)'
 output: pdf_document
 description: bookdown - paketin testailua
 documentclass: book

@@ -49,3 +49,5 @@ Tulosteet löytyvät alihakemistosta _book.
 6.8.2018 uusi kehityshaara, ja yksi commit (alaviite). Ehkä myös muut perusmuotoilut voisi lyhyesti esitellä?
 
 **25.10.2018** Ongemia MikTeX-pakettien kanssa, peruskäyttäjänä ladatut paketit kaipasivat päivityksiä. Katsoin puuttuvat paketit MikTeX-pakettihallintasovelluksella tavallisen käyttäjän oikeuksilla, ja asensin ne admin-oikeuksilla. Pieni kommentti tästä itse dokumenttiin.
+
+**25.10.2018** versio 3.03.
