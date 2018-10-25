@@ -16,3 +16,5 @@ Perusopas bookdown paketin käyttöön on Yihui Xien ["bookdown: Authoring Books
 Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan ["R Markdown: The Definitive Guide"](https://bookdown.org/yihui/rmarkdown/). Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.
 
 R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman teoksen johdattelut auttavat jatkoon.
+
+Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia, jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman koneen MikTeX - asennus asentamaan tarvittavat paketit "lennossa". Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin paketinhallintasovelluksen (jolla on monta nimeä, admin console jne) peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit voi sitten asentaa admin-oikeuksilla.
