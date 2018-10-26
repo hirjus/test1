@@ -25,3 +25,9 @@ Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy html-tulosteessa
 ```{r bdprocess2, out.width='50%', fig.align='center',fig.cap='Tulostiedoston prosessointi - pdf'}
 knitr::include_graphics('BookdownProc.pdf')
 ```
+
+
+Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä säätämistä. Ohje löytyi [Yihui Xienin blogista](https://yihui.name/en/2018/09/code-appendix/) (luettu 26.10.2018).
+```{r ref.label=knitr::all_labels(), echo = T, eval = F}
+```
+"New line" vaaditaan koodilohkon jälkeen.

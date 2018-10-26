@@ -131,7 +131,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-25 (Versio 3.03)}
+    \date{2018-10-26 (Versio 3.03)}
 
 
 \usepackage{amsthm}
@@ -668,6 +668,95 @@ html-tulosteessa.
 
 \caption{Tulostiedoston prosessointi - pdf}\label{fig:bdprocess2}
 \end{figure}
+
+Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä
+säätämistä. Ohje löytyi
+\href{https://yihui.name/en/2018/09/code-appendix/}{Yihui Xienin
+blogista} (luettu 26.10.2018).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?}
+\KeywordTok{library}\NormalTok{(rgl)}
+\KeywordTok{library}\NormalTok{(ca)}
+\KeywordTok{library}\NormalTok{(haven)}
+\KeywordTok{library}\NormalTok{(dplyr)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(lubridate)}
+\KeywordTok{library}\NormalTok{(rmarkdown)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
+\KeywordTok{library}\NormalTok{(furniture)}
+\KeywordTok{library}\NormalTok{(likert)}
+\KeywordTok{library}\NormalTok{(scales) }\CommentTok{# G_1_2 - kuva}
+\KeywordTok{library}\NormalTok{(reshape2)  }\CommentTok{# G_1_2 - kuva}
+\KeywordTok{library}\NormalTok{(printr) }\CommentTok{#19.5.18 taulukoiden ja matriisien tulostukseen}
+\KeywordTok{library}\NormalTok{(stargazer) }\CommentTok{# 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen}
+\KeywordTok{library}\NormalTok{(bookdown)}
+\KeywordTok{library}\NormalTok{(tinytex)}
+\KeywordTok{system}\NormalTok{(}\StringTok{"pdflatex --version"}\NormalTok{)}
+\CommentTok{#getwd()}
+
+\NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{pandoc_version}\NormalTok{()}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(smoke[,}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{], }\DataTypeTok{booktabs =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{caption =} \StringTok{'CA-paketin smoke-data (keinotekoinen)'}
+\NormalTok{)}
+\CommentTok{# Taulukkoon viittaaminen tekstissä \textbackslash{}@ref(label)}
+\CommentTok{# riviprofiilit}
+\NormalTok{smoke.rpro <-}\StringTok{ }\NormalTok{smoke }\OperatorTok{/}\StringTok{ }\KeywordTok{rowSums}\NormalTok{ (smoke)}
+\CommentTok{# keskiarvoprofiili}
+\NormalTok{smoke.avrpro <-}\StringTok{ }\KeywordTok{colSums}\NormalTok{(smoke) }\OperatorTok{/}\StringTok{ }\KeywordTok{sum}\NormalTok{(smoke)}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
+  \KeywordTok{list}\NormalTok{(smoke.rpro, }\KeywordTok{t}\NormalTok{(smoke.avrpro)   ), }\DataTypeTok{digits =} \DecValTok{3}\NormalTok{,}
+  \DataTypeTok{caption =} \StringTok{'Riviprofiilit ja keskiarvoprofiili'}\NormalTok{, }\DataTypeTok{booktabs =} \OtherTok{TRUE}
+\NormalTok{)}
+
+\NormalTok{smokeCA <-}\StringTok{ }\KeywordTok{ca}\NormalTok{(smoke)}
+\NormalTok{temp1 <-}\StringTok{ }\NormalTok{smokeCA }
+\NormalTok{numres1CA1 <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(smokeCA)}
+\CommentTok{#str(smokeCA)}
+\CommentTok{#knitr::kable( smokeCA,}
+\CommentTok{#  digits = 3,}
+\CommentTok{#  caption = 'Riviprofiilit ja keskiarvoprofiili', booktabs = TRUE}
+\CommentTok{#)}
+\CommentTok{#str(temp1)}
+\CommentTok{#stargazer(temp2$rows, type = "text", title = "CA-tuloksia")}
+\CommentTok{# LateX-tulostuksessa float vaatii jotain tällaista:Table: (\textbackslash{}#tab:cataul1) }
+\CommentTok{#str(temp2)}
+\CommentTok{#str(temp2$scree)}
+\CommentTok{#temp2$scree}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{( numres1CA1}\OperatorTok{$}\NormalTok{rows,}
+    \DataTypeTok{digits =} \DecValTok{3}\NormalTok{,          }
+    \DataTypeTok{caption =} \StringTok{'Korrespondenssianalyysin diagnostiikkaa - rivit'}\NormalTok{, }\DataTypeTok{booktabs =} \OtherTok{TRUE}
+\NormalTok{)}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{( numres1CA1}\OperatorTok{$}\NormalTok{columns,}
+    \DataTypeTok{digits =} \DecValTok{3}\NormalTok{,          }
+    \DataTypeTok{caption =} \StringTok{'Korrespondenssianalyysin diagnostiikkaa - sarakkeet'}\NormalTok{, }\DataTypeTok{booktabs =} \OtherTok{TRUE}
+\NormalTok{)}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{( numres1CA1}\OperatorTok{$}\NormalTok{scree,}
+    \DataTypeTok{digits =} \DecValTok{3}\NormalTok{,          }
+    \DataTypeTok{caption =} \StringTok{'Korrespondenssianalyysin diagnostiikkaa - ominaisarvot'}\NormalTok{, }\DataTypeTok{booktabs =} \OtherTok{TRUE}
+\NormalTok{)}
+
+\KeywordTok{plot}\NormalTok{(smokeCA)}
+
+\KeywordTok{str}\NormalTok{(numres1CA1}\OperatorTok{$}\NormalTok{scree)}
+\NormalTok{test2 <-}\StringTok{ }\KeywordTok{as.table}\NormalTok{(numres1CA1}\OperatorTok{$}\NormalTok{scree)}
+\CommentTok{#str(test1$V1)}
+\KeywordTok{str}\NormalTok{(test2)}
+\NormalTok{test2[[dimnames]]}
+\CommentTok{# Vielä kokeilua!}
+
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{'BookdownProc.png'}\NormalTok{)}
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{'BookdownProc.pdf'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \bibliography{bdtest1.bib}
 

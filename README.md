@@ -51,3 +51,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **25.10.2018** Ongemia MikTeX-pakettien kanssa, peruskäyttäjänä ladatut paketit kaipasivat päivityksiä. Katsoin puuttuvat paketit MikTeX-pakettihallintasovelluksella tavallisen käyttäjän oikeuksilla, ja asensin ne admin-oikeuksilla. Pieni kommentti tästä itse dokumenttiin.
 
 **25.10.2018** versio 3.03. Ei kehitetä vähään aikaan, pikku muutoksia suoraan masteriin. Lisättiin viimeiseen lukuun png-kuvan pdf-versio, ei näy html-tulosteessa.
+
+**26.10.2018** Lisättiin viimeisen luvun 5 loppuun lyhyt knitr-koodipätkä, joka kokoaa r-koodin yhdeksi listaukseksi. Toimii!
