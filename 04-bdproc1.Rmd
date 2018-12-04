@@ -17,6 +17,17 @@ Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan ["R Markdown: 
 
 R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman teoksen johdattelut auttavat jatkoon.
 
+**Käytännön vinkkejä**
+
+1. Kuvasuhde pitää olla 1:1 . Ehkä hankalin juttu Rmarkdownin kanssa työskennellessä, mutta aina voi avata oman grafiikkaikkunan. Dataa analysoidessa voi tallentaa kuvat pdf-muodossa, lisäillä kommentteja yms. Lopullisessa dokumentissa kuvasuhden pitää erikseen tarkista, säätämiseen on monta vipua.
+
+2. Bookdown-työskentelyssä pdf-tuloste ei ole kätevä, yleensä analyysiä hiotaan Rmd-tiedosto kerrallaan. R Studio voi yllättää aina joskus! Knit-napin takaa löytyy kuitenkin eri renderöintifuktiot kuin oikean laidan yläikkunan "Build Book" - valikosta. Knitr-funktiota kannattaa käyttää, jos haluaa katsoa yhden Rmd-tiedoston tulostetta. Tarkista kuitenkin, että (a) Rmd-tiedostoon ei automaattisesti lisäillä YAML-headereita ja (b) projektin hakemistoon ei ilmesty ylimääräisiä Rmd-tiedostoja. Joskus bookdown R Studion kanssa kasaa yhden Rmd-tiedoston tulostuksessa "väliaikaiseksi" tiedostoksi koko dokumentin yhteen <dokumentin nimi>.Rmd -tiedostoon. Jos bookdown-projektiin kuuluvia Rmd-tiedostoja ei eksplitsiittisesti luetella (suositeltavaa, laita bookdown.yml - tiedostoon lista) syntyy hassua sotkua.
+
+3. Koko raportin tulostus html-muodossa käy kätevimmin "Build book" - valikon html-book- funktiolla/formaatilla. Tämä pitää tsekata! (4.12.18)
+
+4. Suositus: koko dokumentit tulostukset aina "puhtaalta pöydältä", käynnistä R uudelleen. Myös silloin, kun tulostat ensin vaikka gitbookin ja sitten pdf-tiedoston.
+
+
 Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia, jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman koneen MikTeX - asennus asentamaan tarvittavat paketit "lennossa". Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin paketinhallintasovelluksen (jolla on monta nimeä, admin console jne) peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit voi sitten asentaa admin-oikeuksilla.
 
 Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy html-tulosteessa.

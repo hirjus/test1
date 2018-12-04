@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bookdown-dokumetti - testi 1</title>
+  <title>Luku 5 Bookdown ja Rmarkdown | Bookdown-dokumetti - testi 1</title>
   <meta name="description" content="bookdown - paketin testailua">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Bookdown-dokumetti - testi 1" />
+  <meta property="og:title" content="Luku 5 Bookdown ja Rmarkdown | Bookdown-dokumetti - testi 1 />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="hirjus/test1" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bookdown-dokumetti - testi 1" />
+  <meta name="twitter:title" content="Luku 5 Bookdown ja Rmarkdown | Bookdown-dokumetti - testi 1 />
   
   <meta name="twitter:description" content="bookdown - paketin testailua" />
   
@@ -35,6 +35,7 @@
 <link rel="next" href="lahteet.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -131,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a><ul>
 <li class="chapter" data-level="2.1" data-path="johdanto.html"><a href="johdanto.html#alkutoimia"><i class="fa fa-check"></i><b>2.1</b> Alkutoimia</a></li>
 <li class="chapter" data-level="2.2" data-path="johdanto.html"><a href="johdanto.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>2.2</b> Tärkeimmät ohjelmistot</a></li>
-<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-ja-tilannetietoja"><i class="fa fa-check"></i><b>2.3</b> Muutoksia ja tilannetietoja</a></li>
+<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-tilannetietoja-ja-puutteita"><i class="fa fa-check"></i><b>2.3</b> Muutoksia, tilannetietoja ja puutteita</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
@@ -165,7 +166,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Bookdown- R-paketti “paketoi” RMarkdownin tulostutoiminnot (output) ja sen monet säädettävät optiot. Samat Rmd-dokumentit saadaan koottua moneen eri formaattiin: html- sivuiksi, PDF-dokumentiksi tai Ebook-kirjaksi. Kaikissa tulostusvaihtoehdoissa on monia eri vaihtoehtoja. Html-tulostuksessa voi valita yhden tai useamman html-sivun lisäksi gitbook- tai Tufte- vaihtoehdon. Ne on toteutettu css-tyylitiedostoilla ja JavaScript-kirjastoilla. Tässä on käytetty gitbook-formaattia.</p>
 <p>LaTeX-formaatti renderöidään jollain LaTeX-vaihtoehdolla PDF-tiedostoksi. <strong>ToDo</strong> PDF-formaattejakin on useita variantteja, mikä niistä. Tässä vaihtoehdossa konfigurointimahdollisuudet ovat käytännössä rajattomat, sillä välitulosteena syntyvää TeX-tiedostoa voi muokata ja muuntaa sen sitten PDF-muotoon.</p>
 <p>Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on vaikea hahmottaa.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:bdprocess1"></span>
 <img src="BookdownProc.png" alt="Tulostiedoston prosessointi - png" width="50%" />
 <p class="caption">
@@ -176,9 +177,16 @@ Kuva 5.1: Tulostiedoston prosessointi - png
 <a href="#fig:bdprocess"><strong>??</strong></a> kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma “kutoo” Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).</p>
 <p>Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan <a href="https://bookdown.org/yihui/rmarkdown/">“R Markdown: The Definitive Guide”</a>. Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.</p>
 <p>R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman teoksen johdattelut auttavat jatkoon.</p>
+<p><strong>Käytännön vinkkejä</strong></p>
+<ol style="list-style-type: decimal">
+<li><p>Kuvasuhde pitää olla 1:1 . Ehkä hankalin juttu Rmarkdownin kanssa työskennellessä, mutta aina voi avata oman grafiikkaikkunan. Dataa analysoidessa voi tallentaa kuvat pdf-muodossa, lisäillä kommentteja yms. Lopullisessa dokumentissa kuvasuhden pitää erikseen tarkista, säätämiseen on monta vipua.</p></li>
+<li><p>Bookdown-työskentelyssä pdf-tuloste ei ole kätevä, yleensä analyysiä hiotaan Rmd-tiedosto kerrallaan. R Studio voi yllättää aina joskus! Knit-napin takaa löytyy kuitenkin eri renderöintifuktiot kuin oikean laidan yläikkunan “Build Book” - valikosta. Knitr-funktiota kannattaa käyttää, jos haluaa katsoa yhden Rmd-tiedoston tulostetta. Tarkista kuitenkin, että (a) Rmd-tiedostoon ei automaattisesti lisäillä YAML-headereita ja (b) projektin hakemistoon ei ilmesty ylimääräisiä Rmd-tiedostoja. Joskus bookdown R Studion kanssa kasaa yhden Rmd-tiedoston tulostuksessa “väliaikaiseksi” tiedostoksi koko dokumentin yhteen <dokumentin nimi>.Rmd -tiedostoon. Jos bookdown-projektiin kuuluvia Rmd-tiedostoja ei eksplitsiittisesti luetella (suositeltavaa, laita bookdown.yml - tiedostoon lista) syntyy hassua sotkua.</p></li>
+<li><p>Koko raportin tulostus html-muodossa käy kätevimmin “Build book” - valikon html-book- funktiolla/formaatilla. Tämä pitää tsekata! (4.12.18)</p></li>
+<li><p>Suositus: koko dokumentit tulostukset aina “puhtaalta pöydältä”, käynnistä R uudelleen. Myös silloin, kun tulostat ensin vaikka gitbookin ja sitten pdf-tiedoston.</p></li>
+</ol>
 <p>Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia, jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman koneen MikTeX - asennus asentamaan tarvittavat paketit “lennossa”. Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin paketinhallintasovelluksen (jolla on monta nimeä, admin console jne) peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit voi sitten asentaa admin-oikeuksilla.</p>
 <p>Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy html-tulosteessa.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:bdprocess2"></span>
 <img src="BookdownProc.pdf" alt="Tulostiedoston prosessointi - pdf" width="50%" />
 <p class="caption">
@@ -186,85 +194,86 @@ Kuva 5.2: Tulostiedoston prosessointi - pdf
 </p>
 </div>
 <p>Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä säätämistä. Ohje löytyi <a href="https://yihui.name/en/2018/09/code-appendix/">Yihui Xienin blogista</a> (luettu 26.10.2018).</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1"><span class="co">#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?</span></a>
-<a class="sourceLine" id="cb13-2" data-line-number="2"><span class="kw">library</span>(rgl)</a>
-<a class="sourceLine" id="cb13-3" data-line-number="3"><span class="kw">library</span>(ca)</a>
-<a class="sourceLine" id="cb13-4" data-line-number="4"><span class="kw">library</span>(haven)</a>
-<a class="sourceLine" id="cb13-5" data-line-number="5"><span class="kw">library</span>(dplyr)</a>
-<a class="sourceLine" id="cb13-6" data-line-number="6"><span class="kw">library</span>(knitr)</a>
-<a class="sourceLine" id="cb13-7" data-line-number="7"><span class="kw">library</span>(tidyverse)</a>
-<a class="sourceLine" id="cb13-8" data-line-number="8"><span class="kw">library</span>(lubridate)</a>
-<a class="sourceLine" id="cb13-9" data-line-number="9"><span class="kw">library</span>(rmarkdown)</a>
-<a class="sourceLine" id="cb13-10" data-line-number="10"><span class="kw">library</span>(ggplot2)</a>
-<a class="sourceLine" id="cb13-11" data-line-number="11"><span class="kw">library</span>(furniture)</a>
-<a class="sourceLine" id="cb13-12" data-line-number="12"><span class="kw">library</span>(likert)</a>
-<a class="sourceLine" id="cb13-13" data-line-number="13"><span class="kw">library</span>(scales) <span class="co"># G_1_2 - kuva</span></a>
-<a class="sourceLine" id="cb13-14" data-line-number="14"><span class="kw">library</span>(reshape2)  <span class="co"># G_1_2 - kuva</span></a>
-<a class="sourceLine" id="cb13-15" data-line-number="15"><span class="kw">library</span>(printr) <span class="co">#19.5.18 taulukoiden ja matriisien tulostukseen</span></a>
-<a class="sourceLine" id="cb13-16" data-line-number="16"><span class="kw">library</span>(stargazer) <span class="co"># 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen</span></a>
-<a class="sourceLine" id="cb13-17" data-line-number="17"><span class="kw">library</span>(bookdown)</a>
-<a class="sourceLine" id="cb13-18" data-line-number="18"><span class="kw">library</span>(tinytex)</a>
-<a class="sourceLine" id="cb13-19" data-line-number="19"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</a>
-<a class="sourceLine" id="cb13-20" data-line-number="20"><span class="co">#getwd()</span></a>
-<a class="sourceLine" id="cb13-21" data-line-number="21"></a>
-<a class="sourceLine" id="cb13-22" data-line-number="22">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a>
-<a class="sourceLine" id="cb13-23" data-line-number="23"></a>
-<a class="sourceLine" id="cb13-24" data-line-number="24">knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb13-25" data-line-number="25">  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></a>
-<a class="sourceLine" id="cb13-26" data-line-number="26">)</a>
-<a class="sourceLine" id="cb13-27" data-line-number="27"><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></a>
-<a class="sourceLine" id="cb13-28" data-line-number="28"><span class="co"># riviprofiilit</span></a>
-<a class="sourceLine" id="cb13-29" data-line-number="29">smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</a>
-<a class="sourceLine" id="cb13-30" data-line-number="30"><span class="co"># keskiarvoprofiili</span></a>
-<a class="sourceLine" id="cb13-31" data-line-number="31">smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</a>
-<a class="sourceLine" id="cb13-32" data-line-number="32"></a>
-<a class="sourceLine" id="cb13-33" data-line-number="33">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
-<a class="sourceLine" id="cb13-34" data-line-number="34">  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb13-35" data-line-number="35">  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-36" data-line-number="36">)</a>
-<a class="sourceLine" id="cb13-37" data-line-number="37"></a>
-<a class="sourceLine" id="cb13-38" data-line-number="38">smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</a>
-<a class="sourceLine" id="cb13-39" data-line-number="39">temp1 &lt;-<span class="st"> </span>smokeCA </a>
-<a class="sourceLine" id="cb13-40" data-line-number="40">numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</a>
-<a class="sourceLine" id="cb13-41" data-line-number="41"><span class="co">#str(smokeCA)</span></a>
-<a class="sourceLine" id="cb13-42" data-line-number="42"><span class="co">#knitr::kable( smokeCA,</span></a>
-<a class="sourceLine" id="cb13-43" data-line-number="43"><span class="co">#  digits = 3,</span></a>
-<a class="sourceLine" id="cb13-44" data-line-number="44"><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></a>
-<a class="sourceLine" id="cb13-45" data-line-number="45"><span class="co">#)</span></a>
-<a class="sourceLine" id="cb13-46" data-line-number="46"><span class="co">#str(temp1)</span></a>
-<a class="sourceLine" id="cb13-47" data-line-number="47"><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></a>
-<a class="sourceLine" id="cb13-48" data-line-number="48"><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></a>
-<a class="sourceLine" id="cb13-49" data-line-number="49"><span class="co">#str(temp2)</span></a>
-<a class="sourceLine" id="cb13-50" data-line-number="50"><span class="co">#str(temp2$scree)</span></a>
-<a class="sourceLine" id="cb13-51" data-line-number="51"><span class="co">#temp2$scree</span></a>
-<a class="sourceLine" id="cb13-52" data-line-number="52"></a>
-<a class="sourceLine" id="cb13-53" data-line-number="53">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,</a>
-<a class="sourceLine" id="cb13-54" data-line-number="54">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb13-55" data-line-number="55">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-56" data-line-number="56">)</a>
-<a class="sourceLine" id="cb13-57" data-line-number="57"></a>
-<a class="sourceLine" id="cb13-58" data-line-number="58">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</a>
-<a class="sourceLine" id="cb13-59" data-line-number="59">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb13-60" data-line-number="60">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-61" data-line-number="61">)</a>
-<a class="sourceLine" id="cb13-62" data-line-number="62"></a>
-<a class="sourceLine" id="cb13-63" data-line-number="63">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</a>
-<a class="sourceLine" id="cb13-64" data-line-number="64">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb13-65" data-line-number="65">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb13-66" data-line-number="66">)</a>
-<a class="sourceLine" id="cb13-67" data-line-number="67"></a>
-<a class="sourceLine" id="cb13-68" data-line-number="68"><span class="kw">plot</span>(smokeCA)</a>
-<a class="sourceLine" id="cb13-69" data-line-number="69"></a>
-<a class="sourceLine" id="cb13-70" data-line-number="70"><span class="kw">str</span>(numres1CA1<span class="op">$</span>scree)</a>
-<a class="sourceLine" id="cb13-71" data-line-number="71">test2 &lt;-<span class="st"> </span><span class="kw">as.table</span>(numres1CA1<span class="op">$</span>scree)</a>
-<a class="sourceLine" id="cb13-72" data-line-number="72"><span class="co">#str(test1$V1)</span></a>
-<a class="sourceLine" id="cb13-73" data-line-number="73"><span class="kw">str</span>(test2)</a>
-<a class="sourceLine" id="cb13-74" data-line-number="74">test2[[dimnames]]</a>
-<a class="sourceLine" id="cb13-75" data-line-number="75"><span class="co"># Vielä kokeilua!</span></a>
-<a class="sourceLine" id="cb13-76" data-line-number="76"></a>
-<a class="sourceLine" id="cb13-77" data-line-number="77"></a>
-<a class="sourceLine" id="cb13-78" data-line-number="78">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</a>
-<a class="sourceLine" id="cb13-79" data-line-number="79">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?</span>
+<span class="kw">library</span>(rgl)
+<span class="kw">library</span>(ca)
+<span class="kw">library</span>(haven)
+<span class="kw">library</span>(dplyr)
+<span class="kw">library</span>(knitr)
+<span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(lubridate)
+<span class="kw">library</span>(rmarkdown)
+<span class="kw">library</span>(ggplot2)
+<span class="kw">library</span>(furniture)
+<span class="kw">library</span>(likert)
+<span class="kw">library</span>(scales) <span class="co"># G_1_2 - kuva</span>
+<span class="kw">library</span>(reshape2)  <span class="co"># G_1_2 - kuva</span>
+<span class="kw">library</span>(printr) <span class="co">#19.5.18 taulukoiden ja matriisien tulostukseen</span>
+<span class="kw">library</span>(stargazer) <span class="co"># 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen</span>
+<span class="kw">library</span>(bookdown)
+<span class="kw">library</span>(tinytex)
+<span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)
+<span class="co">#getwd()</span>
+
+rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()
+
+knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,
+  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span>
+)
+<span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span>
+<span class="co"># riviprofiilit</span>
+smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)
+<span class="co"># keskiarvoprofiili</span>
+smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)
+
+knitr<span class="op">::</span><span class="kw">kable</span>(
+  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,
+  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>
+)
+
+smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)
+<span class="co">#temp1 &lt;- smokeCA tämä kai tarpeeton ? (4.12.2018)</span>
+numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)
+<span class="co">#str(smokeCA)</span>
+<span class="co">#knitr::kable( smokeCA,</span>
+<span class="co">#  digits = 3,</span>
+<span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span>
+<span class="co">#)</span>
+<span class="co">#str(temp1)</span>
+<span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span>
+<span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span>
+<span class="co">#str(temp2)</span>
+<span class="co">#str(temp2$scree)</span>
+<span class="co">#temp2$scree</span>
+numres1CA1
+
+knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,
+    <span class="dt">digits =</span> <span class="dv">3</span>,          
+    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>
+)
+
+knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,
+    <span class="dt">digits =</span> <span class="dv">3</span>,          
+    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>
+)
+
+knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,
+    <span class="dt">digits =</span> <span class="dv">3</span>,          
+    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span>
+)
+
+<span class="kw">plot</span>(smokeCA)
+
+<span class="kw">str</span>(numres1CA1<span class="op">$</span>scree)
+test2 &lt;-<span class="st"> </span><span class="kw">as.table</span>(numres1CA1<span class="op">$</span>scree)
+<span class="co">#str(test1$V1)</span>
+<span class="kw">str</span>(test2)
+test2[[dimnames]]
+<span class="co"># Vielä kokeilua!</span>
+
+
+knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)
+knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</code></pre>
 <p>“New line” vaaditaan koodilohkon jälkeen.</p>
 
 </div>
@@ -294,7 +303,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -304,6 +313,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -321,7 +334,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

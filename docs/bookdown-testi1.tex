@@ -131,23 +131,9 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-10-26 (Versio 3.03)}
+    \date{2018-12-04 (Versio 3.05)}
 
 
-\usepackage{amsthm}
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\theoremstyle{definition}
-\newtheorem{example}{Example}[chapter]
-\theoremstyle{definition}
-\newtheorem{exercise}{Exercise}[chapter]
-\theoremstyle{remark}
-\newtheorem*{remark}{Remark}
-\newtheorem*{solution}{Solution}
 \begin{document}
 \maketitle
 
@@ -156,15 +142,11 @@
 \tableofcontents
 }
 \hypertarget{bookdown-paketin-testidokumentti}{%
-\chapter{Bookdown-paketin
-testidokumentti}\label{bookdown-paketin-testidokumentti}}
+\chapter{Bookdown-paketin testidokumentti}\label{bookdown-paketin-testidokumentti}}
 
-Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja
-kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet
-toimivat, myös ne joissa on ns.
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne joissa on ns.
 
-A sample document using RMarkdown with bookdown-package to do
-statistical analysis and publish a report in html and pdf formats.
+A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
 
 \hypertarget{johdanto}{%
 \chapter{Johdanto}\label{johdanto}}
@@ -172,25 +154,16 @@ statistical analysis and publish a report in html and pdf formats.
 \hypertarget{alkutoimia}{%
 \section{Alkutoimia}\label{alkutoimia}}
 
-Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna
-bookdown-demoon). Bookdown-demossa lisäksi output: pdf\_document, mutta
-lienee tarpeeton kun kaksi outputformaattia annettu
-output.yaml-tiedostossa
+Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
+Bookdown-demossa lisäksi output: pdf\_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa
 
-20.7.2018 poistetaan tästä dokkarista child-item - jutut. Jätetään
-r-pakettien lataus.
+Bookdown - formaatissa ``juuritiedoston'' indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa. Siellä on YAML-headeri (metadata).
 
-Bookdown - formaatissa ``juuritiedoston'' indexBD.Rmd tekstit eivät
-tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason
-otsikkoa.Siellä on YAML-headeri (metadata).
-
-Lisää YAML-parametreja voi antaa tiedostoissa \_bookdown.yml ja
-\_output.yml. Nämä lienee välittyvät Pandocille?
+Lisää YAML-parametreja voi antaa tiedostoissa \_bookdown.yml ja \_output.yml. Nämä lienee välittyvät Pandocille?
 
 Bookdown - demon esimerkkitiedostot ovat nämä:
 
-ouput.yml (huomaa, että \_ - merkki jätetty pois!) (tässä oli
-bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
+ouput.yml (huomaa, että \_ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
 
 \hypertarget{tarkeimmat-ohjelmistot}{%
 \section{Tärkeimmät ohjelmistot}\label{tarkeimmat-ohjelmistot}}
@@ -210,128 +183,69 @@ bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)
 
 Viimeinen rivi kertoo pandoc-version.
 
-\hypertarget{muutoksia-ja-tilannetietoja}{%
-\section{Muutoksia ja
-tilannetietoja}\label{muutoksia-ja-tilannetietoja}}
+\hypertarget{muutoksia-tilannetietoja-ja-puutteita}{%
+\section{Muutoksia, tilannetietoja ja puutteita}\label{muutoksia-tilannetietoja-ja-puutteita}}
 
-Nyt toimii gitbook \footnote{Virheilmoitukset ovat aika hyödyttömiä.
-  Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin
-  muotoiluista. Alaviitteistä esimerkiksi.} ja pdf\_book
-tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä
-r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja
-Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+Nyt toimii gitbook \footnote{Virheilmoitukset ovat aika hyödyttömiä. Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.} ja pdf\_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
 
-Bookdown-tulostuksessa voisi käyttää ``one document'' - optioita
-(funktioita)?
+test1\_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.
 
-3.7.2018 PDF-tulostuksen säätöä, nyt saadaan jo virheilmoituksiakin!
-Piti tallentaa utf-8 - muodossa kertaalleen. Tulostus kaatuu valituksiin
-puuttuvista \$-merkeistä kaavoissa (test\_kaavat1.rmd). TeX-tiedoston
-voi kääntää PDF:ksi, mutta kaavat sekaisin ja paljon muutakin. Esim.
-sisällysluettelo.
-
-Merkistöt olivat pielessä (ei utf-8!), ja samoin test1\_preamble.tex
--tiedosto. Laitoin kuntoon, nyt asiallinen virheilmoitus:
-
-! LaTeX Error: Two documentclass or documentstyle commands.
-
-Error: Failed to compile indexBD.tex. See indexBD.log for more info.
-Execution halted Poistetaan test1\_preambe.tex eka rivi kokonaan: \%
-documentclass{[}12pt,a4paper,leqno{]} (alusta puuttuu takakeno) \%
-dispositiopaperista, poistettiin ekalta riviltä \{article\} Lisäksi
-usepackage{[}\textbf{utf8}{]}\{inputenc\}.
-
-LaTeX Font Info: Redeclaring font encoding T1 on input line 48. ))
-
-! LaTeX Error: Option clash for package babel.
-
-Palautetaan eka rivi, documeteclass \{book\}. Taas virheilmoitus ! LaTeX
-Error: Two documentclass or documentstyle commands. Poistetaan eka rivi.
-Ja sama virheilmoitus ``option clash''.
-
-Pahin virhe: equation-tägien välissä ei saa olla tyhjiä rivejä! Ongelmia
-on myös lähdeluettelon aakkostuksessa, Å-ä- ö näyttävät aakkostuvan
-kuten A, a ja o. Pitää testailla vielä.
+Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!
 
 \hypertarget{kaavat-ja-matemattiset-merkinnat}{%
-\chapter{Kaavat ja matemattiset
-merkinnät}\label{kaavat-ja-matemattiset-merkinnat}}
+\chapter{Kaavat ja matemattiset merkinnät}\label{kaavat-ja-matemattiset-merkinnat}}
 
-Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on
-oltava yksikäsitteisiä koko dokumentissa, jos käytetään ``merge and
-knit'' menetelmää. Jos taas jokainen lapsidokumentti on ``itsenäinen''
-(``knit and merge''), tämä koskee vain kyseistä dokumenttia (kts.
-Bookdown - webkirja).
+Kaavat on esitettävä bookdown-paketin määrityksillä. Viittausnimien on oltava yksikäsitteisiä koko dokumentissa, jos käytetään ``merge and knit'' menetelmää. Jos taas jokainen lapsidokumentti on ``itsenäinen'' (``knit and merge''), tämä koskee vain kyseistä dokumenttia (kts. Bookdown - webkirja).
+
+Kaavoissa iso ongelma heinäkuussa oli tämä:
+
+\textbf{equation-tägien välissä ei saa olla tyhjiä rivejä!}
 
 \hypertarget{kahden-luokittelumuuttuja-taulukko}{%
-\section{Kahden luokittelumuuttuja
-taulukko}\label{kahden-luokittelumuuttuja-taulukko}}
+\section{Kahden luokittelumuuttuja taulukko}\label{kahden-luokittelumuuttuja-taulukko}}
 
-Kahden luokittelumuuttujan riippuvuutta voidaan testata \(\chi^{2}\) -
-testillä. Testisuure saadaan laskemalla yhteen jokaisen solun
-havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien
-erotukset muodossa
+Kahden luokittelumuuttujan riippuvuutta voidaan testata \(\chi^{2}\) - testillä. Testisuure saadaan laskemalla yhteen jokaisen solun havaittujen ja odotetettujen (riippumattomuushypoteesi) frekvenssien erotukset muodossa
 
 \begin{equation}
   \chi^{2} = \frac{(havaittu - odotettu)^2} {odotettu}
   \label{eq:khii21}
 \end{equation}
 
-Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella,
-jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:
+Tämä voidaan esittää ca:han sopivammalla tavalla parilla muunnoksella, jolloin saamme riveittäin vastaavat termit rivisummalla painotettuna:
 
 \begin{equation}
   rivisumma \times \frac{(havaittu \: riviprofiili - odotettu \: riviprofiili)^2} {odotettu \: riviprofiili}
   \label{eq:khii22}
 \end{equation}
 
-Kun jaamme nämä tekijät havaintojen kokonaismäärällä \(n\), rivisumma
-muuntuu rivin massaksi, ja niiden summa muotoon \(\frac{\chi^{2}}{n}\).
+Kun jaamme nämä tekijät havaintojen kokonaismäärällä \(n\), rivisumma muuntuu rivin massaksi, ja niiden summa muotoon \(\frac{\chi^{2}}{n}\).
 
 \begin{equation}
  \frac{\chi^{2}}{n} = \phi^{2}
  \label{eq:inert1}
 \end{equation}
 
-Tunnusluku \(\phi^{2}\) on korrespondenssianalyysissä kokonaisinertia
-(total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on
-riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on
-useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient),
-ja sen neliöjuurta kutsutaan \(\phi\) - kertoimeksi.
+Tunnusluku \(\phi^{2}\) on korrespondenssianalyysissä kokonaisinertia (total inertia). Se kuvaa, kuinka paljon varianssia taulukossa on ja on riippumaton havaintojen lukumäärästä. Tilastotieteessä tunnusluvulla on useita vaihtoehtoisia nimiä (esim. mean square contingency coefficient), ja sen neliöjuurta kutsutaan \(\phi\) - kertoimeksi.
 
-Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten
-frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi
-paikallaan. Yhtälöihin voi viitata \eqref{eq:khii21} . Kokeillaan vielä,
-toimivatko kirjallisuusviittet, kuten tärkeä lähde\citep{RefWorks:55}.
+Tässä siirrytään kahden luokittelumuuttujan taulukosta suhteellisten frekvenssien taulukkoon, ja pieni pohdinta taulukoista yleensä olisi paikallaan. Yhtälöihin voi viitata \eqref{eq:khii21} . Kokeillaan vielä, toimivatko kirjallisuusviittet, kuten tärkeä lähde\citep{RefWorks:55}.
 
 \hypertarget{taulukot-ja-kuvat}{%
 \chapter{Taulukot ja kuvat}\label{taulukot-ja-kuvat}}
 
 Tähän taulukoita ja kuvia, esimerkkiaineistoilla.
 
-Kirjallisuutta on myös \citep{RefWorks:68}, ja \citep{RefWorks:57}
-esittelee geometrisen tulkinnan peruskäsitteet yksinkertaisen kahden
-luokittelumuuttujan korrespondenssianalyysin avaulla. Mitenköhän skandit
-toimivat lähteissä, bib-tiedostossa on niitä myös escape-muodossa (katso
-esim. \citep{RefWorks:100}, kritiikkiä on esittänyt
-\citep{RefWorks:110})
+Kirjallisuutta on myös \citep{RefWorks:68}, ja \citep{RefWorks:57} esittelee geometrisen tulkinnan peruskäsitteet yksinkertaisen kahden luokittelumuuttujan korrespondenssianalyysin avaulla. Mitenköhän skandit toimivat lähteissä, bib-tiedostossa on niitä myös escape-muodossa (katso esim. \citep{RefWorks:100}, kritiikkiä on esittänyt \citep{RefWorks:110})
 
-Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on
-viitteiden esittäminen jokaisen sivun alareunassa.
+Viitteet saa tulostusasetuksilla yhdelle sivulle, oletuksena on viitteiden esittäminen jokaisen sivun alareunassa.
 
 \hypertarget{taulukoita}{%
 \section{Taulukoita}\label{taulukoita}}
 
-Tästä poistettu koodilohko data\_1, ei tarvita jos ca-paketti on
-ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty.
-Koodilohkojen nimissä taitaa olla sallittu?
+Tästä poistettu koodilohko data\_1, ei tarvita jos ca-paketti on ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty. Koodilohkojen nimissä taitaa olla sallittu?
 
-Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja
-se saa automaattisesti labelin etutunnisteella `tab', ja siihen
-liitetään chunk-label (esim alla tab:smoketable1).
+Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella `tab', ja siihen liitetään chunk-label (esim alla tab:smoketable1).
 
-Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen,
-``smoke''-dataa ei löydy.
+Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen, ``smoke''-dataa ei löydy.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -364,13 +278,9 @@ SC & 10 & 6 & 7 & 2\\
 \end{Highlighting}
 \end{Shaded}
 
-Taulukossa \ref{tab:smoketable1} on kahden luokittelumuuttujan
-keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin
-(SM = senior managemet, JM = junior management, SE ja JE vastaavasti
-ryhmälle employee, SC = secretary).
+Taulukossa \ref{tab:smoketable1} on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).
 
-Useampi taulukko saadaan taulukkoympäristöön (table environment)
-yhdistämällä data-objektit listaksi.
+Useampi taulukko saadaan taulukkoympäristöön (table environment) yhdistämällä data-objektit listaksi.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -411,35 +321,23 @@ none & light & medium & heavy\\
 \end{tabular}
 \end{table}
 
-Taulukossa \ref{tab:smoketable2} on laskettu jokaisen rivin
-riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden
-rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat
-jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut
-kertovat tupakoititapojen jakauman koko henkilöstössä.
+Taulukossa \ref{tab:smoketable2} on laskettu jokaisen rivin riviprofiilit. Ne saadan kun rivin luvut jaetaan rivin summalla. Yhden rivin taulukossa on esitetty riviprofiilien keskikarvo, sarakesummat jaettuna koko taulukon havaintojen lukumäärällä. Sen prosenttiluvut kertovat tupakoititapojen jakauman koko henkilöstössä.
 
-Jos PDF-tulostuksessa ei haluta ns. kelluvaa taulukkoa (float), voi
-kable-funktiossa käyttää LaTeXin pakettia longtable. Silloin on myös
-muistettava ottaa paketti käyttöön (usepackage\{\}) LaTeX -
-pohjatiedostossa (preamble).
+Jos PDF-tulostuksessa ei haluta ns. kelluvaa taulukkoa (float), voi kable-funktiossa käyttää LaTeXin pakettia longtable. Silloin on myös muistettava ottaa paketti käyttöön (usepackage\{\}) LaTeX - pohjatiedostossa (preamble).
 
-Pandoc tukee monia Markdownin taulukkotyyppejä. Viittaaminen vaaati
-labeloidun otsikon, ja sen on oltava otsikkotestin alussa
-määrämuotoisena (esim. ab:hienotaulu). Tämä vaatii tarkkuutta, jos
-taulukon pitää toimia html- ja LaTex-outputissa. kable-funktiota
-kannattaa käyttää!
+Pandoc tukee monia Markdownin taulukkotyyppejä. Viittaaminen vaaati labeloidun otsikon, ja sen on oltava otsikkotestin alussa määrämuotoisena (esim. ab:hienotaulu). Tämä vaatii tarkkuutta, jos taulukon pitää toimia html- ja LaTex-outputissa. kable-funktiota kannattaa käyttää!
 
 \hypertarget{korrespondenssianalyysin-numeeriset-tulokset-taulukoina}{%
-\section{Korrespondenssianalyysin numeeriset tulokset
-taulukoina}\label{korrespondenssianalyysin-numeeriset-tulokset-taulukoina}}
+\section{Korrespondenssianalyysin numeeriset tulokset taulukoina}\label{korrespondenssianalyysin-numeeriset-tulokset-taulukoina}}
 
-Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja
-esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä
-kaksiulotteisena karttana.
+Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä kaksiulotteisena karttana.
+
+Numeeriset tulokset ovat tärkeitä diagnostiikassa ja kartan laadun varmistuksessa. Niistä näkee myös täsmällisesti, mitkä rivit ja sarakkeet määrittävät koordinaatiston.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{smokeCA <-}\StringTok{ }\KeywordTok{ca}\NormalTok{(smoke)}
-\NormalTok{temp1 <-}\StringTok{ }\NormalTok{smokeCA }
+\CommentTok{#temp1 <- smokeCA tämä kai tarpeeton ? (4.12.2018)}
 \NormalTok{numres1CA1 <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(smokeCA)}
 \CommentTok{#str(smokeCA)}
 \CommentTok{#knitr::kable( smokeCA,}
@@ -452,17 +350,41 @@ kaksiulotteisena karttana.
 \CommentTok{#str(temp2)}
 \CommentTok{#str(temp2$scree)}
 \CommentTok{#temp2$scree}
+\NormalTok{numres1CA1}
 \end{Highlighting}
 \end{Shaded}
 
-Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee
-monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista
-kablen pitäisi toimia.
+\begin{verbatim}
+## 
+## Principal inertias (eigenvalues):
+## 
+##  dim    value      %   cum%   scree plot               
+##  1      0.074759  87.8  87.8  **********************   
+##  2      0.010017  11.8  99.5  ***                      
+##  3      0.000414   0.5 100.0                           
+##         -------- -----                                 
+##  Total: 0.085190 100.0                                 
+## 
+## 
+## Rows:
+##     name   mass  qlt  inr    k=1 cor ctr    k=2 cor ctr  
+## 1 |   SM |   57  893   31 |  -66  92   3 | -194 800 214 |
+## 2 |   JM |   93  991  139 |  259 526  84 | -243 465 551 |
+## 3 |   SE |  264 1000  450 | -381 999 512 |  -11   1   3 |
+## 4 |   JE |  456 1000  308 |  233 942 331 |   58  58 152 |
+## 5 |   SC |  130  999   71 | -201 865  70 |   79 133  81 |
+## 
+## Columns:
+##     name   mass  qlt  inr    k=1 cor ctr    k=2 cor ctr  
+## 1 | none |  316 1000  577 | -393 994 654 |  -30   6  29 |
+## 2 | lght |  233  984   83 |   99 327  31 |  141 657 463 |
+## 3 | medm |  321  983  148 |  196 982 166 |    7   1   2 |
+## 4 | hevy |  130  995  192 |  294 684 150 | -198 310 506 |
+\end{verbatim}
 
-Kokeillaan summary(smokeCA) - listan dataframe-olioden tulostusta
-kablella. Voisi harkita funktiota, joka poimii CA:n tuloslistasta
-sopivat objektit kable-funktiolle? Stargazer taas vaatisi (luultavasti)
-jonkun ehdollisen tulostuksen (PDF ja html)?
+Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista kablen pitäisi toimia.
+
+Kokeillaan summary(smokeCA) - listan dataframe-olioden tulostusta kablella. Voisi harkita funktiota, joka poimii CA:n tuloslistasta sopivat objektit kable-funktiolle? Stargazer taas vaatisi (luultavasti) jonkun ehdollisen tulostuksen (PDF ja html)?
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -490,8 +412,7 @@ SC & 130 & 999 & 71 & -201 & 865 & 70 & 79 & 133 & 81\\
 \end{tabular}
 \end{table}
 
-Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi
-ne tulostetaan erikseen.
+Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi ne tulostetaan erikseen.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -518,13 +439,9 @@ hevy & 130 & 995 & 192 & 294 & 684 & 150 & -198 & 310 & 506\\
 \end{tabular}
 \end{table}
 
-Taulukoiden \ref{tab:simpleCAtab1} ja \ref{tab:simpleCAtab2} luvut on
-kerrottu tuhannella (``per milles'').
+Taulukoiden \ref{tab:simpleCAtab1} ja \ref{tab:simpleCAtab2} luvut on kerrottu tuhannella (``per milles'').
 
-Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan
-ca-funktion tuloslistasta taulukoksi. Se esitetään joskus myös ns. scree
-- kuvana, jos dimensoita on paljon ja joudutaan pohtimaan kuinka monta
-valitaan (vaikea kysymys!).
+Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan ca-funktion tuloslistasta taulukoksi. Se esitetään joskus myös ns. scree - kuvana, jos dimensoita on paljon ja joudutaan pohtimaan kuinka monta valitaan (vaikea kysymys!).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -550,16 +467,14 @@ valitaan (vaikea kysymys!).
 \end{tabular}
 \end{table}
 
-Taulukko \ref{tab:simpleCAscree} vaatii selityksen, mutta kuvaa ei tässä
-tapauksessa tarvita.
+Taulukko \ref{tab:simpleCAscree} vaatii selityksen, mutta kuvaa ei tässä tapauksessa tarvita.
 
 \hypertarget{kuvat}{%
 \section{Kuvat}\label{kuvat}}
 
 \textbf{chunk-optiot}
 
-fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig:
-+ koodipätkän label) ja niihin voi viitata.
+fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig: + koodipätkän label) ja niihin voi viitata.
 
 fig.asp oikeaan arvoon 1.
 
@@ -575,37 +490,21 @@ fig.asp oikeaan arvoon 1.
 \caption{\label{fig:CAmap1}CA-kartta}
 \end{figure}
 
-Kuviin (kuten \ref{fig:CAmap1}) ja taulukoihin voi viitata tekstissä.
-Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?
+Kuviin (kuten \ref{fig:CAmap1}) ja taulukoihin voi viitata tekstissä. Kuvan otsikko tulostuu kuvan alapuolelle, ehkä vähän huono idea?
 
-Näköjään stargazer-kokeilu tulostusoptiolla ``html'' loi
-R-projektihakemistoon kansion ja sinne png-kuvan. finnish.ldf tiedoston
-muokkaus MikTeX:ssä tehty, mutta se ei vaikuta html-viiteotsikkoon.
-Korjattu ``ehdollisessa viitesivussa'' viitteet.Rmd jossa
-html-viiteluettelon otsikko annetaan.
+Näköjään stargazer-kokeilu tulostusoptiolla ``html'' loi R-projektihakemistoon kansion ja sinne png-kuvan.
+finnish.ldf tiedoston muokkaus MikTeX:ssä tehty, mutta se ei vaikuta html-viiteotsikkoon. Korjattu ``ehdollisessa viitesivussa'' viitteet.Rmd jossa html-viiteluettelon otsikko annetaan.
 
 Saisiko numeeristen tulosten scree-kuvan samalla tavalla kuvaksi?
 
 \hypertarget{bookdown-ja-rmarkdown}{%
 \chapter{Bookdown ja Rmarkdown}\label{bookdown-ja-rmarkdown}}
 
-Bookdown- R-paketti ``paketoi'' RMarkdownin tulostutoiminnot (output) ja
-sen monet säädettävät optiot. Samat Rmd-dokumentit saadaan koottua
-moneen eri formaattiin: html- sivuiksi, PDF-dokumentiksi tai
-Ebook-kirjaksi. Kaikissa tulostusvaihtoehdoissa on monia eri
-vaihtoehtoja. Html-tulostuksessa voi valita yhden tai useamman
-html-sivun lisäksi gitbook- tai Tufte- vaihtoehdon. Ne on toteutettu
-css-tyylitiedostoilla ja JavaScript-kirjastoilla. Tässä on käytetty
-gitbook-formaattia.
+Bookdown- R-paketti ``paketoi'' RMarkdownin tulostutoiminnot (output) ja sen monet säädettävät optiot. Samat Rmd-dokumentit saadaan koottua moneen eri formaattiin: html- sivuiksi, PDF-dokumentiksi tai Ebook-kirjaksi. Kaikissa tulostusvaihtoehdoissa on monia eri vaihtoehtoja. Html-tulostuksessa voi valita yhden tai useamman html-sivun lisäksi gitbook- tai Tufte- vaihtoehdon. Ne on toteutettu css-tyylitiedostoilla ja JavaScript-kirjastoilla. Tässä on käytetty gitbook-formaattia.
 
-LaTeX-formaatti renderöidään jollain LaTeX-vaihtoehdolla
-PDF-tiedostoksi. \textbf{ToDo} PDF-formaattejakin on useita variantteja,
-mikä niistä. Tässä vaihtoehdossa konfigurointimahdollisuudet ovat
-käytännössä rajattomat, sillä välitulosteena syntyvää TeX-tiedostoa voi
-muokata ja muuntaa sen sitten PDF-muotoon.
+LaTeX-formaatti renderöidään jollain LaTeX-vaihtoehdolla PDF-tiedostoksi. \textbf{ToDo} PDF-formaattejakin on useita variantteja, mikä niistä. Tässä vaihtoehdossa konfigurointimahdollisuudet ovat käytännössä rajattomat, sillä välitulosteena syntyvää TeX-tiedostoa voi muokata ja muuntaa sen sitten PDF-muotoon.
 
-Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on
-vaikea hahmottaa.
+Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on vaikea hahmottaa.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -622,37 +521,30 @@ vaikea hahmottaa.
 \caption{Tulostiedoston prosessointi - png}\label{fig:bdprocess1}
 \end{figure}
 
-Perusopas bookdown paketin käyttöön on Yihui Xien
-\href{https://bookdown.org/yihui/bookdown/}{``bookdown: Authoring Books
-and Technical Documents with R Markdown''"}. Siinä pääidea on tuottaa
-yhdellä Rmd-koodilla kuvan \ref{fig:bdprocess} kolme vaihtoehtoista
-tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma ``kutoo''
-Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi
-(md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka
-täydentää niillä omia mallitiedostojaan (template).
+Perusopas bookdown paketin käyttöön on Yihui Xien \href{https://bookdown.org/yihui/bookdown/}{``bookdown: Authoring Books and Technical Documents with R Markdown''"}. Siinä pääidea on tuottaa yhdellä Rmd-koodilla kuvan
+\ref{fig:bdprocess} kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma ``kutoo'' Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
 
-Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan
-\href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown: The
-Definitive Guide''}. Siinä eri asetusten hierarkia on kuvattu tarkemmin
-ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on
-vain yksi luku.
+Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan \href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown: The Definitive Guide''}. Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.
 
-R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo
-uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman
-teoksen johdattelut auttavat jatkoon.
+R Studiolla alkuun pääse helposti, kun lataa bookdown-paketin, ja luo uuden bookdown-projektin. Xien ensimmäisen kirjan alku-luvut ja uudemman teoksen johdattelut auttavat jatkoon.
 
-Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia,
-jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin
-kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman
-koneen MikTeX - asennus asentamaan tarvittavat paketit ``lennossa''.
-Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet
-eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin
-paketinhallintasovelluksen (jolla on monta nimeä, admin console jne)
-peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit
-voi sitten asentaa admin-oikeuksilla.
+\textbf{Käytännön vinkkejä}
 
-Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy
-html-tulosteessa.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Kuvasuhde pitää olla 1:1 . Ehkä hankalin juttu Rmarkdownin kanssa työskennellessä, mutta aina voi avata oman grafiikkaikkunan. Dataa analysoidessa voi tallentaa kuvat pdf-muodossa, lisäillä kommentteja yms. Lopullisessa dokumentissa kuvasuhden pitää erikseen tarkista, säätämiseen on monta vipua.
+\item
+  Bookdown-työskentelyssä pdf-tuloste ei ole kätevä, yleensä analyysiä hiotaan Rmd-tiedosto kerrallaan. R Studio voi yllättää aina joskus! Knit-napin takaa löytyy kuitenkin eri renderöintifuktiot kuin oikean laidan yläikkunan ``Build Book'' - valikosta. Knitr-funktiota kannattaa käyttää, jos haluaa katsoa yhden Rmd-tiedoston tulostetta. Tarkista kuitenkin, että (a) Rmd-tiedostoon ei automaattisesti lisäillä YAML-headereita ja (b) projektin hakemistoon ei ilmesty ylimääräisiä Rmd-tiedostoja. Joskus bookdown R Studion kanssa kasaa yhden Rmd-tiedoston tulostuksessa ``väliaikaiseksi'' tiedostoksi koko dokumentin yhteen .Rmd -tiedostoon. Jos bookdown-projektiin kuuluvia Rmd-tiedostoja ei eksplitsiittisesti luetella (suositeltavaa, laita bookdown.yml - tiedostoon lista) syntyy hassua sotkua.
+\item
+  Koko raportin tulostus html-muodossa käy kätevimmin ``Build book'' - valikon html-book- funktiolla/formaatilla. Tämä pitää tsekata! (4.12.18)
+\item
+  Suositus: koko dokumentit tulostukset aina ``puhtaalta pöydältä'', käynnistä R uudelleen. Myös silloin, kun tulostat ensin vaikka gitbookin ja sitten pdf-tiedoston.
+\end{enumerate}
+
+Windows-ympäristössä (Windows 10) MikTeXin kanssa voi tulla ongelmia, jos käytät konetta tavallisen käyttäjän oikeuksilla. Bookdown-paketin kanssa on kätevää käyttää tinytex - r-pakettia, ja konfiguroida oman koneen MikTeX - asennus asentamaan tarvittavat paketit ``lennossa''. Peruskäyttäjän omat paketit voivat vaatia päivitystä, mutta oikeudet eivät riitä. Pulman voi ratkaista, kun käynnistää MikTeXin paketinhallintasovelluksen (jolla on monta nimeä, admin console jne) peruskäyttäjänä, ja katsoo mitä päivityksiä on tarjolla. Nämä paketit voi sitten asentaa admin-oikeuksilla.
+
+Kokeillaan vielä PDF-kuvan liittämistä dokumenttiin. Ei näy html-tulosteessa.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -669,10 +561,7 @@ html-tulosteessa.
 \caption{Tulostiedoston prosessointi - pdf}\label{fig:bdprocess2}
 \end{figure}
 
-Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä
-säätämistä. Ohje löytyi
-\href{https://yihui.name/en/2018/09/code-appendix/}{Yihui Xienin
-blogista} (luettu 26.10.2018).
+Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä säätämistä. Ohje löytyi \href{https://yihui.name/en/2018/09/code-appendix/}{Yihui Xienin blogista} (luettu 26.10.2018).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -714,7 +603,7 @@ blogista} (luettu 26.10.2018).
 \NormalTok{)}
 
 \NormalTok{smokeCA <-}\StringTok{ }\KeywordTok{ca}\NormalTok{(smoke)}
-\NormalTok{temp1 <-}\StringTok{ }\NormalTok{smokeCA }
+\CommentTok{#temp1 <- smokeCA tämä kai tarpeeton ? (4.12.2018)}
 \NormalTok{numres1CA1 <-}\StringTok{ }\KeywordTok{summary}\NormalTok{(smokeCA)}
 \CommentTok{#str(smokeCA)}
 \CommentTok{#knitr::kable( smokeCA,}
@@ -727,6 +616,7 @@ blogista} (luettu 26.10.2018).
 \CommentTok{#str(temp2)}
 \CommentTok{#str(temp2$scree)}
 \CommentTok{#temp2$scree}
+\NormalTok{numres1CA1}
 
 \NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{( numres1CA1}\OperatorTok{$}\NormalTok{rows,}
     \DataTypeTok{digits =} \DecValTok{3}\NormalTok{,          }

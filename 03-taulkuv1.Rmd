@@ -50,9 +50,11 @@ Pandoc tukee monia Markdownin taulukkotyyppejä. Viittaaminen vaaati labeloidun 
 
 Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä kaksiulotteisena karttana.
 
+Numeeriset tulokset ovat tärkeitä diagnostiikassa ja kartan laadun varmistuksessa. Niistä näkee myös täsmällisesti, mitkä rivit ja sarakkeet määrittävät koordinaatiston.
+
 ```{r simpleCA}
 smokeCA <- ca(smoke)
-temp1 <- smokeCA 
+#temp1 <- smokeCA tämä kai tarpeeton ? (4.12.2018)
 numres1CA1 <- summary(smokeCA)
 #str(smokeCA)
 #knitr::kable( smokeCA,
@@ -65,6 +67,7 @@ numres1CA1 <- summary(smokeCA)
 #str(temp2)
 #str(temp2$scree)
 #temp2$scree
+numres1CA1
 
 ```
 

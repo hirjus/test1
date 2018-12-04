@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Bookdown-dokumetti - testi 1</title>
+  <title>Luku 2 Johdanto | Bookdown-dokumetti - testi 1</title>
   <meta name="description" content="bookdown - paketin testailua">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Bookdown-dokumetti - testi 1" />
+  <meta property="og:title" content="Luku 2 Johdanto | Bookdown-dokumetti - testi 1 />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="hirjus/test1" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Bookdown-dokumetti - testi 1" />
+  <meta name="twitter:title" content="Luku 2 Johdanto | Bookdown-dokumetti - testi 1 />
   
   <meta name="twitter:description" content="bookdown - paketin testailua" />
   
@@ -35,6 +35,7 @@
 <link rel="next" href="kaavat-ja-matemattiset-merkinnat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -131,7 +132,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2" data-path="johdanto.html"><a href="johdanto.html"><i class="fa fa-check"></i><b>2</b> Johdanto</a><ul>
 <li class="chapter" data-level="2.1" data-path="johdanto.html"><a href="johdanto.html#alkutoimia"><i class="fa fa-check"></i><b>2.1</b> Alkutoimia</a></li>
 <li class="chapter" data-level="2.2" data-path="johdanto.html"><a href="johdanto.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>2.2</b> Tärkeimmät ohjelmistot</a></li>
-<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-ja-tilannetietoja"><i class="fa fa-check"></i><b>2.3</b> Muutoksia ja tilannetietoja</a></li>
+<li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-tilannetietoja-ja-puutteita"><i class="fa fa-check"></i><b>2.3</b> Muutoksia, tilannetietoja ja puutteita</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
@@ -166,39 +167,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Alkutoimia</h2>
 <p>Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
 Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa</p>
-<p>20.7.2018 poistetaan tästä dokkarista child-item - jutut. Jätetään r-pakettien lataus.</p>
-<p>Bookdown - formaatissa “juuritiedoston” indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa.Siellä on YAML-headeri (metadata).</p>
+<p>Bookdown - formaatissa “juuritiedoston” indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa. Siellä on YAML-headeri (metadata).</p>
 <p>Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. Nämä lienee välittyvät Pandocille?</p>
 <p>Bookdown - demon esimerkkitiedostot ovat nämä:</p>
 <p>ouput.yml (huomaa, että _ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)</p>
 </div>
 <div id="tarkeimmat-ohjelmistot" class="section level2">
 <h2><span class="header-section-number">2.2</span> Tärkeimmät ohjelmistot</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="co">#getwd()</span></a>
-<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb1-4" data-line-number="4">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)
+<span class="co">#getwd()</span>
+
+rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</code></pre>
 <pre><code>## [1] &#39;2.2.1&#39;</code></pre>
 <p>Viimeinen rivi kertoo pandoc-version.</p>
 </div>
-<div id="muutoksia-ja-tilannetietoja" class="section level2">
-<h2><span class="header-section-number">2.3</span> Muutoksia ja tilannetietoja</h2>
+<div id="muutoksia-tilannetietoja-ja-puutteita" class="section level2">
+<h2><span class="header-section-number">2.3</span> Muutoksia, tilannetietoja ja puutteita</h2>
 <p>Nyt toimii gitbook<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
-<p>Bookdown-tulostuksessa voisi käyttää “one document” - optioita (funktioita)?</p>
-<p>3.7.2018 PDF-tulostuksen säätöä, nyt saadaan jo virheilmoituksiakin! Piti tallentaa utf-8 - muodossa kertaalleen. Tulostus kaatuu valituksiin puuttuvista $-merkeistä kaavoissa (test_kaavat1.rmd). TeX-tiedoston voi kääntää PDF:ksi, mutta kaavat sekaisin ja paljon muutakin. Esim. sisällysluettelo.</p>
-<p>Merkistöt olivat pielessä (ei utf-8!), ja samoin test1_preamble.tex -tiedosto. Laitoin kuntoon, nyt asiallinen virheilmoitus:</p>
-<p>! LaTeX Error: Two documentclass or documentstyle commands.</p>
-<p>Error: Failed to compile indexBD.tex. See indexBD.log for more info.
-Execution halted
-Poistetaan test1_preambe.tex eka rivi kokonaan:
-% documentclass[12pt,a4paper,leqno] (alusta puuttuu takakeno)
-% dispositiopaperista, poistettiin ekalta riviltä {article}
-Lisäksi usepackage[<strong>utf8</strong>]{inputenc}.</p>
-<p>LaTeX Font Info: Redeclaring font encoding T1 on input line 48.
-))</p>
-<p>! LaTeX Error: Option clash for package babel.</p>
-<p>Palautetaan eka rivi, documeteclass {book}. Taas virheilmoitus ! LaTeX Error: Two documentclass or documentstyle commands. Poistetaan eka rivi. Ja sama virheilmoitus “option clash”.</p>
-<p>Pahin virhe: equation-tägien välissä ei saa olla tyhjiä rivejä! Ongelmia on myös lähdeluettelon aakkostuksessa, Å-ä- ö näyttävät aakkostuvan kuten A, a ja o. Pitää testailla vielä.</p>
+<p>test1_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.</p>
+<p>Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!</p>
 
 </div>
 </div>
@@ -234,7 +221,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -244,6 +231,10 @@ gitbook.start({
 "size": 2
 },
 "edit": {
+"link": null,
+"text": null
+},
+"history": {
 "link": null,
 "text": null
 },
@@ -261,7 +252,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;
