@@ -131,7 +131,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-12-04 (Versio 3.05)}
+    \date{2018-12-18 (Versio 3.05)}
 
 
 \begin{document}
@@ -255,11 +255,11 @@ Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen, ``s
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:smoketable1}CA-paketin smoke-data (keinotekoinen)}
 \centering
-\begin{tabular}[t]{lrrrr}
+\begin{tabular}{lrrrr}
 \toprule
   & none & light & medium & heavy\\
 \midrule
@@ -300,7 +300,7 @@ Useampi taulukko saadaan taulukkoympäristöön (table environment) yhdistämäl
 \caption{\label{tab:smoketable2}Riviprofiilit ja keskiarvoprofiili}
 
 \centering
-\begin{tabular}[t]{lrrrr}
+\begin{tabular}{lrrrr}
 \toprule
   & none & light & medium & heavy\\
 \midrule
@@ -312,7 +312,7 @@ SC & 0.400 & 0.240 & 0.280 & 0.080\\
 \bottomrule
 \end{tabular}
 \centering
-\begin{tabular}[t]{rrrr}
+\begin{tabular}{rrrr}
 \toprule
 none & light & medium & heavy\\
 \midrule
@@ -395,11 +395,11 @@ Kokeillaan summary(smokeCA) - listan dataframe-olioden tulostusta kablella. Vois
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:simpleCAtab1}Korrespondenssianalyysin diagnostiikkaa - rivit}
 \centering
-\begin{tabular}[t]{lrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
 name & mass &  qlt &  inr &  k=1 & cor & ctr &  k=2 & cor & ctr\\
 \midrule
@@ -423,11 +423,11 @@ Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi ne tul
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:simpleCAtab2}Korrespondenssianalyysin diagnostiikkaa - sarakkeet}
 \centering
-\begin{tabular}[t]{lrrrrrrrrr}
+\begin{tabular}{lrrrrrrrrr}
 \toprule
 name & mass &  qlt &  inr &  k=1 & cor & ctr &  k=2 & cor & ctr\\
 \midrule
@@ -452,11 +452,11 @@ Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan ca-funkt
 \end{Highlighting}
 \end{Shaded}
 
-\begin{table}
+\begin{table}[t]
 
 \caption{\label{tab:simpleCAscree}Korrespondenssianalyysin diagnostiikkaa - ominaisarvot}
 \centering
-\begin{tabular}[t]{rrrr}
+\begin{tabular}{rrrr}
 \toprule
  & values & values2 & values3\\
 \midrule

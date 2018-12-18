@@ -55,3 +55,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **26.10.2018** Lisättiin viimeisen luvun 5 loppuun lyhyt knitr-koodipätkä, joka kokoaa r-koodin yhdeksi listaukseksi. Toimii!
 
 **4.12.2018** Siistittiin pois turhia vanhoja virheilmoituksia, lisättiin listaa käytännön vinkeista (aspect ratio, yhden rmd-tiedoston html-tulostus jne). MikTeX päivitysten testaus samalla. Versio 3.03 -> 3.05.
+
+**18.12.2018** R- ja MikTeX- päivitysten jälkeen testattiin bookdownin Gitbook ja pdf-tulostus.
