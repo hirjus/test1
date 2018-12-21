@@ -57,3 +57,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **4.12.2018** Siistittiin pois turhia vanhoja virheilmoituksia, lisättiin listaa käytännön vinkeista (aspect ratio, yhden rmd-tiedoston html-tulostus jne). MikTeX päivitysten testaus samalla. Versio 3.03 -> 3.05.
 
 **18.12.2018** R- ja MikTeX- päivitysten jälkeen testattiin bookdownin Gitbook ja pdf-tulostus.
+
+**21.12.2018** R-päivitys versioon 3.5.2, testaus.
