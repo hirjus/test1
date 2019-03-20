@@ -11,7 +11,7 @@ knitr::include_graphics('BookdownProc.png')
 ```
 
 Perusopas bookdown paketin käyttöön on Yihui Xien ["bookdown: Authoring Books and Technical Documents with R Markdown""](https://bookdown.org/yihui/bookdown/). Siinä pääidea on tuottaa yhdellä Rmd-koodilla kuvan
-\@ref(fig:bdprocess) kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma "kutoo" Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
+\@ref(fig:bdprocess1) kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma "kutoo" Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
 
 Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan ["R Markdown: The Definitive Guide"](https://bookdown.org/yihui/rmarkdown/). Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.
 

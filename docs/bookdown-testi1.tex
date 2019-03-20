@@ -115,7 +115,7 @@
 \usepackage{titling}
 
 % Create subtitle command for use in maketitle
-\newcommand{\subtitle}[1]{
+\providecommand{\subtitle}[1]{
   \posttitle{
     \begin{center}\large#1\end{center}
     }
@@ -131,7 +131,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-01-05 (Versio 3.05)}
+    \date{2019-03-20 (Versio 3.05)}
 
 
 \begin{document}
@@ -522,7 +522,7 @@ Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on vaikea ha
 \end{figure}
 
 Perusopas bookdown paketin käyttöön on Yihui Xien \href{https://bookdown.org/yihui/bookdown/}{``bookdown: Authoring Books and Technical Documents with R Markdown''"}. Siinä pääidea on tuottaa yhdellä Rmd-koodilla kuvan
-\ref{fig:bdprocess} kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma ``kutoo'' Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
+\ref{fig:bdprocess1} kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma ``kutoo'' Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
 
 Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan \href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown: The Definitive Guide''}. Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.
 

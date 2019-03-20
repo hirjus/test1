@@ -59,3 +59,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **18.12.2018** R- ja MikTeX- päivitysten jälkeen testattiin bookdownin Gitbook ja pdf-tulostus.
 
 **21.12.2018** R-päivitys versioon 3.5.2, testaus. Testattu myös 5.1.2019 MikTeXin päivityksen jälkeen.
+
+**20.3.2019** R-päivitys ja MikteX-päivitys, testaus.
