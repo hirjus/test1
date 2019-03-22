@@ -133,6 +133,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="johdanto.html"><a href="johdanto.html#alkutoimia"><i class="fa fa-check"></i><b>2.1</b> Alkutoimia</a></li>
 <li class="chapter" data-level="2.2" data-path="johdanto.html"><a href="johdanto.html#tarkeimmat-ohjelmistot"><i class="fa fa-check"></i><b>2.2</b> Tärkeimmät ohjelmistot</a></li>
 <li class="chapter" data-level="2.3" data-path="johdanto.html"><a href="johdanto.html#muutoksia-tilannetietoja-ja-puutteita"><i class="fa fa-check"></i><b>2.3</b> Muutoksia, tilannetietoja ja puutteita</a></li>
+<li class="chapter" data-level="2.4" data-path="johdanto.html"><a href="johdanto.html#voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko"><i class="fa fa-check"></i><b>2.4</b> Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html"><i class="fa fa-check"></i><b>3</b> Kaavat ja matemattiset merkinnät</a><ul>
 <li class="chapter" data-level="3.1" data-path="kaavat-ja-matemattiset-merkinnat.html"><a href="kaavat-ja-matemattiset-merkinnat.html#kahden-luokittelumuuttuja-taulukko"><i class="fa fa-check"></i><b>3.1</b> Kahden luokittelumuuttuja taulukko</a></li>
@@ -186,6 +187,16 @@ rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</cod
 <p>Nyt toimii gitbook<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
 <p>test1_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.</p>
 <p>Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!</p>
+
+</div>
+<div id="voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko" class="section level2">
+<h2><span class="header-section-number">2.4</span> Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?</h2>
+<p>Lisätään tiedosto 011-test_johd.Rmd, ja katsotaan toimiiko. Tämä helpottaisi
+isomman dokumentin rakentamista. Tässä Bookdown kokoaa tiedostot “aakkosjärjestyksessä”,
+mutta ne voi myös luetella eksplisiittisesti bookdown.yml -tiedostossa.</p>
+<p>“Warning <a href="message:In" class="uri">message:In</a> split_chapters(output, gitbook_page, number_sections, split_by, :
+You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?”</p>
+<p>Mutta näyttäisi toimivan!</p>
 
 </div>
 </div>

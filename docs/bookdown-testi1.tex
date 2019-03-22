@@ -131,7 +131,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-03-20 (Versio 3.05)}
+    \date{2019-03-22 (Versio 3.05)}
 
 
 \begin{document}
@@ -191,6 +191,18 @@ Nyt toimii gitbook \footnote{Virheilmoitukset ovat aika hyödyttömiä. Niiden s
 test1\_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.
 
 Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!
+
+\hypertarget{voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko}{%
+\section{Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?}\label{voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko}}
+
+Lisätään tiedosto 011-test\_johd.Rmd, ja katsotaan toimiiko. Tämä helpottaisi
+isomman dokumentin rakentamista. Tässä Bookdown kokoaa tiedostot ``aakkosjärjestyksessä'',
+mutta ne voi myös luetella eksplisiittisesti bookdown.yml -tiedostossa.
+
+``Warning \url{message:In} split\_chapters(output, gitbook\_page, number\_sections, split\_by, :
+You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?''
+
+Mutta näyttäisi toimivan!
 
 \hypertarget{kaavat-ja-matemattiset-merkinnat}{%
 \chapter{Kaavat ja matemattiset merkinnät}\label{kaavat-ja-matemattiset-merkinnat}}

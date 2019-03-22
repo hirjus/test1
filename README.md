@@ -61,3 +61,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **21.12.2018** R-päivitys versioon 3.5.2, testaus. Testattu myös 5.1.2019 MikTeXin päivityksen jälkeen.
 
 **20.3.2019** R-päivitys ja MikteX-päivitys, testaus.
+
+**22.3.2019** Voiko rmd-tiedoston 1. rivillä olla myös toisen tason otsikko (##)? Voi näköjään, helpottaa isompien dokumettien jakamista pienempiin pätkiin. Tuottaa toki varoituksen.
