@@ -34,7 +34,7 @@ library(furniture)
 library(likert)
 library(scales) # G_1_2 - kuva
 library(reshape2)  # G_1_2 - kuva
-library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen
+library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)
 library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen
 library(bookdown)
 library(tinytex)

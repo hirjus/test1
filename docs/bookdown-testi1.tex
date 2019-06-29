@@ -21,7 +21,6 @@
 \usepackage{microtype}
 \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 \hypersetup{unicode=true,
             pdftitle={Bookdown-dokumetti - testi 1},
@@ -131,7 +130,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-05-22 (Versio 3.05)}
+    \date{2019-06-29 (Versio 3.05)}
 
 
 \begin{document}
@@ -171,6 +170,15 @@ ouput.yml (huomaa, että \_ - merkki jätetty pois!) (tässä oli bookdown-demo-
 \begin{Shaded}
 \begin{Highlighting}[]
 \KeywordTok{system}\NormalTok{(}\StringTok{"pdflatex --version"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \CommentTok{#getwd()}
 
 \NormalTok{rmarkdown}\OperatorTok{::}\KeywordTok{pandoc_version}\NormalTok{()}
@@ -591,7 +599,7 @@ Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä sää
 \KeywordTok{library}\NormalTok{(likert)}
 \KeywordTok{library}\NormalTok{(scales) }\CommentTok{# G_1_2 - kuva}
 \KeywordTok{library}\NormalTok{(reshape2)  }\CommentTok{# G_1_2 - kuva}
-\KeywordTok{library}\NormalTok{(printr) }\CommentTok{#19.5.18 taulukoiden ja matriisien tulostukseen}
+\KeywordTok{library}\NormalTok{(printr) }\CommentTok{#19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)}
 \KeywordTok{library}\NormalTok{(stargazer) }\CommentTok{# 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen}
 \KeywordTok{library}\NormalTok{(bookdown)}
 \KeywordTok{library}\NormalTok{(tinytex)}
