@@ -67,3 +67,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **8.5.2019** R- ja MikTeX-päivitys, testaus.
 
 **22.5.2019** R- ja MikTeX-päivitys, testaus.
+
+**3.7.2019** Pieni lisäys YAML-optiosta prosessikuvaukseen.
