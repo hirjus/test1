@@ -130,7 +130,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2019-06-29 (Versio 3.05)}
+    \date{2019-07-13 (Versio 3.05)}
 
 
 \begin{document}
@@ -201,7 +201,7 @@ test1\_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toi
 Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!
 
 \hypertarget{voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko}{%
-\section{Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?}\label{voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko}}
+\chapter{Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?}\label{voiko-rmd-dokumentin-ensimmaisella-rivilla-olla-toisen-tason-otsikko}}
 
 Lisätään tiedosto 011-test\_johd.Rmd, ja katsotaan toimiiko. Tämä helpottaisi
 isomman dokumentin rakentamista. Tässä Bookdown kokoaa tiedostot ``aakkosjärjestyksessä'',
@@ -210,7 +210,7 @@ mutta ne voi myös luetella eksplisiittisesti bookdown.yml -tiedostossa.
 ``Warning \url{message:In} split\_chapters(output, gitbook\_page, number\_sections, split\_by, :
 You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?''
 
-Mutta näyttäisi toimivan!
+Mutta näyttäisi toimivan, jätetään kuitenkin pois (13.7.2019). Voi aiheuttaa hämminkiä viitteissä, sisällysluettelossa ja muussakin.
 
 \hypertarget{kaavat-ja-matemattiset-merkinnat}{%
 \chapter{Kaavat ja matemattiset merkinnät}\label{kaavat-ja-matemattiset-merkinnat}}
@@ -543,6 +543,8 @@ Prosessissa on monta vaihtetta, ja eri parametrien yhteisvaikutusta on vaikea ha
 
 Perusopas bookdown paketin käyttöön on Yihui Xien \href{https://bookdown.org/yihui/bookdown/}{``bookdown: Authoring Books and Technical Documents with R Markdown''"}. Siinä pääidea on tuottaa yhdellä Rmd-koodilla kuvan
 \ref{fig:bdprocess1} kolme vaihtoehtoista tulostiedostoa mahdollisimman yksinkertaisesti. Knitr- ohjelma ``kutoo'' Rmd-tiedoston r-koodilohkojen tulokset ja tekstin markdown-tiedostoksi (md). Rmd-tiedostojen YAML-asetukset siirtyvät Pandocille, joka täydentää niillä omia mallitiedostojaan (template).
+
+Asetuksia on useammassa paikassa. YAML- asetuksista bd-kirja kertoo näin: ''More bookdown configuration options in \_bookdown.yml are explained in Section 4.4. Besides these configurations, you can also specify some Pandoc-related configurations in the YAML metadata of the first Rmd file of the book, such as the title, author, and date of the book, etc.'' Tärkeintä on yksikertaisuus, lopullista ulkoasua voi hioa kun kokonaisuus on valmis.
 
 Laajempi ja tarkempi opas ilmestyi 15.7.2018, kolmen kirjoittajan \href{https://bookdown.org/yihui/rmarkdown/}{``R Markdown: The Definitive Guide''}. Siinä eri asetusten hierarkia on kuvattu tarkemmin ja selkeämmin. Tulostusvaihtoehtoja esitellään laajemmin, bookdown on vain yksi luku.
 
