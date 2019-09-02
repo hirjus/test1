@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Bookdown-dokumetti - testi 1</title>
   <meta name="description" content="bookdown - paketin testailua" />
-  <meta name="generator" content="bookdown 0.12 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Bookdown-dokumetti - testi 1" />
   <meta property="og:type" content="book" />
@@ -31,7 +31,7 @@
   
   
 
-<link rel="next" href="johdanto.html">
+<link rel="next" href="johdanto.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -161,7 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Bookdown-dokumetti - testi 1</h1>
 <p class="author"><em>Jussi Hirvonen</em></p>
-<p class="date"><em>2019-07-13 (Versio 3.05)</em></p>
+<p class="date"><em>2019-09-02 (Versio 3.05)</em></p>
 </div>
 <div id="bookdown-paketin-testidokumentti" class="section level1">
 <h1><span class="header-section-number">Luku 1</span> Bookdown-paketin testidokumentti</h1>
@@ -227,8 +227,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
