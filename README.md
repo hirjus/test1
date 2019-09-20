@@ -70,3 +70,4 @@ Tulosteet löytyvät alihakemistosta _book.
 
 **3.7.2019** Pieni lisäys YAML-optiosta prosessikuvaukseen.
 **13.7.2019, 2.9.2019** R- ja MikTeX - päivitysten testaus. **Marginaalit leventyneet!**
+**20.9.2019** R 3.6.0 -> 3.6.1, RStudio versioon 1.2.5001. 

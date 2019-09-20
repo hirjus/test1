@@ -20,8 +20,7 @@ Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat
 A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
 
 ```{r bdtest1_paketit, include=FALSE}
-#pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa?
-library(rgl)
+# pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)
 library(ca)
 library(haven)
 library(dplyr)
