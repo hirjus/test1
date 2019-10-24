@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Luku 2 Johdanto | Bookdown-dokumetti - testi 1</title>
+  <title>Luku 3 Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko? | Bookdown-dokumetti - testi 1</title>
   <meta name="description" content="bookdown - paketin testailua" />
   <meta name="generator" content="bookdown 0.14 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Luku 2 Johdanto | Bookdown-dokumetti - testi 1" />
+  <meta property="og:title" content="Luku 3 Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko? | Bookdown-dokumetti - testi 1" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="hirjus/test1" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Luku 2 Johdanto | Bookdown-dokumetti - testi 1" />
+  <meta name="twitter:title" content="Luku 3 Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko? | Bookdown-dokumetti - testi 1" />
   
   <meta name="twitter:description" content="bookdown - paketin testailua" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="voiko-rmd-dokumentin-ensimmäisellä-rivillä-olla-toisen-tason-otsikko.html"/>
+<link rel="prev" href="johdanto.html"/>
+<link rel="next" href="kaavat-ja-matemattiset-merkinnät.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -161,64 +161,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="johdanto" class="section level1">
-<h1><span class="header-section-number">Luku 2</span> Johdanto</h1>
-<div id="alkutoimia" class="section level2">
-<h2><span class="header-section-number">2.1</span> Alkutoimia</h2>
-<p>Ero YAML-headerissa lang-parametri (lang: fi). (verrattuna bookdown-demoon).
-Bookdown-demossa lisäksi output: pdf_document, mutta lienee tarpeeton kun kaksi outputformaattia annettu output.yaml-tiedostossa</p>
-<p>Bookdown - formaatissa “juuritiedoston” indexBD.Rmd tekstit eivät tulostu jos siellä ei ole luvun (chapter) aloittavaa ensimmäisen tason otsikkoa. Siellä on YAML-headeri (metadata).</p>
-<p>Lisää YAML-parametreja voi antaa tiedostoissa _bookdown.yml ja _output.yml. Nämä lienee välittyvät Pandocille?</p>
-<p>Bookdown - demon esimerkkitiedostot ovat nämä:</p>
-<p>ouput.yml (huomaa, että _ - merkki jätetty pois!) (tässä oli bookdown-demo-paketin yml-tiedostot, poistin 3.7.2018)</p>
-</div>
-<div id="tärkeimmät-ohjelmistot" class="section level2">
-<h2><span class="header-section-number">2.2</span> Tärkeimmät ohjelmistot</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</a></code></pre></div>
-<pre><code>## [1] 0</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</a></code></pre></div>
-<pre><code>## [1] &#39;2.7.2&#39;</code></pre>
-<p>Viimeinen rivi kertoo pandoc-version.
-<strong>20.9.2019</strong> Pandoc-versio tulostuu oikein, mutta pdf-latex - komennon tulosteesta
-vain viimeinen rivi. Tässä koko tulos 20.9.2019</p>
-<p>MiKTeX-pdfTeX 2.9.7029 (1.40.20) (MiKTeX 2.9.7140 64-bit)</p>
-<p>using bzip2 version 1.0.6, 6-Sept-2010</p>
-<p>compiled with curl version 7.61.1; using libcurl/7.61.1 WinSSL</p>
-<p>compiled with expat version 2.2.6; using expat_2.2.6</p>
-<p>compiled with jpeg version 9.3</p>
-<p>compiled with liblzma version 50020042; using 50020042</p>
-<p>compiled with libpng version 1.6.35; using 1.6.35</p>
-<p>compiled with libressl version LibreSSL 2.8.2; using LibreSSL 2.8.2</p>
-<p>compiled with MiKTeX Application Framework version 4.6961; using 4.6961</p>
-<p>compiled with MiKTeX Core version 15.7099; using 15.7099</p>
-<p>compiled with MiKTeX Archive Extractor version 1.6882; using 1.6882</p>
-<p>compiled with MiKTeX Package Manager version 7.7104; using 7.7104</p>
-<p>compiled with poppler version 0.60.1</p>
-<p>compiled with uriparser version 0.9.2</p>
-<p>compiled with zlib version 1.2.11; using 1.2.11</p>
-<p>[1] 0</p>
-</div>
-<div id="muutoksia-tilannetietoja-ja-puutteita" class="section level2">
-<h2><span class="header-section-number">2.3</span> Muutoksia, tilannetietoja ja puutteita</h2>
-<p>Nyt toimii gitbook<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).</p>
-<p>test1_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.</p>
-<p>Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!</p>
+<div id="voiko-rmd-dokumentin-ensimmäisellä-rivillä-olla-toisen-tason-otsikko" class="section level1">
+<h1><span class="header-section-number">Luku 3</span> Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?</h1>
+<p>Lisätään tiedosto 011-test_johd.Rmd, ja katsotaan toimiiko. Tämä helpottaisi
+isomman dokumentin rakentamista. Tässä Bookdown kokoaa tiedostot “aakkosjärjestyksessä”,
+mutta ne voi myös luetella eksplisiittisesti bookdown.yml -tiedostossa.</p>
+<p>“Warning <a href="message:In" class="uri">message:In</a> split_chapters(output, gitbook_page, number_sections, split_by, :
+You have 7 Rmd input file(s) but only 6 first-level heading(s). Did you forget first-level headings in certain Rmd files?”</p>
+<p>Mutta näyttäisi toimivan, jätetään kuitenkin pois (13.7.2019). Voi aiheuttaa hämminkiä viitteissä, sisällysluettelossa ja muussakin.</p>
 
-</div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="1">
-<li id="fn1"><p>Virheilmoitukset ovat aika hyödyttömiä. Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.<a href="johdanto.html#fnref1" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="voiko-rmd-dokumentin-ensimmäisellä-rivillä-olla-toisen-tason-otsikko.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="johdanto.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="kaavat-ja-matemattiset-merkinnät.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
