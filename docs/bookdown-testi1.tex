@@ -108,22 +108,6 @@
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-% https://github.com/rstudio/rmarkdown/issues/337
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-% https://github.com/rstudio/rmarkdown/pull/252
-\usepackage{titling}
-\setlength{\droptitle}{-2em}
-
-\pretitle{\vspace{\droptitle}\centering\huge}
-\posttitle{\par}
-
-\preauthor{\centering\large\emph}
-\postauthor{\par}
-
-\predate{\centering\large\emph}
-\postdate{\par}
 \ifxetex
   % Load polyglossia as late as possible: uses bidi with RTL langages (e.g. Hebrew, Arabic)
   \usepackage{polyglossia}
@@ -136,7 +120,7 @@
 
 \title{Bookdown-dokumetti - testi 1}
 \author{Jussi Hirvonen}
-\date{2019-12-12 (Versio 3.05)}
+\date{2019-12-27 (Versio 3.05)}
 
 \begin{document}
 \frontmatter
