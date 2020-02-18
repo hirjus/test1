@@ -22,6 +22,7 @@ A sample document using RMarkdown with bookdown-package to do statistical analys
 ```{r bdtest1_paketit, include=FALSE}
 # pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)
 library(ca)
+library(rgl) # ongelmia jossain vaiheessa, kokeillaan toimiiko nyt (18.2.20)
 library(haven)
 library(dplyr)
 library(knitr)
@@ -34,7 +35,7 @@ library(likert)
 library(scales) # G_1_2 - kuva
 library(reshape2)  # G_1_2 - kuva
 library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)
-library(stargazer) # 28.5.2018 taulukoiden yms. tulostietojen siistiin tulostukseen
+# library(stargazer) # 28.5.2018, ei käytetetä joten pois (18.2.20)
 library(bookdown)
 library(tinytex)
 ```
