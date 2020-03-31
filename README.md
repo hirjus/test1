@@ -74,3 +74,4 @@ Tulosteet löytyvät alihakemistosta _book.
 **24.10.2019** R- ja MikTeX - päivitysten testaus.
 **28.10.2019** R-update testaus.
 **12.12.2019** Rupdate, MikTeX update testaus.
+**31.3.2020** Useita R- ja MikTeX-päivityksiä testailtu, ei muita muutoksia.
