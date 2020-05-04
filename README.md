@@ -76,3 +76,7 @@ Tulosteet löytyvät alihakemistosta _book.
 **12.12.2019** Rupdate, MikTeX update testaus.
 **31.3.2020** Useita R- ja MikTeX-päivityksiä testailtu, ei muita muutoksia.
 **14.4.2020** Kehitys - haaraa käytetään R- ja MikTeX-päivitysten testaukseen.
+
+**4.5.2020** Kokeillaan test1_preamble.tex - toimivuutta, saisi ainakin sivun
+yläreunasta luvun nimen pois. Liian paljon LaTeX-komentoja, simple_preamble.tex
+asettaa vain sivutyylin arvoon "plain", sivun yläreunan teksi pois.

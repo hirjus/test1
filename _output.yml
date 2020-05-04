@@ -7,7 +7,7 @@ bookdown::gitbook:
     #code_folding: hide # koodilohkojen koodi oletukesna piilossa - vaatii themen käyttöä, gitbookissa on jo
 bookdown::pdf_book:
   includes:
-     #in_header: test1_preamble.tex
+     in_header: simple_preamble.tex
   latex_engine: pdflatex
   citation_package: natbib
   keep_tex: yes
