@@ -80,3 +80,5 @@ Tulosteet löytyvät alihakemistosta _book.
 **4.5.2020** Kokeillaan test1_preamble.tex - toimivuutta, saisi ainakin sivun
 yläreunasta luvun nimen pois. Liian paljon LaTeX-komentoja, simple_preamble.tex
 asettaa vain sivutyylin arvoon "plain", sivun yläreunan teksi pois.
+
+**23.5.2020** Testataan r-päivitykset, gitbook ja pdf-tulostus toimivat.
