@@ -52,9 +52,9 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
 pre.sourceCode { margin: 0; }
@@ -63,14 +63,16 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +81,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -171,9 +173,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Tästä poistettu koodilohko data_1, ei tarvita jos ca-paketti on ladattu. Ja alaviiva on aikanakin ref-labeleissa kielletty. Koodilohkojen nimissä taitaa olla sallittu?</p>
 <p>Taulukot tulostetaan funktiolla knitr::kable(). Taulukko numeroidaan ja se saa automaattisesti labelin etutunnisteella ‘tab’, ja siihen liitetään chunk-label (esim alla tab:smoketable1).</p>
 <p>Tämä koodipätkä ei antaa yhden kappaleen esikatselussa virheilmoituksen, “smoke”-dataa ei löydy.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</a>
-<a class="sourceLine" id="cb5-2" title="2">  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></a>
-<a class="sourceLine" id="cb5-3" title="3">)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="taulukot-ja-kuvat.html#cb5-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb5-2"><a href="taulukot-ja-kuvat.html#cb5-2"></a>  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></span>
+<span id="cb5-3"><a href="taulukot-ja-kuvat.html#cb5-3"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:smoketable1">Taulukko 5.1: </span>CA-paketin smoke-data (keinotekoinen)</caption>
 <thead>
@@ -223,18 +225,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="taulukot-ja-kuvat.html#cb6-1"></a><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></span></code></pre></div>
 <p>Taulukossa <a href="taulukot-ja-kuvat.html#tab:smoketable1">5.1</a> on kahden luokittelumuuttujan keinotekoinen esimerkkiaineisto tupakonnin määrästä henkilöstöryhmittäin (SM = senior managemet, JM = junior management, SE ja JE vastaavasti ryhmälle employee, SC = secretary).</p>
 <p>Useampi taulukko saadaan taulukkoympäristöön (table environment) yhdistämällä data-objektit listaksi.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="co"># riviprofiilit</span></a>
-<a class="sourceLine" id="cb7-2" title="2">smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</a>
-<a class="sourceLine" id="cb7-3" title="3"><span class="co"># keskiarvoprofiili</span></a>
-<a class="sourceLine" id="cb7-4" title="4">smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</a>
-<a class="sourceLine" id="cb7-5" title="5"></a>
-<a class="sourceLine" id="cb7-6" title="6">knitr<span class="op">::</span><span class="kw">kable</span>(</a>
-<a class="sourceLine" id="cb7-7" title="7">  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb7-9" title="9">)</a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="taulukot-ja-kuvat.html#cb7-1"></a><span class="co"># riviprofiilit</span></span>
+<span id="cb7-2"><a href="taulukot-ja-kuvat.html#cb7-2"></a>smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</span>
+<span id="cb7-3"><a href="taulukot-ja-kuvat.html#cb7-3"></a><span class="co"># keskiarvoprofiili</span></span>
+<span id="cb7-4"><a href="taulukot-ja-kuvat.html#cb7-4"></a>smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</span>
+<span id="cb7-5"><a href="taulukot-ja-kuvat.html#cb7-5"></a></span>
+<span id="cb7-6"><a href="taulukot-ja-kuvat.html#cb7-6"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb7-7"><a href="taulukot-ja-kuvat.html#cb7-7"></a>  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb7-8"><a href="taulukot-ja-kuvat.html#cb7-8"></a>  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb7-9"><a href="taulukot-ja-kuvat.html#cb7-9"></a>)</span></code></pre></div>
 <table class="kable_wrapper">
 <caption>
 <span id="tab:smoketable2">Taulukko 5.2: </span>Riviprofiilit ja keskiarvoprofiili
@@ -322,21 +324,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">5.2</span> Korrespondenssianalyysin numeeriset tulokset taulukoina</h2>
 <p>Korrespondenssianalyysin idea on vähentää aineiston dimensioita, ja esittää taulukon rivien ja sarakkeiden riippuvuudet yleensä kaksiulotteisena karttana.</p>
 <p>Numeeriset tulokset ovat tärkeitä diagnostiikassa ja kartan laadun varmistuksessa. Niistä näkee myös täsmällisesti, mitkä rivit ja sarakkeet määrittävät koordinaatiston.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1">smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="co">#temp1 &lt;- smokeCA tämä kai tarpeeton ? (4.12.2018)</span></a>
-<a class="sourceLine" id="cb8-3" title="3">numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="co">#str(smokeCA)</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="co">#knitr::kable( smokeCA,</span></a>
-<a class="sourceLine" id="cb8-6" title="6"><span class="co">#  digits = 3,</span></a>
-<a class="sourceLine" id="cb8-7" title="7"><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="co">#)</span></a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="co">#str(temp1)</span></a>
-<a class="sourceLine" id="cb8-10" title="10"><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></a>
-<a class="sourceLine" id="cb8-11" title="11"><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></a>
-<a class="sourceLine" id="cb8-12" title="12"><span class="co">#str(temp2)</span></a>
-<a class="sourceLine" id="cb8-13" title="13"><span class="co">#str(temp2$scree)</span></a>
-<a class="sourceLine" id="cb8-14" title="14"><span class="co">#temp2$scree</span></a>
-<a class="sourceLine" id="cb8-15" title="15">numres1CA1</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="taulukot-ja-kuvat.html#cb8-1"></a>smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</span>
+<span id="cb8-2"><a href="taulukot-ja-kuvat.html#cb8-2"></a><span class="co">#temp1 &lt;- smokeCA tämä kai tarpeeton ? (4.12.2018)</span></span>
+<span id="cb8-3"><a href="taulukot-ja-kuvat.html#cb8-3"></a>numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</span>
+<span id="cb8-4"><a href="taulukot-ja-kuvat.html#cb8-4"></a><span class="co">#str(smokeCA)</span></span>
+<span id="cb8-5"><a href="taulukot-ja-kuvat.html#cb8-5"></a><span class="co">#knitr::kable( smokeCA,</span></span>
+<span id="cb8-6"><a href="taulukot-ja-kuvat.html#cb8-6"></a><span class="co">#  digits = 3,</span></span>
+<span id="cb8-7"><a href="taulukot-ja-kuvat.html#cb8-7"></a><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></span>
+<span id="cb8-8"><a href="taulukot-ja-kuvat.html#cb8-8"></a><span class="co">#)</span></span>
+<span id="cb8-9"><a href="taulukot-ja-kuvat.html#cb8-9"></a><span class="co">#str(temp1)</span></span>
+<span id="cb8-10"><a href="taulukot-ja-kuvat.html#cb8-10"></a><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></span>
+<span id="cb8-11"><a href="taulukot-ja-kuvat.html#cb8-11"></a><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></span>
+<span id="cb8-12"><a href="taulukot-ja-kuvat.html#cb8-12"></a><span class="co">#str(temp2)</span></span>
+<span id="cb8-13"><a href="taulukot-ja-kuvat.html#cb8-13"></a><span class="co">#str(temp2$scree)</span></span>
+<span id="cb8-14"><a href="taulukot-ja-kuvat.html#cb8-14"></a><span class="co">#temp2$scree</span></span>
+<span id="cb8-15"><a href="taulukot-ja-kuvat.html#cb8-15"></a>numres1CA1</span></code></pre></div>
 <pre><code>## 
 ## Principal inertias (eigenvalues):
 ## 
@@ -364,10 +366,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 | hevy |  130  995  192 |  294 684 150 | -198 310 506 |</code></pre>
 <p>Taulukot ovatkin aika vaikeita, tulostiedoista! Stargazer toki tekee monenlaista, mutta kun kyse on hyvin yksinkertaisista tulostaulukoista kablen pitäisi toimia.</p>
 <p>Kokeillaan summary(smokeCA) - listan dataframe-olioden tulostusta kablella. Voisi harkita funktiota, joka poimii CA:n tuloslistasta sopivat objektit kable-funktiolle? Stargazer taas vaatisi (luultavasti) jonkun ehdollisen tulostuksen (PDF ja html)?</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,</a>
-<a class="sourceLine" id="cb10-2" title="2">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb10-3" title="3">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb10-4" title="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="taulukot-ja-kuvat.html#cb10-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,</span>
+<span id="cb10-2"><a href="taulukot-ja-kuvat.html#cb10-2"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb10-3"><a href="taulukot-ja-kuvat.html#cb10-3"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb10-4"><a href="taulukot-ja-kuvat.html#cb10-4"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:simpleCAtab1">Taulukko 5.3: </span>Korrespondenssianalyysin diagnostiikkaa - rivit</caption>
 <thead>
@@ -448,10 +450,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>Rivien ja sarakkeiden diagnotiikkataulukot eivät mahdu rinnakkain, siksi ne tulostetaan erikseen.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</a>
-<a class="sourceLine" id="cb11-2" title="2">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb11-3" title="3">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb11-4" title="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="taulukot-ja-kuvat.html#cb11-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</span>
+<span id="cb11-2"><a href="taulukot-ja-kuvat.html#cb11-2"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb11-3"><a href="taulukot-ja-kuvat.html#cb11-3"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb11-4"><a href="taulukot-ja-kuvat.html#cb11-4"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:simpleCAtab2">Taulukko 5.4: </span>Korrespondenssianalyysin diagnostiikkaa - sarakkeet</caption>
 <thead>
@@ -521,10 +523,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Taulukoiden <a href="taulukot-ja-kuvat.html#tab:simpleCAtab1">5.3</a> ja <a href="taulukot-ja-kuvat.html#tab:simpleCAtab2">5.4</a> luvut on kerrottu tuhannella (“per milles”).</p>
 <p>Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan ca-funktion tuloslistasta taulukoksi. Se esitetään joskus myös ns. scree - kuvana, jos dimensoita on paljon ja joudutaan pohtimaan kuinka monta valitaan (vaikea kysymys!).</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1">knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</a>
-<a class="sourceLine" id="cb12-2" title="2">    <span class="dt">digits =</span> <span class="dv">3</span>,          </a>
-<a class="sourceLine" id="cb12-3" title="3">    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></a>
-<a class="sourceLine" id="cb12-4" title="4">)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="taulukot-ja-kuvat.html#cb12-1"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</span>
+<span id="cb12-2"><a href="taulukot-ja-kuvat.html#cb12-2"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb12-3"><a href="taulukot-ja-kuvat.html#cb12-3"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb12-4"><a href="taulukot-ja-kuvat.html#cb12-4"></a>)</span></code></pre></div>
 <table>
 <caption><span id="tab:simpleCAscree">Taulukko 5.5: </span>Korrespondenssianalyysin diagnostiikkaa - ominaisarvot</caption>
 <thead>
@@ -563,7 +565,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>chunk-optiot</strong></p>
 <p>fig.cap: R plot - kuvat figure-ympäristöön, automaattiset labelit (fig: + koodipätkän label) ja niihin voi viitata.</p>
 <p>fig.asp oikeaan arvoon 1.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="kw">plot</span>(smokeCA)</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="taulukot-ja-kuvat.html#cb13-1"></a><span class="kw">plot</span>(smokeCA)</span></code></pre></div>
 <div class="figure"><span id="fig:CAmap1"></span>
 <img src="bookdown-testi1_files/figure-html/CAmap1-1.png" alt="CA-kartta" width="672" />
 <p class="caption">
