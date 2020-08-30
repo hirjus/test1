@@ -85,3 +85,4 @@ asettaa vain sivutyylin arvoon "plain", sivun yläreunan teksi pois.
 **7.6.2020** R-päivitykset, gitbook ja pdf toimivat. PDF-tulosteessa r-koodi "valuu"
 oikean marginaalin yli. Dokumentin tekstit ovat aika vanhentuneita.
 **21.7.20** Rstudio ja R-paketit päivitetty.
+**30.8.20** R-pakettien päivitys.
