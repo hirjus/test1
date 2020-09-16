@@ -15,9 +15,11 @@ biblio-style: apalike
 
 # Bookdown-paketin testidokumentti
 
-Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne joissa on ns.
-
-A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat
+numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne
+joissa on ääkkösiä.
+A sample document using RMarkdown with bookdown-package to do statistical 
+analysis and publish a report in html and pdf formats.
 
 ```{r bdtest1_paketit, include=FALSE}
 # pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)

@@ -86,3 +86,4 @@ asettaa vain sivutyylin arvoon "plain", sivun yläreunan teksi pois.
 oikean marginaalin yli. Dokumentin tekstit ovat aika vanhentuneita.
 **21.7.20** Rstudio ja R-paketit päivitetty.
 **30.8.20** R-pakettien päivitys.
+**16.9.20** R-pakettien päivityksi.
