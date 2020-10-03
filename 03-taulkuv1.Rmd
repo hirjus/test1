@@ -105,7 +105,8 @@ knitr::kable( numres1CA1$scree,
 
 ```
 
-Taulukko \@ref(tab:simpleCAscree) vaatii selityksen, mutta kuvaa ei tässä tapauksessa tarvita.
+Taulukon \@ref(tab:simpleCAscree) ensimmäinen sarake ominaisarvo, toinen ja
+kolmas ovat dimension osuus kokonaisinertiasta (osuus ja kumulatiivinen osuus).
 
 ## Kuvat
 

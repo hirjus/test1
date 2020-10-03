@@ -46,9 +46,16 @@ compiled with zlib version 1.2.11; using 1.2.11
 
 ##  Muutoksia, tilannetietoja ja puutteita
 
-Nyt toimii gitbook ^[Virheilmoitukset ovat aika hyödyttömiä. Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.] ja pdf_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+Tulostusformaatteina testataan gitbook ^[Virheilmoitukset ovat aika hyödyttömiä.
+Tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.]
+ja pdf_book. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta
+(omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja)
+**edit: gitbook on html/CSS/javascript-paketti (3.10.20)**.
 
-test1_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.
+test1_preamble.tex -tiedostolla voi säätää Tex-asetuksia. Tuo ei toimi, mutta
+simple_peambe.tex - toimii (luvun nimi pois sivun ylälaidasta).
 
-Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!
+Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa.
+PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti.
+Ikävä juttu!
 

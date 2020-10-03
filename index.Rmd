@@ -17,14 +17,17 @@ biblio-style: apalike
 
 Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat
 numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne
-joissa on ääkkösiä.
+joissa on ääkkösiä. Viiteiden järjestys on gitbook (html)- formaatissa
+ei kuin pdf-tiedostossa (ns. "skandit").
+
 A sample document using RMarkdown with bookdown-package to do statistical 
 analysis and publish a report in html and pdf formats.
 
 ```{r bdtest1_paketit, include=FALSE}
-# pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)
+# Tätä pakettilistaa ei ole pidetty täysin samana kuin capaper- tai 
+# Galku-projekteissa (3.10.20)
 library(ca)
-library(rgl) # ongelmia jossain vaiheessa, kokeillaan toimiiko nyt (18.2.20)
+library(rgl)
 library(haven)
 library(dplyr)
 library(knitr)
@@ -33,10 +36,10 @@ library(lubridate)
 library(rmarkdown)
 library(ggplot2)
 library(furniture)
-library(likert)
+# library(likert) ei käytetä, pois (3.10.20)
 library(scales) # G_1_2 - kuva
 library(reshape2)  # G_1_2 - kuva
-library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)
+library(printr) #19.5.18 taulukoiden ja matriisien tulostukseen
 # library(stargazer) # 28.5.2018, ei käytetetä joten pois (18.2.20)
 library(bookdown)
 library(tinytex)

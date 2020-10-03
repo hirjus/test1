@@ -156,7 +156,7 @@
 
 \title{Bookdown-dokumetti - testi 1}
 \author{Jussi Hirvonen}
-\date{2020-09-16 (Versio 3.05)}
+\date{2020-10-03 (Versio 3.05)}
 
 \begin{document}
 \maketitle
@@ -168,9 +168,13 @@
 \hypertarget{bookdown-paketin-testidokumentti}{%
 \chapter{Bookdown-paketin testidokumentti}\label{bookdown-paketin-testidokumentti}}
 
-Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne joissa on ns.
+Esimerkki Rmarkdownin ja bookdown-paketin käytöstä. Kuvat, taulukot ja kaavat
+numeroidaan ja niihin voi viitata tekstissä. Lähdeviitteet toimivat, myös ne
+joissa on ääkkösiä. Viiteiden järjestys on gitbook (html)- formaatissa
+ei kuin pdf-tiedostossa (ns. ``skandit'').
 
-A sample document using RMarkdown with bookdown-package to do statistical analysis and publish a report in html and pdf formats.
+A sample document using RMarkdown with bookdown-package to do statistical
+analysis and publish a report in html and pdf formats.
 
 \hypertarget{johdanto}{%
 \chapter{Johdanto}\label{johdanto}}
@@ -237,11 +241,18 @@ compiled with zlib version 1.2.11; using 1.2.11
 \hypertarget{muutoksia-tilannetietoja-ja-puutteita}{%
 \section{Muutoksia, tilannetietoja ja puutteita}\label{muutoksia-tilannetietoja-ja-puutteita}}
 
-Nyt toimii gitbook \footnote{Virheilmoitukset ovat aika hyödyttömiä. Niiden sijaan tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.} ja pdf\_book tulostusformaatteina. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta (omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja).
+Tulostusformaatteina testataan gitbook \footnote{Virheilmoitukset ovat aika hyödyttömiä.
+  Tähän alkuun sopisi kuvaus perusideoista ja tekstin muotoiluista. Alaviitteistä esimerkiksi.}
+ja pdf\_book. Molemmat ovat html-paketteja, ja tarvitsevat ehkä r-datahakemistosta
+(omalta koneelta) libs-hakemiston jQuery- ja Gitbook-paketit (javaskriptiä ja css-tyylitiedostoja)
+\textbf{edit: gitbook on html/CSS/javascript-paketti (3.10.20)}.
 
-test1\_preamble.tex -tiedostoa kokeiltiin, mutta sitä ei saatu heinäkuussa toimimaan.
+test1\_preamble.tex -tiedostolla voi säätää Tex-asetuksia. Tuo ei toimi, mutta
+simple\_peambe.tex - toimii (luvun nimi pois sivun ylälaidasta).
 
-Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa. PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti. Ikävä juttu!
+Lähdeluettelossa Å tulee heti A - kirjaimen jälkeen gitbook-versiossa.
+PDF-tiedostossa taas Å-alkuinen sukunimi sijoittuu vähän toisin virheellisesti.
+Ikävä juttu!
 
 \hypertarget{voiko-rmd-dokumentin-ensimmuxe4iselluxe4-rivilluxe4-olla-toisen-tason-otsikko}{%
 \chapter{Voiko rmd-dokumentin ensimmäisellä rivillä olla toisen tason otsikko?}\label{voiko-rmd-dokumentin-ensimmuxe4iselluxe4-rivilluxe4-olla-toisen-tason-otsikko}}
@@ -530,7 +541,8 @@ Dimensioiden ominaisarvot (eli niiden osuus kokonaisinertiasta) saadaan ca-funkt
 \end{tabular}
 \end{table}
 
-Taulukko \ref{tab:simpleCAscree} vaatii selityksen, mutta kuvaa ei tässä tapauksessa tarvita.
+Taulukon \ref{tab:simpleCAscree} ensimmäinen sarake ominaisarvo, toinen ja
+kolmas ovat dimension osuus kokonaisinertiasta (osuus ja kumulatiivinen osuus).
 
 \hypertarget{kuvat}{%
 \section{Kuvat}\label{kuvat}}
@@ -630,9 +642,10 @@ Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä sää
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)}
+\CommentTok{# Tätä pakettilistaa ei ole pidetty täysin samana kuin capaper- tai }
+\CommentTok{# Galku-projekteissa (3.10.20)}
 \KeywordTok{library}\NormalTok{(ca)}
-\KeywordTok{library}\NormalTok{(rgl) }\CommentTok{# ongelmia jossain vaiheessa, kokeillaan toimiiko nyt (18.2.20)}
+\KeywordTok{library}\NormalTok{(rgl)}
 \KeywordTok{library}\NormalTok{(haven)}
 \KeywordTok{library}\NormalTok{(dplyr)}
 \KeywordTok{library}\NormalTok{(knitr)}
@@ -641,10 +654,10 @@ Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä sää
 \KeywordTok{library}\NormalTok{(rmarkdown)}
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(furniture)}
-\KeywordTok{library}\NormalTok{(likert)}
+\CommentTok{# library(likert) ei käytetä, pois (3.10.20)}
 \KeywordTok{library}\NormalTok{(scales) }\CommentTok{# G_1_2 - kuva}
 \KeywordTok{library}\NormalTok{(reshape2)  }\CommentTok{# G_1_2 - kuva}
-\KeywordTok{library}\NormalTok{(printr) }\CommentTok{#19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)}
+\KeywordTok{library}\NormalTok{(printr) }\CommentTok{#19.5.18 taulukoiden ja matriisien tulostukseen}
 \CommentTok{# library(stargazer) # 28.5.2018, ei käytetetä joten pois (18.2.20)}
 \KeywordTok{library}\NormalTok{(bookdown)}
 \KeywordTok{library}\NormalTok{(tinytex)}

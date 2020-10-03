@@ -198,85 +198,86 @@ Kuva 6.2: Tulostiedoston prosessointi - pdf
 </p>
 </div>
 <p>Testataan koodilohkojen listausta, näyttää toimivan mutta vaatii vielä säätämistä. Ohje löytyi <a href="https://yihui.name/en/2018/09/code-appendix/">Yihui Xienin blogista</a> (luettu 26.10.2018).</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bookdown-ja-rmarkdown.html#cb16-1"></a><span class="co"># pitääkö kirjastot ladata tässä, vai jokaisen rmd-tiedoston alussa? library(rgl)</span></span>
-<span id="cb16-2"><a href="bookdown-ja-rmarkdown.html#cb16-2"></a><span class="kw">library</span>(ca)</span>
-<span id="cb16-3"><a href="bookdown-ja-rmarkdown.html#cb16-3"></a><span class="kw">library</span>(rgl) <span class="co"># ongelmia jossain vaiheessa, kokeillaan toimiiko nyt (18.2.20)</span></span>
-<span id="cb16-4"><a href="bookdown-ja-rmarkdown.html#cb16-4"></a><span class="kw">library</span>(haven)</span>
-<span id="cb16-5"><a href="bookdown-ja-rmarkdown.html#cb16-5"></a><span class="kw">library</span>(dplyr)</span>
-<span id="cb16-6"><a href="bookdown-ja-rmarkdown.html#cb16-6"></a><span class="kw">library</span>(knitr)</span>
-<span id="cb16-7"><a href="bookdown-ja-rmarkdown.html#cb16-7"></a><span class="kw">library</span>(tidyverse)</span>
-<span id="cb16-8"><a href="bookdown-ja-rmarkdown.html#cb16-8"></a><span class="kw">library</span>(lubridate)</span>
-<span id="cb16-9"><a href="bookdown-ja-rmarkdown.html#cb16-9"></a><span class="kw">library</span>(rmarkdown)</span>
-<span id="cb16-10"><a href="bookdown-ja-rmarkdown.html#cb16-10"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb16-11"><a href="bookdown-ja-rmarkdown.html#cb16-11"></a><span class="kw">library</span>(furniture)</span>
-<span id="cb16-12"><a href="bookdown-ja-rmarkdown.html#cb16-12"></a><span class="kw">library</span>(likert)</span>
-<span id="cb16-13"><a href="bookdown-ja-rmarkdown.html#cb16-13"></a><span class="kw">library</span>(scales) <span class="co"># G_1_2 - kuva</span></span>
-<span id="cb16-14"><a href="bookdown-ja-rmarkdown.html#cb16-14"></a><span class="kw">library</span>(reshape2)  <span class="co"># G_1_2 - kuva</span></span>
-<span id="cb16-15"><a href="bookdown-ja-rmarkdown.html#cb16-15"></a><span class="kw">library</span>(printr) <span class="co">#19.5.18 taulukoiden ja matriisien tulostukseen - onkohan tarpeen? (29.6.2019)</span></span>
-<span id="cb16-16"><a href="bookdown-ja-rmarkdown.html#cb16-16"></a><span class="co"># library(stargazer) # 28.5.2018, ei käytetetä joten pois (18.2.20)</span></span>
-<span id="cb16-17"><a href="bookdown-ja-rmarkdown.html#cb16-17"></a><span class="kw">library</span>(bookdown)</span>
-<span id="cb16-18"><a href="bookdown-ja-rmarkdown.html#cb16-18"></a><span class="kw">library</span>(tinytex)</span>
-<span id="cb16-19"><a href="bookdown-ja-rmarkdown.html#cb16-19"></a><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</span>
-<span id="cb16-20"><a href="bookdown-ja-rmarkdown.html#cb16-20"></a>rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</span>
-<span id="cb16-21"><a href="bookdown-ja-rmarkdown.html#cb16-21"></a></span>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bookdown-ja-rmarkdown.html#cb16-1"></a><span class="co"># Tätä pakettilistaa ei ole pidetty täysin samana kuin capaper- tai </span></span>
+<span id="cb16-2"><a href="bookdown-ja-rmarkdown.html#cb16-2"></a><span class="co"># Galku-projekteissa (3.10.20)</span></span>
+<span id="cb16-3"><a href="bookdown-ja-rmarkdown.html#cb16-3"></a><span class="kw">library</span>(ca)</span>
+<span id="cb16-4"><a href="bookdown-ja-rmarkdown.html#cb16-4"></a><span class="kw">library</span>(rgl)</span>
+<span id="cb16-5"><a href="bookdown-ja-rmarkdown.html#cb16-5"></a><span class="kw">library</span>(haven)</span>
+<span id="cb16-6"><a href="bookdown-ja-rmarkdown.html#cb16-6"></a><span class="kw">library</span>(dplyr)</span>
+<span id="cb16-7"><a href="bookdown-ja-rmarkdown.html#cb16-7"></a><span class="kw">library</span>(knitr)</span>
+<span id="cb16-8"><a href="bookdown-ja-rmarkdown.html#cb16-8"></a><span class="kw">library</span>(tidyverse)</span>
+<span id="cb16-9"><a href="bookdown-ja-rmarkdown.html#cb16-9"></a><span class="kw">library</span>(lubridate)</span>
+<span id="cb16-10"><a href="bookdown-ja-rmarkdown.html#cb16-10"></a><span class="kw">library</span>(rmarkdown)</span>
+<span id="cb16-11"><a href="bookdown-ja-rmarkdown.html#cb16-11"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb16-12"><a href="bookdown-ja-rmarkdown.html#cb16-12"></a><span class="kw">library</span>(furniture)</span>
+<span id="cb16-13"><a href="bookdown-ja-rmarkdown.html#cb16-13"></a><span class="co"># library(likert) ei käytetä, pois (3.10.20)</span></span>
+<span id="cb16-14"><a href="bookdown-ja-rmarkdown.html#cb16-14"></a><span class="kw">library</span>(scales) <span class="co"># G_1_2 - kuva</span></span>
+<span id="cb16-15"><a href="bookdown-ja-rmarkdown.html#cb16-15"></a><span class="kw">library</span>(reshape2)  <span class="co"># G_1_2 - kuva</span></span>
+<span id="cb16-16"><a href="bookdown-ja-rmarkdown.html#cb16-16"></a><span class="kw">library</span>(printr) <span class="co">#19.5.18 taulukoiden ja matriisien tulostukseen</span></span>
+<span id="cb16-17"><a href="bookdown-ja-rmarkdown.html#cb16-17"></a><span class="co"># library(stargazer) # 28.5.2018, ei käytetetä joten pois (18.2.20)</span></span>
+<span id="cb16-18"><a href="bookdown-ja-rmarkdown.html#cb16-18"></a><span class="kw">library</span>(bookdown)</span>
+<span id="cb16-19"><a href="bookdown-ja-rmarkdown.html#cb16-19"></a><span class="kw">library</span>(tinytex)</span>
+<span id="cb16-20"><a href="bookdown-ja-rmarkdown.html#cb16-20"></a><span class="kw">system</span>(<span class="st">&quot;pdflatex --version&quot;</span>)</span>
+<span id="cb16-21"><a href="bookdown-ja-rmarkdown.html#cb16-21"></a>rmarkdown<span class="op">::</span><span class="kw">pandoc_version</span>()</span>
 <span id="cb16-22"><a href="bookdown-ja-rmarkdown.html#cb16-22"></a></span>
-<span id="cb16-23"><a href="bookdown-ja-rmarkdown.html#cb16-23"></a>knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb16-24"><a href="bookdown-ja-rmarkdown.html#cb16-24"></a>  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></span>
-<span id="cb16-25"><a href="bookdown-ja-rmarkdown.html#cb16-25"></a>)</span>
-<span id="cb16-26"><a href="bookdown-ja-rmarkdown.html#cb16-26"></a><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></span>
-<span id="cb16-27"><a href="bookdown-ja-rmarkdown.html#cb16-27"></a><span class="co"># riviprofiilit</span></span>
-<span id="cb16-28"><a href="bookdown-ja-rmarkdown.html#cb16-28"></a>smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</span>
-<span id="cb16-29"><a href="bookdown-ja-rmarkdown.html#cb16-29"></a><span class="co"># keskiarvoprofiili</span></span>
-<span id="cb16-30"><a href="bookdown-ja-rmarkdown.html#cb16-30"></a>smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</span>
-<span id="cb16-31"><a href="bookdown-ja-rmarkdown.html#cb16-31"></a></span>
-<span id="cb16-32"><a href="bookdown-ja-rmarkdown.html#cb16-32"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
-<span id="cb16-33"><a href="bookdown-ja-rmarkdown.html#cb16-33"></a>  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb16-34"><a href="bookdown-ja-rmarkdown.html#cb16-34"></a>  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
-<span id="cb16-35"><a href="bookdown-ja-rmarkdown.html#cb16-35"></a>)</span>
-<span id="cb16-36"><a href="bookdown-ja-rmarkdown.html#cb16-36"></a></span>
-<span id="cb16-37"><a href="bookdown-ja-rmarkdown.html#cb16-37"></a>smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</span>
-<span id="cb16-38"><a href="bookdown-ja-rmarkdown.html#cb16-38"></a><span class="co">#temp1 &lt;- smokeCA tämä kai tarpeeton ? (4.12.2018)</span></span>
-<span id="cb16-39"><a href="bookdown-ja-rmarkdown.html#cb16-39"></a>numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</span>
-<span id="cb16-40"><a href="bookdown-ja-rmarkdown.html#cb16-40"></a><span class="co">#str(smokeCA)</span></span>
-<span id="cb16-41"><a href="bookdown-ja-rmarkdown.html#cb16-41"></a><span class="co">#knitr::kable( smokeCA,</span></span>
-<span id="cb16-42"><a href="bookdown-ja-rmarkdown.html#cb16-42"></a><span class="co">#  digits = 3,</span></span>
-<span id="cb16-43"><a href="bookdown-ja-rmarkdown.html#cb16-43"></a><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></span>
-<span id="cb16-44"><a href="bookdown-ja-rmarkdown.html#cb16-44"></a><span class="co">#)</span></span>
-<span id="cb16-45"><a href="bookdown-ja-rmarkdown.html#cb16-45"></a><span class="co">#str(temp1)</span></span>
-<span id="cb16-46"><a href="bookdown-ja-rmarkdown.html#cb16-46"></a><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></span>
-<span id="cb16-47"><a href="bookdown-ja-rmarkdown.html#cb16-47"></a><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></span>
-<span id="cb16-48"><a href="bookdown-ja-rmarkdown.html#cb16-48"></a><span class="co">#str(temp2)</span></span>
-<span id="cb16-49"><a href="bookdown-ja-rmarkdown.html#cb16-49"></a><span class="co">#str(temp2$scree)</span></span>
-<span id="cb16-50"><a href="bookdown-ja-rmarkdown.html#cb16-50"></a><span class="co">#temp2$scree</span></span>
-<span id="cb16-51"><a href="bookdown-ja-rmarkdown.html#cb16-51"></a>numres1CA1</span>
-<span id="cb16-52"><a href="bookdown-ja-rmarkdown.html#cb16-52"></a></span>
-<span id="cb16-53"><a href="bookdown-ja-rmarkdown.html#cb16-53"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,</span>
-<span id="cb16-54"><a href="bookdown-ja-rmarkdown.html#cb16-54"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
-<span id="cb16-55"><a href="bookdown-ja-rmarkdown.html#cb16-55"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
-<span id="cb16-56"><a href="bookdown-ja-rmarkdown.html#cb16-56"></a>)</span>
-<span id="cb16-57"><a href="bookdown-ja-rmarkdown.html#cb16-57"></a></span>
-<span id="cb16-58"><a href="bookdown-ja-rmarkdown.html#cb16-58"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</span>
-<span id="cb16-59"><a href="bookdown-ja-rmarkdown.html#cb16-59"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
-<span id="cb16-60"><a href="bookdown-ja-rmarkdown.html#cb16-60"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
-<span id="cb16-61"><a href="bookdown-ja-rmarkdown.html#cb16-61"></a>)</span>
-<span id="cb16-62"><a href="bookdown-ja-rmarkdown.html#cb16-62"></a></span>
-<span id="cb16-63"><a href="bookdown-ja-rmarkdown.html#cb16-63"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</span>
-<span id="cb16-64"><a href="bookdown-ja-rmarkdown.html#cb16-64"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
-<span id="cb16-65"><a href="bookdown-ja-rmarkdown.html#cb16-65"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
-<span id="cb16-66"><a href="bookdown-ja-rmarkdown.html#cb16-66"></a>)</span>
-<span id="cb16-67"><a href="bookdown-ja-rmarkdown.html#cb16-67"></a></span>
-<span id="cb16-68"><a href="bookdown-ja-rmarkdown.html#cb16-68"></a><span class="kw">plot</span>(smokeCA)</span>
-<span id="cb16-69"><a href="bookdown-ja-rmarkdown.html#cb16-69"></a></span>
-<span id="cb16-70"><a href="bookdown-ja-rmarkdown.html#cb16-70"></a><span class="kw">str</span>(numres1CA1<span class="op">$</span>scree)</span>
-<span id="cb16-71"><a href="bookdown-ja-rmarkdown.html#cb16-71"></a>test2 &lt;-<span class="st"> </span><span class="kw">as.table</span>(numres1CA1<span class="op">$</span>scree)</span>
-<span id="cb16-72"><a href="bookdown-ja-rmarkdown.html#cb16-72"></a><span class="co">#str(test1$V1)</span></span>
-<span id="cb16-73"><a href="bookdown-ja-rmarkdown.html#cb16-73"></a><span class="kw">str</span>(test2)</span>
-<span id="cb16-74"><a href="bookdown-ja-rmarkdown.html#cb16-74"></a>test2[[dimnames]]</span>
-<span id="cb16-75"><a href="bookdown-ja-rmarkdown.html#cb16-75"></a><span class="co"># Vielä kokeilua!</span></span>
-<span id="cb16-76"><a href="bookdown-ja-rmarkdown.html#cb16-76"></a></span>
+<span id="cb16-23"><a href="bookdown-ja-rmarkdown.html#cb16-23"></a></span>
+<span id="cb16-24"><a href="bookdown-ja-rmarkdown.html#cb16-24"></a>knitr<span class="op">::</span><span class="kw">kable</span>(smoke[,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">booktabs =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb16-25"><a href="bookdown-ja-rmarkdown.html#cb16-25"></a>  <span class="dt">caption =</span> <span class="st">&#39;CA-paketin smoke-data (keinotekoinen)&#39;</span></span>
+<span id="cb16-26"><a href="bookdown-ja-rmarkdown.html#cb16-26"></a>)</span>
+<span id="cb16-27"><a href="bookdown-ja-rmarkdown.html#cb16-27"></a><span class="co"># Taulukkoon viittaaminen tekstissä \@ref(label)</span></span>
+<span id="cb16-28"><a href="bookdown-ja-rmarkdown.html#cb16-28"></a><span class="co"># riviprofiilit</span></span>
+<span id="cb16-29"><a href="bookdown-ja-rmarkdown.html#cb16-29"></a>smoke.rpro &lt;-<span class="st"> </span>smoke <span class="op">/</span><span class="st"> </span><span class="kw">rowSums</span> (smoke)</span>
+<span id="cb16-30"><a href="bookdown-ja-rmarkdown.html#cb16-30"></a><span class="co"># keskiarvoprofiili</span></span>
+<span id="cb16-31"><a href="bookdown-ja-rmarkdown.html#cb16-31"></a>smoke.avrpro &lt;-<span class="st"> </span><span class="kw">colSums</span>(smoke) <span class="op">/</span><span class="st"> </span><span class="kw">sum</span>(smoke)</span>
+<span id="cb16-32"><a href="bookdown-ja-rmarkdown.html#cb16-32"></a></span>
+<span id="cb16-33"><a href="bookdown-ja-rmarkdown.html#cb16-33"></a>knitr<span class="op">::</span><span class="kw">kable</span>(</span>
+<span id="cb16-34"><a href="bookdown-ja-rmarkdown.html#cb16-34"></a>  <span class="kw">list</span>(smoke.rpro, <span class="kw">t</span>(smoke.avrpro)   ), <span class="dt">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb16-35"><a href="bookdown-ja-rmarkdown.html#cb16-35"></a>  <span class="dt">caption =</span> <span class="st">&#39;Riviprofiilit ja keskiarvoprofiili&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb16-36"><a href="bookdown-ja-rmarkdown.html#cb16-36"></a>)</span>
+<span id="cb16-37"><a href="bookdown-ja-rmarkdown.html#cb16-37"></a></span>
+<span id="cb16-38"><a href="bookdown-ja-rmarkdown.html#cb16-38"></a>smokeCA &lt;-<span class="st"> </span><span class="kw">ca</span>(smoke)</span>
+<span id="cb16-39"><a href="bookdown-ja-rmarkdown.html#cb16-39"></a><span class="co">#temp1 &lt;- smokeCA tämä kai tarpeeton ? (4.12.2018)</span></span>
+<span id="cb16-40"><a href="bookdown-ja-rmarkdown.html#cb16-40"></a>numres1CA1 &lt;-<span class="st"> </span><span class="kw">summary</span>(smokeCA)</span>
+<span id="cb16-41"><a href="bookdown-ja-rmarkdown.html#cb16-41"></a><span class="co">#str(smokeCA)</span></span>
+<span id="cb16-42"><a href="bookdown-ja-rmarkdown.html#cb16-42"></a><span class="co">#knitr::kable( smokeCA,</span></span>
+<span id="cb16-43"><a href="bookdown-ja-rmarkdown.html#cb16-43"></a><span class="co">#  digits = 3,</span></span>
+<span id="cb16-44"><a href="bookdown-ja-rmarkdown.html#cb16-44"></a><span class="co">#  caption = &#39;Riviprofiilit ja keskiarvoprofiili&#39;, booktabs = TRUE</span></span>
+<span id="cb16-45"><a href="bookdown-ja-rmarkdown.html#cb16-45"></a><span class="co">#)</span></span>
+<span id="cb16-46"><a href="bookdown-ja-rmarkdown.html#cb16-46"></a><span class="co">#str(temp1)</span></span>
+<span id="cb16-47"><a href="bookdown-ja-rmarkdown.html#cb16-47"></a><span class="co">#stargazer(temp2$rows, type = &quot;text&quot;, title = &quot;CA-tuloksia&quot;)</span></span>
+<span id="cb16-48"><a href="bookdown-ja-rmarkdown.html#cb16-48"></a><span class="co"># LateX-tulostuksessa float vaatii jotain tällaista:Table: (\#tab:cataul1) </span></span>
+<span id="cb16-49"><a href="bookdown-ja-rmarkdown.html#cb16-49"></a><span class="co">#str(temp2)</span></span>
+<span id="cb16-50"><a href="bookdown-ja-rmarkdown.html#cb16-50"></a><span class="co">#str(temp2$scree)</span></span>
+<span id="cb16-51"><a href="bookdown-ja-rmarkdown.html#cb16-51"></a><span class="co">#temp2$scree</span></span>
+<span id="cb16-52"><a href="bookdown-ja-rmarkdown.html#cb16-52"></a>numres1CA1</span>
+<span id="cb16-53"><a href="bookdown-ja-rmarkdown.html#cb16-53"></a></span>
+<span id="cb16-54"><a href="bookdown-ja-rmarkdown.html#cb16-54"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>rows,</span>
+<span id="cb16-55"><a href="bookdown-ja-rmarkdown.html#cb16-55"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb16-56"><a href="bookdown-ja-rmarkdown.html#cb16-56"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - rivit&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb16-57"><a href="bookdown-ja-rmarkdown.html#cb16-57"></a>)</span>
+<span id="cb16-58"><a href="bookdown-ja-rmarkdown.html#cb16-58"></a></span>
+<span id="cb16-59"><a href="bookdown-ja-rmarkdown.html#cb16-59"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>columns,</span>
+<span id="cb16-60"><a href="bookdown-ja-rmarkdown.html#cb16-60"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb16-61"><a href="bookdown-ja-rmarkdown.html#cb16-61"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - sarakkeet&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb16-62"><a href="bookdown-ja-rmarkdown.html#cb16-62"></a>)</span>
+<span id="cb16-63"><a href="bookdown-ja-rmarkdown.html#cb16-63"></a></span>
+<span id="cb16-64"><a href="bookdown-ja-rmarkdown.html#cb16-64"></a>knitr<span class="op">::</span><span class="kw">kable</span>( numres1CA1<span class="op">$</span>scree,</span>
+<span id="cb16-65"><a href="bookdown-ja-rmarkdown.html#cb16-65"></a>    <span class="dt">digits =</span> <span class="dv">3</span>,          </span>
+<span id="cb16-66"><a href="bookdown-ja-rmarkdown.html#cb16-66"></a>    <span class="dt">caption =</span> <span class="st">&#39;Korrespondenssianalyysin diagnostiikkaa - ominaisarvot&#39;</span>, <span class="dt">booktabs =</span> <span class="ot">TRUE</span></span>
+<span id="cb16-67"><a href="bookdown-ja-rmarkdown.html#cb16-67"></a>)</span>
+<span id="cb16-68"><a href="bookdown-ja-rmarkdown.html#cb16-68"></a></span>
+<span id="cb16-69"><a href="bookdown-ja-rmarkdown.html#cb16-69"></a><span class="kw">plot</span>(smokeCA)</span>
+<span id="cb16-70"><a href="bookdown-ja-rmarkdown.html#cb16-70"></a></span>
+<span id="cb16-71"><a href="bookdown-ja-rmarkdown.html#cb16-71"></a><span class="kw">str</span>(numres1CA1<span class="op">$</span>scree)</span>
+<span id="cb16-72"><a href="bookdown-ja-rmarkdown.html#cb16-72"></a>test2 &lt;-<span class="st"> </span><span class="kw">as.table</span>(numres1CA1<span class="op">$</span>scree)</span>
+<span id="cb16-73"><a href="bookdown-ja-rmarkdown.html#cb16-73"></a><span class="co">#str(test1$V1)</span></span>
+<span id="cb16-74"><a href="bookdown-ja-rmarkdown.html#cb16-74"></a><span class="kw">str</span>(test2)</span>
+<span id="cb16-75"><a href="bookdown-ja-rmarkdown.html#cb16-75"></a>test2[[dimnames]]</span>
+<span id="cb16-76"><a href="bookdown-ja-rmarkdown.html#cb16-76"></a><span class="co"># Vielä kokeilua!</span></span>
 <span id="cb16-77"><a href="bookdown-ja-rmarkdown.html#cb16-77"></a></span>
-<span id="cb16-78"><a href="bookdown-ja-rmarkdown.html#cb16-78"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</span>
-<span id="cb16-79"><a href="bookdown-ja-rmarkdown.html#cb16-79"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</span></code></pre></div>
+<span id="cb16-78"><a href="bookdown-ja-rmarkdown.html#cb16-78"></a></span>
+<span id="cb16-79"><a href="bookdown-ja-rmarkdown.html#cb16-79"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.png&#39;</span>)</span>
+<span id="cb16-80"><a href="bookdown-ja-rmarkdown.html#cb16-80"></a>knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;BookdownProc.pdf&#39;</span>)</span></code></pre></div>
 <p>“New line” vaaditaan koodilohkon jälkeen.</p>
 
 </div>
