@@ -89,3 +89,4 @@ oikean marginaalin yli. Dokumentin tekstit ovat aika vanhentuneita.
 **16.9.20** R-pakettien päivitys.
 **3.10.2020** R-pakettien ja RStudion päivitys, pientä tekstin pientä
 editointia.
+**18.10.2020** Testailtiin MikTeX-päivityksiä, pdf-tulostus toimii.
